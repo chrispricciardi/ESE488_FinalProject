@@ -1,5 +1,5 @@
 //SRAMA
-module sram_input(
+module sram_weight1(
 clk,
 we,
 d,
@@ -10,10 +10,10 @@ q
 input clk;	
 input we;		//if(we) > [write enable] else > [read enable]
 input [15:0] d; 	//data input (high impedance for this design)
-input [9:0] address;	//memory address
+input [17:0] address;	//memory address
 output reg [15:0] q; 	//output
 
-reg[15:0] mem [0:783];  
+reg[15:0] mem [0:156799];  
 
 always @(posedge clk)
 begin 

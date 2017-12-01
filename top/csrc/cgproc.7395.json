@@ -1,31 +1,31 @@
 {
     "Modules": {
+        "sram_input": {},
         "top_tb": {
             "Compiled": "Yes",
-            "Compiled Times": 8
+            "Compiled Times": 14
         },
         "...MASTER...": {}
     },
     "CompUnits": {
         "amcQw_d": {
             "mode": 4,
-            "bytes": 7110,
             "mod": "...MASTER...",
+            "archive": "archive.13/_7395_archive_1.a",
             "out": "amcQw_d.o",
-            "archive": "archive.7/_4048_archive_1.a"
+            "bytes": 7110
         },
         "W0eJz_d": {
             "mode": 4,
-            "bytes": 14792,
             "mod": "top_tb",
+            "archive": "archive.13/_7395_archive_1.a",
             "out": "W0eJz_d.o",
-            "archive": "archive.7/_4048_archive_1.a"
+            "bytes": 27077
         }
     },
     "ObjArchives": [
         {
-            "archive": "archive.7/_4048_archive_1.a",
-            "size": 21902,
+            "archive": "archive.13/_7395_archive_1.a",
             "objects": [
                 [
                     "amcQw_d.o",
@@ -33,9 +33,10 @@
                 ],
                 [
                     "W0eJz_d.o",
-                    14792
+                    27077
                 ]
-            ]
+            ],
+            "size": 34187
         }
     ]
 }

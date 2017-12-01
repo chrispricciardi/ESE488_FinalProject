@@ -1,76 +1,103 @@
 //TOP
 module top(
 clk,
-input_address,			// address to input SRAM
-write,				// write signal to input SRAM
-wdata1,wdata2,wdata3,wdata4,wdata5,wdata6,wdata7,wdata8,wdata9,wdata10,	// input SRAM data in for SRAM(1-10)		
+we_1,
+we_2,
+we_3,
+address_1,
+address_2, 	
 reset
 );
 
 //---Inputs---
 input clk;
 input reset;
-input address_2; 
-input write; //write signal for testing SRAM	
-input [15:0] wdata1,wdata2,wdata3,wdata4,wdata5,wdata6,wdata7,wdata8,wdata9,wdata10; //input of input SRAM	
 
-//wire write; //write signal for SRAM (write = 0 implies read)
-wire [15:0] in_1, in_2, in_3, in_4, in_5, in_6, in_7, in_8, in_9, in_10; //output of input SRAM	 		
-wire [15:0] input_address;
-//wire [15:0] wdata; 		//data to SRAM
+//---Wires---
+//wire we;  			//write signal for SRAM (write = 0 implies read)
+
+//--write enables set to INPUT for testing. Change to wires from control
+input we_1; // sram_weight1 write enable
+input we_2; // sram_weight2 write enable
+input we_3; // sram_input write enable
 
 
+input [17:0] address_1; //sram_weight1 address
+input [11:0] address_2; //sram_weight2 address
+wire [9:0]  address_3; //sram_input address
 
-sram_input SRAM1(.clk(clk),
-	.wdata(wdata1), 
-	.write(write),  
+wire [15:0] d1,d2,d3,d4,d5,d6,d7,d8,d9,d10; //data to sram_input
+wire [15:0] in_1, in_2, in_3, in_4, in_5, in_6, in_7, in_8, in_9, in_10; //output of input SRAM	
+wire [15:0] dw1, dw2; //data to sram_weight1(2)
+wire [15:0] weight_1, weight_2; //output of sram_weight
+
+
+//---INPUT SRAM---
+sram_input SRAM_INPUT1(.clk(clk),
+	.d(d1), 
+	.we(we_3),  
+	.address(address_3), 
+	.q(in_1)); 
+sram_input SRAM_INPUT2(.clk(clk),
+	.d(d2), 
+	.we(we_3),  
+	.address(address_3), 
+	.q(in_2)); 
+sram_input SRAM_INPUT3(.clk(clk),
+	.d(d3), 
+	.we(we_3),  
+	.address(address_3), 
+	.q(in_3)); 
+sram_input SRAM_INPUT4(.clk(clk),
+	.d(d4), 
+	.we(we_3),  
+	.address(address_3), 
+	.q(in_4)); 
+sram_input SRAM_INPUT5(.clk(clk),
+	.d(d5), 
+	.we(we_3),  
+	.address(address_3), 
+	.q(in_5)); 
+sram_input SRAM_INPUT6(.clk(clk),
+	.d(d6), 
+	.we(we_3),  
+	.address(address_3), 
+	.q(in_6)); 
+sram_input SRAM_INPUT7(.clk(clk),
+	.d(d7), 
+	.we(we_3),  
+	.address(address_3), 
+	.q(in_7)); 
+sram_input SRAM_INPUT8(.clk(clk),
+	.d(d8), 
+	.we(we_3),  
+	.address(address_3), 
+	.q(in_8)); 
+sram_input SRAM_INPUT9(.clk(clk),
+	.d(d9), 
+	.we(we_3),  
+	.address(address_3), 
+	.q(in_9)); 
+sram_input SRAM_INPUT10(.clk(clk),
+	.d(d10), 
+	.we(we_3),  
+	.address(address_3), 
+	.q(in_10)); 
+
+//---WEIGHT SRAMS---
+sram_weight1 SRAM_WEIGHT1(.clk(clk),
+	.d(dw1), 
+	.we(we_1),  
+	.address(address_1), 
+	.q(weight_1)); 
+
+sram_weight2 SRAM_WEIGHT2(.clk(clk),
+	.d(dw2), 
+	.we(we_2),  
 	.address(address_2), 
-	.rdata(A)); 
-sram_input SRAM2(.clk(clk),
-	.wdata(wdata), 
-	.write(write),  
-	.address(address_2), 
-	.rdata(A)); 
-sram_input SRAM3(.clk(clk),
-	.wdata(wdata), 
-	.write(write),  
-	.address(address_2), 
-	.rdata(A)); 
-sram_input SRAM4(.clk(clk),
-	.wdata(wdata), 
-	.write(write),  
-	.address(address_2), 
-	.rdata(A)); 
-sram_input SRAM5(.clk(clk),
-	.wdata(wdata), 
-	.write(write),  
-	.address(address_2), 
-	.rdata(A)); 
-sram_input SRAM6(.clk(clk),
-	.wdata(wdata), 
-	.write(write),  
-	.address(address_2), 
-	.rdata(A)); 
-sram_input SRAM7(.clk(clk),
-	.wdata(wdata), 
-	.write(write),  
-	.address(address_2), 
-	.rdata(A)); 
-sram_input SRAM8(.clk(clk),
-	.wdata(wdata), 
-	.write(write),  
-	.address(address_2), 
-	.rdata(A)); 
-sram_input SRAM9(.clk(clk),
-	.wdata(wdata), 
-	.write(write),  
-	.address(address_2), 
-	.rdata(A)); 
-sram_input SRAM10(.clk(clk),
-	.wdata(wdata), 
-	.write(write),  
-	.address(address_2), 
-	.rdata(A)); 
+	.q(weight_2)); 
+
+
 
 /*
 control CONTROL(.clk(clk), 

@@ -4,6 +4,11 @@
         "amcQw",
         "module"
     ],
+    "sram_input": [
+        "sram_input",
+        "wx9Rv",
+        "module"
+    ],
     "top_tb": [
         "top_tb",
         "W0eJz",
