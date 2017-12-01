@@ -1,0 +1,41 @@
+{
+    "Modules": {
+        "top_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 8
+        },
+        "...MASTER...": {}
+    },
+    "CompUnits": {
+        "amcQw_d": {
+            "mode": 4,
+            "bytes": 7110,
+            "mod": "...MASTER...",
+            "out": "amcQw_d.o",
+            "archive": "archive.7/_4048_archive_1.a"
+        },
+        "W0eJz_d": {
+            "mode": 4,
+            "bytes": 14792,
+            "mod": "top_tb",
+            "out": "W0eJz_d.o",
+            "archive": "archive.7/_4048_archive_1.a"
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.7/_4048_archive_1.a",
+            "size": 21902,
+            "objects": [
+                [
+                    "amcQw_d.o",
+                    7110
+                ],
+                [
+                    "W0eJz_d.o",
+                    14792
+                ]
+            ]
+        }
+    ]
+}
