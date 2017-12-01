@@ -1,0 +1,530 @@
+Warning: Worst timing paths might not be returned. (TIM-104)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -nworst 3
+        -greater_path 0.00
+        -max_paths 1000000
+Design : mult
+Version: J-2014.09-SP5
+Date   : Thu Nov 30 19:06:27 2017
+****************************************
+
+Operating Conditions: nom_pvt   Library: vtvt_tsmc180
+Wire Load Model Mode: top
+
+  Startpoint: layer5_reg[23]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[15] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[23]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[23]/q (dp_1)                257.03     257.03 r
+  out[15] (out)                            0.00     257.03 r
+  data arrival time                                 257.03
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[22]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[14] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[22]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[22]/q (dp_1)                257.03     257.03 r
+  out[14] (out)                            0.00     257.03 r
+  data arrival time                                 257.03
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[21]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[13] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[21]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[21]/q (dp_1)                257.03     257.03 r
+  out[13] (out)                            0.00     257.03 r
+  data arrival time                                 257.03
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[20]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[12] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[20]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[20]/q (dp_1)                257.03     257.03 r
+  out[12] (out)                            0.00     257.03 r
+  data arrival time                                 257.03
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[19]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[11] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[19]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[19]/q (dp_1)                257.03     257.03 r
+  out[11] (out)                            0.00     257.03 r
+  data arrival time                                 257.03
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[18]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[10] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[18]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[18]/q (dp_1)                257.03     257.03 r
+  out[10] (out)                            0.00     257.03 r
+  data arrival time                                 257.03
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[17]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[9] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[17]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[17]/q (dp_1)                257.03     257.03 r
+  out[9] (out)                             0.00     257.03 r
+  data arrival time                                 257.03
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[16]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[8] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[16]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[16]/q (dp_1)                257.03     257.03 r
+  out[8] (out)                             0.00     257.03 r
+  data arrival time                                 257.03
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[15]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[7] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[15]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[15]/q (dp_1)                257.03     257.03 r
+  out[7] (out)                             0.00     257.03 r
+  data arrival time                                 257.03
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[14]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[6] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[14]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[14]/q (dp_1)                257.03     257.03 r
+  out[6] (out)                             0.00     257.03 r
+  data arrival time                                 257.03
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[13]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[5] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[13]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[13]/q (dp_1)                257.03     257.03 r
+  out[5] (out)                             0.00     257.03 r
+  data arrival time                                 257.03
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[4] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[12]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[12]/q (dp_1)                257.03     257.03 r
+  out[4] (out)                             0.00     257.03 r
+  data arrival time                                 257.03
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[11]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[3] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[11]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[11]/q (dp_1)                257.03     257.03 r
+  out[3] (out)                             0.00     257.03 r
+  data arrival time                                 257.03
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[10]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[2] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[10]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[10]/q (dp_1)                257.03     257.03 r
+  out[2] (out)                             0.00     257.03 r
+  data arrival time                                 257.03
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[9]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[1] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[9]/ck (dp_1)                  0.00       0.00 r
+  layer5_reg[9]/q (dp_1)                 257.03     257.03 r
+  out[1] (out)                             0.00     257.03 r
+  data arrival time                                 257.03
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[8]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[0] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[8]/ck (dp_1)                  0.00       0.00 r
+  layer5_reg[8]/q (dp_1)                 257.03     257.03 r
+  out[0] (out)                             0.00     257.03 r
+  data arrival time                                 257.03
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[23]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[15] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[23]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[23]/q (dp_1)                333.72     333.72 f
+  out[15] (out)                            0.00     333.72 f
+  data arrival time                                 333.72
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[22]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[14] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[22]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[22]/q (dp_1)                333.72     333.72 f
+  out[14] (out)                            0.00     333.72 f
+  data arrival time                                 333.72
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[21]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[13] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[21]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[21]/q (dp_1)                333.72     333.72 f
+  out[13] (out)                            0.00     333.72 f
+  data arrival time                                 333.72
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[20]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[12] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[20]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[20]/q (dp_1)                333.72     333.72 f
+  out[12] (out)                            0.00     333.72 f
+  data arrival time                                 333.72
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[19]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[11] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[19]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[19]/q (dp_1)                333.72     333.72 f
+  out[11] (out)                            0.00     333.72 f
+  data arrival time                                 333.72
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[18]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[10] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[18]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[18]/q (dp_1)                333.72     333.72 f
+  out[10] (out)                            0.00     333.72 f
+  data arrival time                                 333.72
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[17]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[9] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[17]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[17]/q (dp_1)                333.72     333.72 f
+  out[9] (out)                             0.00     333.72 f
+  data arrival time                                 333.72
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[16]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[8] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[16]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[16]/q (dp_1)                333.72     333.72 f
+  out[8] (out)                             0.00     333.72 f
+  data arrival time                                 333.72
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[15]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[7] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[15]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[15]/q (dp_1)                333.72     333.72 f
+  out[7] (out)                             0.00     333.72 f
+  data arrival time                                 333.72
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[14]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[6] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[14]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[14]/q (dp_1)                333.72     333.72 f
+  out[6] (out)                             0.00     333.72 f
+  data arrival time                                 333.72
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[13]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[5] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[13]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[13]/q (dp_1)                333.72     333.72 f
+  out[5] (out)                             0.00     333.72 f
+  data arrival time                                 333.72
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[4] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[12]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[12]/q (dp_1)                333.72     333.72 f
+  out[4] (out)                             0.00     333.72 f
+  data arrival time                                 333.72
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[11]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[3] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[11]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[11]/q (dp_1)                333.72     333.72 f
+  out[3] (out)                             0.00     333.72 f
+  data arrival time                                 333.72
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[10]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[2] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[10]/ck (dp_1)                 0.00       0.00 r
+  layer5_reg[10]/q (dp_1)                333.72     333.72 f
+  out[2] (out)                             0.00     333.72 f
+  data arrival time                                 333.72
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[9]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[1] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[9]/ck (dp_1)                  0.00       0.00 r
+  layer5_reg[9]/q (dp_1)                 333.72     333.72 f
+  out[1] (out)                             0.00     333.72 f
+  data arrival time                                 333.72
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: layer5_reg[8]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[0] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  layer5_reg[8]/ck (dp_1)                  0.00       0.00 r
+  layer5_reg[8]/q (dp_1)                 333.72     333.72 f
+  out[0] (out)                             0.00     333.72 f
+  data arrival time                                 333.72
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

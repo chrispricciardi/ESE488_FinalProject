@@ -1,0 +1,598 @@
+Warning: Worst timing paths might not be returned. (TIM-104)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -nworst 3
+        -greater_path 0.00
+        -max_paths 20
+Design : mult
+Version: J-2014.09-SP5
+Date   : Thu Nov 30 19:06:27 2017
+****************************************
+
+Operating Conditions: nom_pvt   Library: vtvt_tsmc180
+Wire Load Model Mode: top
+
+  Startpoint: layer3_reg[2][11]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer4_reg[1][11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer3_reg[2][11]/ck (dp_1)              0.00       0.00 r
+  layer3_reg[2][11]/q (dp_1)             109.68     109.68 r
+  U850/op (and2_1)                       112.55     222.23 r
+  layer4_reg[1][11]/ip (dp_1)              0.00     222.23 r
+  data arrival time                                 222.23
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer4_reg[1][11]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -222.23
+  -----------------------------------------------------------
+  slack (MET)                                       222.23
+
+
+  Startpoint: layer3_reg[2][10]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer4_reg[1][10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer3_reg[2][10]/ck (dp_1)              0.00       0.00 r
+  layer3_reg[2][10]/q (dp_1)             109.68     109.68 r
+  U849/op (and2_1)                       112.55     222.23 r
+  layer4_reg[1][10]/ip (dp_1)              0.00     222.23 r
+  data arrival time                                 222.23
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer4_reg[1][10]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -222.23
+  -----------------------------------------------------------
+  slack (MET)                                       222.23
+
+
+  Startpoint: layer3_reg[2][9]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer4_reg[1][9]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer3_reg[2][9]/ck (dp_1)               0.00       0.00 r
+  layer3_reg[2][9]/q (dp_1)              109.68     109.68 r
+  U848/op (and2_1)                       112.55     222.23 r
+  layer4_reg[1][9]/ip (dp_1)               0.00     222.23 r
+  data arrival time                                 222.23
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer4_reg[1][9]/ck (dp_1)               0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -222.23
+  -----------------------------------------------------------
+  slack (MET)                                       222.23
+
+
+  Startpoint: layer3_reg[2][8]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer4_reg[1][8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer3_reg[2][8]/ck (dp_1)               0.00       0.00 r
+  layer3_reg[2][8]/q (dp_1)              109.68     109.68 r
+  U847/op (and2_1)                       112.55     222.23 r
+  layer4_reg[1][8]/ip (dp_1)               0.00     222.23 r
+  data arrival time                                 222.23
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer4_reg[1][8]/ck (dp_1)               0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -222.23
+  -----------------------------------------------------------
+  slack (MET)                                       222.23
+
+
+  Startpoint: layer1_reg[14][14]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer2_reg[7][14]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer1_reg[14][14]/ck (dp_1)             0.00       0.00 r
+  layer1_reg[14][14]/q (dp_1)            109.68     109.68 r
+  U1308/op (and2_1)                      112.55     222.23 r
+  layer2_reg[7][14]/ip (dp_1)              0.00     222.23 r
+  data arrival time                                 222.23
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer2_reg[7][14]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -222.23
+  -----------------------------------------------------------
+  slack (MET)                                       222.23
+
+
+  Startpoint: layer1_reg[12][12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer2_reg[6][12]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer1_reg[12][12]/ck (dp_1)             0.00       0.00 r
+  layer1_reg[12][12]/q (dp_1)            109.68     109.68 r
+  U1277/op (and2_1)                      112.55     222.23 r
+  layer2_reg[6][12]/ip (dp_1)              0.00     222.23 r
+  data arrival time                                 222.23
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer2_reg[6][12]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -222.23
+  -----------------------------------------------------------
+  slack (MET)                                       222.23
+
+
+  Startpoint: layer1_reg[10][10]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer2_reg[5][10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer1_reg[10][10]/ck (dp_1)             0.00       0.00 r
+  layer1_reg[10][10]/q (dp_1)            109.68     109.68 r
+  U1242/op (and2_1)                      112.55     222.23 r
+  layer2_reg[5][10]/ip (dp_1)              0.00     222.23 r
+  data arrival time                                 222.23
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer2_reg[5][10]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -222.23
+  -----------------------------------------------------------
+  slack (MET)                                       222.23
+
+
+  Startpoint: layer1_reg[8][8]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer2_reg[4][8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer1_reg[8][8]/ck (dp_1)               0.00       0.00 r
+  layer1_reg[8][8]/q (dp_1)              109.68     109.68 r
+  U1203/op (and2_1)                      112.55     222.23 r
+  layer2_reg[4][8]/ip (dp_1)               0.00     222.23 r
+  data arrival time                                 222.23
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer2_reg[4][8]/ck (dp_1)               0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -222.23
+  -----------------------------------------------------------
+  slack (MET)                                       222.23
+
+
+  Startpoint: layer1_reg[6][6]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer2_reg[3][6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer1_reg[6][6]/ck (dp_1)               0.00       0.00 r
+  layer1_reg[6][6]/q (dp_1)              109.68     109.68 r
+  U1162/op (and2_1)                      112.55     222.23 r
+  layer2_reg[3][6]/ip (dp_1)               0.00     222.23 r
+  data arrival time                                 222.23
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer2_reg[3][6]/ck (dp_1)               0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -222.23
+  -----------------------------------------------------------
+  slack (MET)                                       222.23
+
+
+  Startpoint: layer1_reg[4][4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer2_reg[2][4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer1_reg[4][4]/ck (dp_1)               0.00       0.00 r
+  layer1_reg[4][4]/q (dp_1)              109.68     109.68 r
+  U1121/op (and2_1)                      112.55     222.23 r
+  layer2_reg[2][4]/ip (dp_1)               0.00     222.23 r
+  data arrival time                                 222.23
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer2_reg[2][4]/ck (dp_1)               0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -222.23
+  -----------------------------------------------------------
+  slack (MET)                                       222.23
+
+
+  Startpoint: layer1_reg[2][2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer2_reg[1][2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer1_reg[2][2]/ck (dp_1)               0.00       0.00 r
+  layer1_reg[2][2]/q (dp_1)              109.68     109.68 r
+  U1079/op (and2_1)                      112.55     222.23 r
+  layer2_reg[1][2]/ip (dp_1)               0.00     222.23 r
+  data arrival time                                 222.23
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer2_reg[1][2]/ck (dp_1)               0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -222.23
+  -----------------------------------------------------------
+  slack (MET)                                       222.23
+
+
+  Startpoint: layer2_reg[6][13]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer3_reg[3][13]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer2_reg[6][13]/ck (dp_1)              0.00       0.00 r
+  layer2_reg[6][13]/q (dp_1)             109.68     109.68 r
+  U1012/op (and2_1)                      112.55     222.23 r
+  layer3_reg[3][13]/ip (dp_1)              0.00     222.23 r
+  data arrival time                                 222.23
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer3_reg[3][13]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -222.23
+  -----------------------------------------------------------
+  slack (MET)                                       222.23
+
+
+  Startpoint: layer2_reg[6][12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer3_reg[3][12]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer2_reg[6][12]/ck (dp_1)              0.00       0.00 r
+  layer2_reg[6][12]/q (dp_1)             109.68     109.68 r
+  U1011/op (and2_1)                      112.55     222.23 r
+  layer3_reg[3][12]/ip (dp_1)              0.00     222.23 r
+  data arrival time                                 222.23
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer3_reg[3][12]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -222.23
+  -----------------------------------------------------------
+  slack (MET)                                       222.23
+
+
+  Startpoint: layer2_reg[4][9]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer3_reg[2][9]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer2_reg[4][9]/ck (dp_1)               0.00       0.00 r
+  layer2_reg[4][9]/q (dp_1)              109.68     109.68 r
+  U973/op (and2_1)                       112.55     222.23 r
+  layer3_reg[2][9]/ip (dp_1)               0.00     222.23 r
+  data arrival time                                 222.23
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer3_reg[2][9]/ck (dp_1)               0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -222.23
+  -----------------------------------------------------------
+  slack (MET)                                       222.23
+
+
+  Startpoint: layer2_reg[4][8]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer3_reg[2][8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer2_reg[4][8]/ck (dp_1)               0.00       0.00 r
+  layer2_reg[4][8]/q (dp_1)              109.68     109.68 r
+  U972/op (and2_1)                       112.55     222.23 r
+  layer3_reg[2][8]/ip (dp_1)               0.00     222.23 r
+  data arrival time                                 222.23
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer3_reg[2][8]/ck (dp_1)               0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -222.23
+  -----------------------------------------------------------
+  slack (MET)                                       222.23
+
+
+  Startpoint: layer2_reg[2][5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer3_reg[1][5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer2_reg[2][5]/ck (dp_1)               0.00       0.00 r
+  layer2_reg[2][5]/q (dp_1)              109.68     109.68 r
+  U925/op (and2_1)                       112.55     222.23 r
+  layer3_reg[1][5]/ip (dp_1)               0.00     222.23 r
+  data arrival time                                 222.23
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer3_reg[1][5]/ck (dp_1)               0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -222.23
+  -----------------------------------------------------------
+  slack (MET)                                       222.23
+
+
+  Startpoint: layer2_reg[2][4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer3_reg[1][4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer2_reg[2][4]/ck (dp_1)               0.00       0.00 r
+  layer2_reg[2][4]/q (dp_1)              109.68     109.68 r
+  U924/op (and2_1)                       112.55     222.23 r
+  layer3_reg[1][4]/ip (dp_1)               0.00     222.23 r
+  data arrival time                                 222.23
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer3_reg[1][4]/ck (dp_1)               0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -222.23
+  -----------------------------------------------------------
+  slack (MET)                                       222.23
+
+
+  Startpoint: layer3_reg[1][23]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer4_reg[0][23]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer3_reg[1][23]/ck (dp_1)              0.00       0.00 r
+  layer3_reg[1][23]/q (dp_1)             123.16     123.16 r
+  U846/op (not_ab_or_c_or_d)             154.17     277.33 f
+  layer4_reg[0][23]/ip (dp_1)              0.00     277.33 f
+  data arrival time                                 277.33
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer4_reg[0][23]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -277.33
+  -----------------------------------------------------------
+  slack (MET)                                       277.33
+
+
+  Startpoint: layer1_reg[5][20]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer2_reg[2][20]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer1_reg[5][20]/ck (dp_1)              0.00       0.00 r
+  layer1_reg[5][20]/q (dp_1)             143.93     143.93 r
+  U1160/op (not_ab_or_c_or_d)            139.09     283.03 f
+  layer2_reg[2][20]/ip (dp_1)              0.00     283.03 f
+  data arrival time                                 283.03
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer2_reg[2][20]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -283.03
+  -----------------------------------------------------------
+  slack (MET)                                       283.03
+
+
+  Startpoint: layer1_reg[3][18]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: layer2_reg[1][18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer1_reg[3][18]/ck (dp_1)              0.00       0.00 r
+  layer1_reg[3][18]/q (dp_1)             143.93     143.93 r
+  U1119/op (not_ab_or_c_or_d)            139.09     283.03 f
+  layer2_reg[1][18]/ip (dp_1)              0.00     283.03 f
+  data arrival time                                 283.03
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  layer2_reg[1][18]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -283.03
+  -----------------------------------------------------------
+  slack (MET)                                       283.03
+
+
+1
