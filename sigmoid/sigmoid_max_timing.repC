@@ -1,0 +1,133 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 3
+        -greater_path 0.00
+        -max_paths 20
+Design : sigmoid
+Version: J-2014.09-SP5
+Date   : Wed Nov 29 23:07:26 2017
+****************************************
+
+Operating Conditions: nom_pvt   Library: vtvt_tsmc180
+Wire Load Model Mode: top
+
+  Startpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  y_reg[8]/ck (dp_1)                       0.00       0.00 r
+  y_reg[8]/q (dp_1)                      345.30     345.30 f
+  U44/op (nor2_1)                        125.97     471.27 r
+  U45/op (not_ab_or_c_or_d)               93.42     564.69 f
+  y_reg[8]/ip (dp_1)                       0.00     564.69 f
+  data arrival time                                 564.69
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[8]/ck (dp_1)                       0.00   50000.00 r
+  library setup time                    -154.06   49845.94
+  data required time                              49845.94
+  -----------------------------------------------------------
+  data required time                              49845.94
+  data arrival time                                -564.69
+  -----------------------------------------------------------
+  slack (MET)                                     49281.25
+
+
+  Startpoint: sig_rdy_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_rdy_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
+  sig_rdy_reg/q (dp_1)                   345.61     345.61 f
+  U46/op (nor2_1)                        126.70     472.32 r
+  U47/op (nor2_1)                         77.32     549.64 f
+  sig_rdy_reg/ip (dp_1)                    0.00     549.64 f
+  data arrival time                                 549.64
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  sig_rdy_reg/ck (dp_1)                    0.00   50000.00 r
+  library setup time                    -145.94   49854.06
+  data required time                              49854.06
+  -----------------------------------------------------------
+  data required time                              49854.06
+  data arrival time                                -549.64
+  -----------------------------------------------------------
+  slack (MET)                                     49304.42
+
+
+  Startpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  y_reg[8]/ck (dp_1)                       0.00       0.00 r
+  y_reg[8]/q (dp_1)                      270.93     270.93 r
+  U44/op (nor2_1)                         96.51     367.44 f
+  U45/op (not_ab_or_c_or_d)              128.32     495.75 r
+  y_reg[8]/ip (dp_1)                       0.00     495.75 r
+  data arrival time                                 495.75
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[8]/ck (dp_1)                       0.00   50000.00 r
+  library setup time                    -148.75   49851.25
+  data required time                              49851.25
+  -----------------------------------------------------------
+  data required time                              49851.25
+  data arrival time                                -495.75
+  -----------------------------------------------------------
+  slack (MET)                                     49355.49
+
+
+  Startpoint: sig_rdy_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_rdy_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
+  sig_rdy_reg/q (dp_1)                   271.30     271.30 r
+  U46/op (nor2_1)                        104.32     375.62 f
+  U47/op (nor2_1)                         87.80     463.43 r
+  sig_rdy_reg/ip (dp_1)                    0.00     463.43 r
+  data arrival time                                 463.43
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  sig_rdy_reg/ck (dp_1)                    0.00   50000.00 r
+  library setup time                    -143.77   49856.23
+  data required time                              49856.23
+  -----------------------------------------------------------
+  data required time                              49856.23
+  data arrival time                                -463.43
+  -----------------------------------------------------------
+  slack (MET)                                     49392.81
+
+
+1

@@ -1,0 +1,149 @@
+(DELAYFILE
+(SDFVERSION "OVI 1.0")
+(DESIGN "sigmoid")
+(DATE "Wed Nov 29 23:07:26 2017")
+(VENDOR "vtvt_tsmc180")
+(PROGRAM "Synopsys Design Compiler cmos")
+(VERSION "J-2014.09-SP5")
+(DIVIDER /)
+(VOLTAGE 1.80:1.80:1.80)
+(PROCESS)
+(TEMPERATURE 25.00:25.00:25.00)
+(TIMESCALE 1ps)
+(CELL
+  (CELLTYPE "sigmoid")
+  (INSTANCE)
+  (DELAY
+    (ABSOLUTE
+    (INTERCONNECT reset U47/ip1 (0.000:0.000:0.000))
+    (INTERCONNECT U46/op U47/ip2 (0.000:0.000:0.000))
+    (INTERCONNECT done U46/ip1 (0.000:0.000:0.000))
+    (INTERCONNECT sig_rdy_reg/q U46/ip2 (0.000:0.000:0.000))
+    (INTERCONNECT done U45/ip1 (0.000:0.000:0.000))
+    (INTERCONNECT U43/op U45/ip2 (0.000:0.000:0.000))
+    (INTERCONNECT reset U45/ip3 (0.000:0.000:0.000))
+    (INTERCONNECT U44/op U45/ip4 (0.000:0.000:0.000))
+    (INTERCONNECT y_reg\[8\]/q U44/ip1 (0.000:0.000:0.000))
+    (INTERCONNECT done U44/ip2 (0.000:0.000:0.000))
+    (INTERCONNECT U41/op U43/ip1 (0.000:0.000:0.000))
+    (INTERCONNECT sig_in[15] U43/ip2 (0.000:0.000:0.000))
+    (INTERCONNECT U42/op U43/ip3 (0.000:0.000:0.000))
+    (INTERCONNECT sig_in[9] U42/ip1 (0.000:0.000:0.000))
+    (INTERCONNECT sig_in[10] U42/ip2 (0.000:0.000:0.000))
+    (INTERCONNECT sig_in[12] U41/ip1 (0.000:0.000:0.000))
+    (INTERCONNECT sig_in[11] U41/ip2 (0.000:0.000:0.000))
+    (INTERCONNECT sig_in[14] U41/ip3 (0.000:0.000:0.000))
+    (INTERCONNECT sig_in[13] U41/ip4 (0.000:0.000:0.000))
+    (INTERCONNECT U47/op sig_rdy_reg/ip (0.000:0.000:0.000))
+    (INTERCONNECT clk sig_rdy_reg/ck (0.000:0.000:0.000))
+    (INTERCONNECT U45/op y_reg\[8\]/ip (0.000:0.000:0.000))
+    (INTERCONNECT clk y_reg\[8\]/ck (0.000:0.000:0.000))
+    )
+  )
+)
+(CELL
+  (CELLTYPE "nor2_1")
+  (INSTANCE U47)
+  (DELAY
+    (ABSOLUTE
+    (IOPATH ip1 op (78.138:78.138:78.138) (73.345:73.345:73.345))
+    (IOPATH ip2 op (80.507:87.805:87.805) (71.756:77.323:77.323))
+    )
+  )
+)
+(CELL
+  (CELLTYPE "nor2_1")
+  (INSTANCE U46)
+  (DELAY
+    (ABSOLUTE
+    (IOPATH ip1 op (84.563:84.563:84.563) (78.614:78.614:78.614))
+    (IOPATH ip2 op (126.704:126.704:126.704) (104.320:104.320:104.320))
+    )
+  )
+)
+(CELL
+  (CELLTYPE "not_ab_or_c_or_d")
+  (INSTANCE U45)
+  (DELAY
+    (ABSOLUTE
+    (IOPATH ip1 op (151.214:151.214:151.214) (152.076:152.076:152.076))
+    (IOPATH ip2 op (136.769:137.728:137.728) (132.211:133.981:133.981))
+    (IOPATH ip3 op (110.289:110.289:110.289) (99.221:99.221:99.221))
+    (IOPATH ip4 op (110.844:128.315:128.315) (88.579:93.424:93.424))
+    )
+  )
+)
+(CELL
+  (CELLTYPE "nor2_1")
+  (INSTANCE U44)
+  (DELAY
+    (ABSOLUTE
+    (IOPATH ip1 op (125.967:125.967:125.967) (96.507:96.507:96.507))
+    (IOPATH ip2 op (82.992:82.992:82.992) (73.309:73.309:73.309))
+    )
+  )
+)
+(CELL
+  (CELLTYPE "nand3_1")
+  (INSTANCE U43)
+  (DELAY
+    (ABSOLUTE
+    (IOPATH ip1 op (58.827:59.880:59.880) (107.004:107.108:107.108))
+    (IOPATH ip2 op (51.925:51.925:51.925) (99.037:99.037:99.037))
+    (IOPATH ip3 op (52.908:52.912:52.912) (101.088:101.362:101.362))
+    )
+  )
+)
+(CELL
+  (CELLTYPE "or2_1")
+  (INSTANCE U42)
+  (DELAY
+    (ABSOLUTE
+    (IOPATH ip1 op (72.134:72.134:72.134) (115.217:115.217:115.217))
+    (IOPATH ip2 op (79.114:79.114:79.114) (115.138:115.138:115.138))
+    )
+  )
+)
+(CELL
+  (CELLTYPE "and4_1")
+  (INSTANCE U41)
+  (DELAY
+    (ABSOLUTE
+    (IOPATH ip1 op (203.393:203.393:203.393) (159.873:159.873:159.873))
+    (IOPATH ip2 op (203.627:203.627:203.627) (170.538:170.538:170.538))
+    (IOPATH ip3 op (203.023:203.023:203.023) (170.231:170.231:170.231))
+    (IOPATH ip4 op (202.856:202.856:202.856) (173.410:173.410:173.410))
+    )
+  )
+)
+(CELL
+  (CELLTYPE "dp_1")
+  (INSTANCE sig_rdy_reg)
+  (DELAY
+    (ABSOLUTE
+    (IOPATH ck q (271.301:271.301:271.301) (345.613:345.613:345.613))
+    )
+  )
+  (TIMINGCHECK
+    (WIDTH (posedge ck) (750.000:750.000:750.000))
+    (WIDTH (negedge ck) (750.000:750.000:750.000))
+    (HOLD ip (posedge ck) (0.000:0.000:0.000))
+    (SETUP ip (posedge ck) (144.467:145.939:145.939))
+  )
+)
+(CELL
+  (CELLTYPE "dp_1")
+  (INSTANCE y_reg\[8\])
+  (DELAY
+    (ABSOLUTE
+    (IOPATH ck q (270.930:270.930:270.930) (345.303:345.303:345.303))
+    )
+  )
+  (TIMINGCHECK
+    (WIDTH (posedge ck) (750.000:750.000:750.000))
+    (WIDTH (negedge ck) (750.000:750.000:750.000))
+    (HOLD ip (posedge ck) (0.000:0.000:0.000))
+    (SETUP ip (posedge ck) (145.111:154.058:154.058))
+  )
+)
+)

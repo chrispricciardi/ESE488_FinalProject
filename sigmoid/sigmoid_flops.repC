@@ -1,0 +1,24 @@
+ 
+****************************************
+Report : register
+Design : sigmoid
+Version: J-2014.09-SP5
+Date   : Wed Nov 29 23:07:26 2017
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+sig_rdy_reg               dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+y_reg[8]                  dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+--------------------------------------------------------------------------------
+Total 2 cells                                             349.045197
+1

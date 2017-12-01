@@ -1,0 +1,80 @@
+Warning: Worst timing paths might not be returned. (TIM-104)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -nworst 3
+        -greater_path 0.00
+        -max_paths 1000000
+Design : sigmoid
+Version: J-2014.09-SP5
+Date   : Wed Nov 29 23:07:26 2017
+****************************************
+
+Operating Conditions: nom_pvt   Library: vtvt_tsmc180
+Wire Load Model Mode: top
+
+  Startpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[8] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[8]/ck (dp_1)                       0.00       0.00 r
+  y_reg[8]/q (dp_1)                      270.93     270.93 r
+  sig_out[8] (out)                         0.00     270.93 r
+  data arrival time                                 270.93
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: sig_rdy_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_ready (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
+  sig_rdy_reg/q (dp_1)                   271.30     271.30 r
+  sig_ready (out)                          0.00     271.30 r
+  data arrival time                                 271.30
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[8] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[8]/ck (dp_1)                       0.00       0.00 r
+  y_reg[8]/q (dp_1)                      345.30     345.30 f
+  sig_out[8] (out)                         0.00     345.30 f
+  data arrival time                                 345.30
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: sig_rdy_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_ready (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
+  sig_rdy_reg/q (dp_1)                   345.61     345.61 f
+  sig_ready (out)                          0.00     345.61 f
+  data arrival time                                 345.61
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

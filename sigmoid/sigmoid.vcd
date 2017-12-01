@@ -1,0 +1,129 @@
+$date
+	Thu Nov 30 18:54:53 2017
+$end
+
+$version
+	Synopsys VCS version J-2014.12-SP1-1_Full64
+$end
+
+$timescale
+	1ps
+$end
+
+$comment Csum: 1 99c8242f11478842 $end
+
+
+$scope module sigmoid_tb $end
+$var reg 1 ! clk $end
+$var reg 1 " reset $end
+$var reg 1 # done $end
+$var reg 16 $ sig_in [15:0] $end
+$var reg 16 % y [15:0] $end
+$var wire 16 & sig_out [15:0] $end
+$var wire 1 ' sig_ready $end
+$var integer 32 ( j $end
+
+$scope module DUT $end
+$var wire 1 ! clk $end
+$var wire 1 " reset $end
+$var wire 1 # done $end
+$var wire 16 ) sig_in [15:0] $end
+$var wire 16 & sig_out [15:0] $end
+$var wire 1 ' sig_ready $end
+$var reg 16 * y [15:0] $end
+$var reg 1 + sig_rdy $end
+$var integer 32 , i $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+
+#0
+$dumpvars
+0!
+1#
+1"
+x+
+x'
+bxxxxxxxxxxxxxxxx )
+bxxxxxxxxxxxxxxxx *
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ,
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (
+bxxxxxxxxxxxxxxxx $
+bxxxxxxxxxxxxxxxx &
+bxxxxxxxxxxxxxxxx %
+$end
+#10000
+1!
+b0000000000000000 *
+b0000000000000000 &
+0+
+0'
+#16000
+0"
+b00000000000000000000000000000000 (
+b00000000000000000000000001111001 (
+#20000
+0!
+#30000
+1!
+#35000
+1+
+1'
+#36000
+b0000000010000011 $
+b0000000010000011 )
+#40000
+0!
+#50000
+1!
+b00000000000000000000000001111000 ,
+#56000
+b0000001101101110 $
+b0000001101101110 )
+#60000
+0!
+#70000
+1!
+#76000
+b0000011010000000 $
+b0000011010000000 )
+#80000
+0!
+#90000
+1!
+b0000000100000000 *
+b0000000100000000 &
+#96000
+b1111110100000000 $
+b1111110100000000 )
+#100000
+0!
+#110000
+1!
+#116000
+b1000000000000000 $
+b1000000000000000 )
+#120000
+0!
+#130000
+1!
+b0000000000000000 *
+b0000000000000000 &
+#140000
+0!
+#150000
+1!
+#160000
+0!
+#170000
+1!
+#180000
+0!
+#190000
+1!
+#200000
+0!
+#210000
+1!

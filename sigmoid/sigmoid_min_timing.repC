@@ -1,0 +1,134 @@
+Warning: Worst timing paths might not be returned. (TIM-104)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -nworst 3
+        -greater_path 0.00
+        -max_paths 20
+Design : sigmoid
+Version: J-2014.09-SP5
+Date   : Wed Nov 29 23:07:26 2017
+****************************************
+
+Operating Conditions: nom_pvt   Library: vtvt_tsmc180
+Wire Load Model Mode: top
+
+  Startpoint: sig_rdy_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_rdy_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
+  sig_rdy_reg/q (dp_1)                   271.30     271.30 r
+  U46/op (nor2_1)                        104.32     375.62 f
+  U47/op (nor2_1)                         80.51     456.13 r
+  sig_rdy_reg/ip (dp_1)                    0.00     456.13 r
+  data arrival time                                 456.13
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -456.13
+  -----------------------------------------------------------
+  slack (MET)                                       456.13
+
+
+  Startpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  y_reg[8]/ck (dp_1)                       0.00       0.00 r
+  y_reg[8]/q (dp_1)                      270.93     270.93 r
+  U44/op (nor2_1)                         96.51     367.44 f
+  U45/op (not_ab_or_c_or_d)              110.84     478.28 r
+  y_reg[8]/ip (dp_1)                       0.00     478.28 r
+  data arrival time                                 478.28
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  y_reg[8]/ck (dp_1)                       0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -478.28
+  -----------------------------------------------------------
+  slack (MET)                                       478.28
+
+
+  Startpoint: sig_rdy_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_rdy_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
+  sig_rdy_reg/q (dp_1)                   345.61     345.61 f
+  U46/op (nor2_1)                        126.70     472.32 r
+  U47/op (nor2_1)                         71.76     544.07 f
+  sig_rdy_reg/ip (dp_1)                    0.00     544.07 f
+  data arrival time                                 544.07
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -544.07
+  -----------------------------------------------------------
+  slack (MET)                                       544.07
+
+
+  Startpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  y_reg[8]/ck (dp_1)                       0.00       0.00 r
+  y_reg[8]/q (dp_1)                      345.30     345.30 f
+  U44/op (nor2_1)                        125.97     471.27 r
+  U45/op (not_ab_or_c_or_d)               88.58     559.85 f
+  y_reg[8]/ip (dp_1)                       0.00     559.85 f
+  data arrival time                                 559.85
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  y_reg[8]/ck (dp_1)                       0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -559.85
+  -----------------------------------------------------------
+  slack (MET)                                       559.85
+
+
+1
