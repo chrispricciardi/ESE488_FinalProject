@@ -1,0 +1,44 @@
+{
+    "NameTable": {
+        "mult_tb": [
+            "mult_tb",
+            "tfDmJ",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ]
+    },
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 67055
+    },
+    "CompileStrategy": "fullobj",
+    "CurCompileUdps": {},
+    "CompileStatus": "Successful",
+    "CompileProcesses": [
+        "cgproc.27967.json"
+    ],
+    "CurCompileModules": [
+        "...MASTER...",
+        "mult_tb"
+    ],
+    "LVLData": [
+        "SIM"
+    ],
+    "PEModules": [],
+    "Misc": {
+        "cwd": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/mult",
+        "csrc": "csrc",
+        "daidir": "simv.daidir",
+        "csrc_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/mult/csrc",
+        "default_output_dir": "csrc",
+        "daidir_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/mult/simv.daidir",
+        "archive_dir": "archive.0"
+    },
+    "stat": {
+        "nMops": 2252
+    }
+}

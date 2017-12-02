@@ -11,7 +11,7 @@
 #       <Author>        <Date>        <Hardware>     <Version>        <Description>
 #     Dengxue Yan   01-19-2017 20:00      --            1.00             Create
 #====================================================================================================
-src = top.v top_tb.v sram_input.v sram_weight1.v sram_weight2.v 
+src = top.v top_tb.v sram_input.v sram_weight1.v sram_weight2.v mult.v mac.v
 
 vcs_flag = -full64 -PP +lint=all,noVCDE +v2k -timescale=1ns/10ps
 

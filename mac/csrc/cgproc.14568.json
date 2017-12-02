@@ -1,0 +1,41 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "mac_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        }
+    },
+    "ObjArchives": [
+        {
+            "size": 40287,
+            "objects": [
+                [
+                    "amcQw_d.o",
+                    7110
+                ],
+                [
+                    "nVJPz_d.o",
+                    33177
+                ]
+            ],
+            "archive": "archive.0/_14568_archive_1.a"
+        }
+    ],
+    "CompUnits": {
+        "amcQw_d": {
+            "mod": "...MASTER...",
+            "out": "amcQw_d.o",
+            "archive": "archive.0/_14568_archive_1.a",
+            "bytes": 7110,
+            "mode": 4
+        },
+        "nVJPz_d": {
+            "mod": "mac_tb",
+            "out": "nVJPz_d.o",
+            "archive": "archive.0/_14568_archive_1.a",
+            "bytes": 33177,
+            "mode": 4
+        }
+    }
+}

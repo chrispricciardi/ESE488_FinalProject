@@ -4,11 +4,14 @@
 module top_tb();
 	reg clk;
 	reg we; //testing
-
 	reg [17:0] address_1; //testing
 	reg [11:0] address_2; //testing
-	//reg[9:0] address_3; //testing
+	reg [9:0] address_3; //testing
 	reg reset;
+	reg mac_start;
+
+	integer i; 
+	integer j; 
 
 	
     top DUT(
@@ -17,7 +20,9 @@ module top_tb();
 	.we_2(we),
 	.we_3(we),//testing
 	.address_2(address_2), //testing
-	.address_1(address_1),		
+	.address_1(address_1),	
+	.address_3(address_3),	
+	.mac_start(mac_start), 
         .reset(reset)
         );
 
@@ -44,18 +49,22 @@ module top_tb();
 		clk = 0;
 		reset = 1;
 		we = 0; //testing
- 
-		#20
-		reset = 0;
+		address_3 = 0; 
 
-		#20
-		address_1 = 0;
-		address_2 = 0; 
+		#20		
+		reset = 0; 
+		mac_start = 1; 
 
-		#20
-		address_1 = 100; 
-		address_2 = 100; 
+		#20 
+		mac_start = 0;
 
+
+		for (j = 0; j < 784; j=j+1)begin 
+		#20
+		address_3 = j; 
+		address_1 = j; 
+
+		end
 
 		#100
 		$finish;

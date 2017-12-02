@@ -5,17 +5,16 @@ module sigmoid_tb();
     reg  clk;
     reg  reset;
     reg  done;
+
     reg  [15:0] sig_in;
-    reg [15:0] x [120:0];	//Create the memory for the input ranges to the sigmoid
-    reg [15:0] LUT [120:0];	//Create the memory for the outputs to the sigmoid
-    reg [15:0] y;		//Store the output of the LUT
+    //reg [15:0] x [120:0];	//Create the memory for the input ranges to the sigmoid
+  //  reg [15:0] LUT [120:0];	//Create the memory for the outputs to the sigmoid
+   // reg [15:0] y;		//Store the output of the LUT
 
     wire [15:0] sig_out;
     wire sig_ready;
 
     integer j;
-
-  
 
     sigmoid DUT(
         .clk(clk),
@@ -35,8 +34,8 @@ module sigmoid_tb();
         clk = 0;
 	done=1;
 	
-	$readmemb("x_fix.txt", x);
-	$readmemb("y_fix.txt", LUT);
+	$readmemb("x_fix.txt", DUT.x);
+	$readmemb("y_fix.txt", DUT.LUT);
 
         // 1
         #16
@@ -44,14 +43,27 @@ module sigmoid_tb();
 
 	//For troubleshooting
 	//Print the contents of the x and LUT rams to the terminal
-	for(j=0; j<121; j=j+1) begin
+	/*for(j=0; j<121; j=j+1) begin
 		$display("index: %d		x: %h		LUT: %h", j, x[j], LUT[j]);
 		
-	end	
-	
+	end
+	*/
+
 	#20 
 	//0.512
 	sig_in=16'h0083;
+
+	#20
+	done = 0; 
+
+	#20
+	reset = 1; 
+
+	#20
+	reset = 0; 
+
+	#20 
+	done = 1; 
 
 	#20
 	//3.43

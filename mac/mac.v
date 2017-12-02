@@ -26,8 +26,6 @@ reg stage1, stage2, stage3, stage4, stage5, stage6;
 
 mult mult1(clk, reset, mac_in, weight, mult_out);
 
-
-
 assign mac_out = psum;
 assign done = stage6;
 

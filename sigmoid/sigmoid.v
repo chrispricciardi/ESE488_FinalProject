@@ -1,3 +1,5 @@
+// sigmoid ready signal needs to be reworked
+
 module sigmoid(
 	clk,
 	reset,

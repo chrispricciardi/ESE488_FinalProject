@@ -1,0 +1,44 @@
+{
+    "NameTable": {
+        "mac_tb": [
+            "mac_tb",
+            "nVJPz",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ]
+    },
+    "CompileStrategy": "fullobj",
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 67063
+    },
+    "CompileProcesses": [
+        "cgproc.14568.json"
+    ],
+    "CurCompileUdps": {},
+    "PEModules": [],
+    "LVLData": [
+        "SIM"
+    ],
+    "CurCompileModules": [
+        "...MASTER...",
+        "mac_tb"
+    ],
+    "Misc": {
+        "cwd": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/mac",
+        "default_output_dir": "csrc",
+        "daidir_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/mac/simv.daidir",
+        "csrc": "csrc",
+        "csrc_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/mac/csrc",
+        "daidir": "simv.daidir",
+        "archive_dir": "archive.0"
+    },
+    "stat": {
+        "nMops": 2587
+    },
+    "CompileStatus": "Successful"
+}

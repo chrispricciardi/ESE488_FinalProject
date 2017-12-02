@@ -1,11 +1,14 @@
 # Begin_DVE_Session_Save_Info
 # DVE full session
-# Saved on Thu Nov 30 23:22:24 2017
-# Designs open: 0
+# Saved on Fri Dec 1 17:01:15 2017
+# Designs open: 1
+#   V1: /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/top.vcd
 # Toplevel windows open: 1
 # 	TopLevel.1
 #   Source.1: 
-#   Group count = 0
+#   Group count = 2
+#   Group SRAM_WEIGHT2 signal count = 5
+#   Group SRAM_WEIGHT1 signal count = 5
 # End_DVE_Session_Save_Info
 
 # DVE version: J-2014.12-SP1-1
@@ -16,6 +19,13 @@
 
 gui_set_loading_session_type Post
 gui_continuetime_set
+
+# Close design
+if { [gui_sim_state -check active] } {
+    gui_sim_terminate
+}
+gui_close_db -all
+gui_expr_clear_all
 
 # Close all windows
 gui_close_window -type Console
@@ -157,8 +167,11 @@ gui_update_statusbar_target_frame ${TopLevel.1}
 
 # DVE Open design session: 
 
-gui_set_precision 1s
-gui_set_time_units 1s
+if { ![gui_is_db_opened -db {/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/top.vcd.vpd}] } {
+	gui_open_db -design V1 -file /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/top.vcd.vpd -nosource
+}
+gui_set_precision 1ps
+gui_set_time_units 1ps
 #</Database>
 
 # DVE Global setting session: 
@@ -173,7 +186,25 @@ gui_set_time_units 1s
 # Global: Signal Compare
 
 # Global: Signal Groups
+gui_load_child_values {top_tb.DUT.SRAM_WEIGHT1}
+gui_load_child_values {top_tb.DUT.SRAM_WEIGHT2}
 
+
+set _session_group_1 SRAM_WEIGHT2
+gui_sg_create "$_session_group_1"
+set SRAM_WEIGHT2 "$_session_group_1"
+
+gui_sg_addsignal -group "$_session_group_1" { top_tb.DUT.SRAM_WEIGHT2.clk top_tb.DUT.SRAM_WEIGHT2.we top_tb.DUT.SRAM_WEIGHT2.d top_tb.DUT.SRAM_WEIGHT2.address top_tb.DUT.SRAM_WEIGHT2.q }
+gui_set_radix -radix {binary} -signals {V1:top_tb.DUT.SRAM_WEIGHT2.q}
+gui_set_radix -radix {unsigned} -signals {V1:top_tb.DUT.SRAM_WEIGHT2.q}
+
+set _session_group_2 SRAM_WEIGHT1
+gui_sg_create "$_session_group_2"
+set SRAM_WEIGHT1 "$_session_group_2"
+
+gui_sg_addsignal -group "$_session_group_2" { top_tb.DUT.SRAM_WEIGHT1.clk top_tb.DUT.SRAM_WEIGHT1.we top_tb.DUT.SRAM_WEIGHT1.d top_tb.DUT.SRAM_WEIGHT1.address top_tb.DUT.SRAM_WEIGHT1.q }
+gui_set_radix -radix {binary} -signals {V1:top_tb.DUT.SRAM_WEIGHT1.q}
+gui_set_radix -radix {unsigned} -signals {V1:top_tb.DUT.SRAM_WEIGHT1.q}
 
 # Global: Highlighting
 
@@ -208,15 +239,19 @@ gui_list_set_filter -id ${Hier.1} -list { {Package 1} {All 0} {Process 1} {VirtP
 gui_list_set_filter -id ${Hier.1} -text {*}
 gui_hier_list_init -id ${Hier.1}
 gui_change_design -id ${Hier.1} -design V1
-gui_view_scroll -id ${Hier.1} -vertical -set 0
+catch {gui_list_expand -id ${Hier.1} top_tb}
+catch {gui_list_expand -id ${Hier.1} top_tb.DUT}
+catch {gui_list_select -id ${Hier.1} {top_tb.DUT.SRAM_WEIGHT2}}
+gui_view_scroll -id ${Hier.1} -vertical -set 14
 gui_view_scroll -id ${Hier.1} -horizontal -set 0
 
 # Data 'Data.1'
 gui_list_set_filter -id ${Data.1} -list { {Buffer 1} {Input 1} {Others 1} {Linkage 1} {Output 1} {LowPower 1} {Parameter 1} {All 1} {Aggregate 1} {LibBaseMember 1} {Event 1} {Assertion 1} {Constant 1} {Interface 1} {BaseMembers 1} {Signal 1} {$unit 1} {Inout 1} {Variable 1} }
 gui_list_set_filter -id ${Data.1} -text {*}
+gui_list_show_data -id ${Data.1} {top_tb.DUT.SRAM_WEIGHT1}
 gui_view_scroll -id ${Data.1} -vertical -set 0
 gui_view_scroll -id ${Data.1} -horizontal -set 0
-gui_view_scroll -id ${Hier.1} -vertical -set 0
+gui_view_scroll -id ${Hier.1} -vertical -set 14
 gui_view_scroll -id ${Hier.1} -horizontal -set 0
 
 # Source 'Source.1'
@@ -229,6 +264,7 @@ gui_src_set_reusable -id ${Source.1}
 if {[gui_exist_window -window ${TopLevel.1}]} {
 	gui_set_active_window -window ${TopLevel.1}
 	gui_set_active_window -window ${Source.1}
+	gui_set_active_window -window ${HSPane.1}
 }
 #</Session>
 
