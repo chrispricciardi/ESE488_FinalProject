@@ -1,14 +1,14 @@
 # Begin_DVE_Session_Save_Info
 # DVE full session
-# Saved on Fri Dec 1 17:01:15 2017
+# Saved on Mon Dec 4 21:52:55 2017
 # Designs open: 1
 #   V1: /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/top.vcd
 # Toplevel windows open: 1
 # 	TopLevel.1
 #   Source.1: 
 #   Group count = 2
-#   Group SRAM_WEIGHT2 signal count = 5
-#   Group SRAM_WEIGHT1 signal count = 5
+#   Group top_tb signal count = 9
+#   Group SIGMOID1 signal count = 9
 # End_DVE_Session_Save_Info
 
 # DVE version: J-2014.12-SP1-1
@@ -67,7 +67,7 @@ if {![gui_exist_window -window TopLevel.1]} {
 } else { 
     set TopLevel.1 TopLevel.1
 }
-gui_show_window -window ${TopLevel.1} -show_state normal -rect {{390 339} {1328 919}}
+gui_show_window -window ${TopLevel.1} -show_state normal -rect {{85 205} {1017 779}}
 
 # ToolBar settings
 gui_set_toolbar_attributes -toolbar {TimeOperations} -dock_state top
@@ -108,23 +108,23 @@ gui_hide_toolbar -toolbar {Testbench}
 # End ToolBar settings
 
 # Docked window settings
-set HSPane.1 [gui_create_window -type HSPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 213]
+set HSPane.1 [gui_create_window -type HSPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 208]
 catch { set Hier.1 [gui_share_window -id ${HSPane.1} -type Hier] }
-gui_set_window_pref_key -window ${HSPane.1} -key dock_width -value_type integer -value 213
+gui_set_window_pref_key -window ${HSPane.1} -key dock_width -value_type integer -value 208
 gui_set_window_pref_key -window ${HSPane.1} -key dock_height -value_type integer -value -1
 gui_set_window_pref_key -window ${HSPane.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${HSPane.1} {{left 0} {top 0} {width 212} {height 376} {dock_state left} {dock_on_new_line true} {child_hier_colhier 166} {child_hier_coltype 100} {child_hier_colpd 0} {child_hier_col1 0} {child_hier_col2 1} {child_hier_col3 -1}}
-set DLPane.1 [gui_create_window -type DLPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 116]
+gui_update_layout -id ${HSPane.1} {{left 0} {top 0} {width 207} {height 370} {dock_state left} {dock_on_new_line true} {child_hier_colhier 166} {child_hier_coltype 100} {child_hier_colpd 0} {child_hier_col1 0} {child_hier_col2 1} {child_hier_col3 -1}}
+set DLPane.1 [gui_create_window -type DLPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 111]
 catch { set Data.1 [gui_share_window -id ${DLPane.1} -type Data] }
-gui_set_window_pref_key -window ${DLPane.1} -key dock_width -value_type integer -value 116
-gui_set_window_pref_key -window ${DLPane.1} -key dock_height -value_type integer -value 377
+gui_set_window_pref_key -window ${DLPane.1} -key dock_width -value_type integer -value 111
+gui_set_window_pref_key -window ${DLPane.1} -key dock_height -value_type integer -value 371
 gui_set_window_pref_key -window ${DLPane.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${DLPane.1} {{left 0} {top 0} {width 115} {height 376} {dock_state left} {dock_on_new_line true} {child_data_colvariable 140} {child_data_colvalue 100} {child_data_coltype 40} {child_data_col1 0} {child_data_col2 1} {child_data_col3 2}}
+gui_update_layout -id ${DLPane.1} {{left 0} {top 0} {width 110} {height 370} {dock_state left} {dock_on_new_line true} {child_data_colvariable 140} {child_data_colvalue 100} {child_data_coltype 40} {child_data_col1 0} {child_data_col2 1} {child_data_col3 2}}
 set Console.1 [gui_create_window -type Console -parent ${TopLevel.1} -dock_state bottom -dock_on_new_line true -dock_extent 105]
-gui_set_window_pref_key -window ${Console.1} -key dock_width -value_type integer -value 939
+gui_set_window_pref_key -window ${Console.1} -key dock_width -value_type integer -value 933
 gui_set_window_pref_key -window ${Console.1} -key dock_height -value_type integer -value 105
 gui_set_window_pref_key -window ${Console.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${Console.1} {{left 0} {top 0} {width 938} {height 105} {dock_state bottom} {dock_on_new_line true}}
+gui_update_layout -id ${Console.1} {{left 0} {top 0} {width 932} {height 105} {dock_state bottom} {dock_on_new_line true}}
 #### Start - Readjusting docked view's offset / size
 set dockAreaList { top left right bottom }
 foreach dockArea $dockAreaList {
@@ -147,8 +147,8 @@ gui_sync_global -id ${TopLevel.1} -option true
 
 # MDI window settings
 set Source.1 [gui_create_window -type {Source}  -parent ${TopLevel.1}]
-gui_show_window -window ${Source.1} -show_state normal -rect {{0 0} {600 326}}
-gui_update_layout -id ${Source.1} {{left 0} {top 0} {width 605} {height 351} {show_state normal} {dock_state undocked} {dock_on_new_line false}}
+gui_show_window -window ${Source.1} -show_state normal -rect {{0 0} {605 320}}
+gui_update_layout -id ${Source.1} {{left 0} {top 0} {width 610} {height 345} {show_state normal} {dock_state undocked} {dock_on_new_line false}}
 
 # End MDI window settings
 
@@ -186,25 +186,27 @@ gui_set_time_units 1ps
 # Global: Signal Compare
 
 # Global: Signal Groups
-gui_load_child_values {top_tb.DUT.SRAM_WEIGHT1}
-gui_load_child_values {top_tb.DUT.SRAM_WEIGHT2}
+gui_load_child_values {top_tb.DUT.SIGMOID1}
+gui_load_child_values {top_tb}
 
 
-set _session_group_1 SRAM_WEIGHT2
+set _session_group_1 top_tb
 gui_sg_create "$_session_group_1"
-set SRAM_WEIGHT2 "$_session_group_1"
+set top_tb "$_session_group_1"
 
-gui_sg_addsignal -group "$_session_group_1" { top_tb.DUT.SRAM_WEIGHT2.clk top_tb.DUT.SRAM_WEIGHT2.we top_tb.DUT.SRAM_WEIGHT2.d top_tb.DUT.SRAM_WEIGHT2.address top_tb.DUT.SRAM_WEIGHT2.q }
-gui_set_radix -radix {binary} -signals {V1:top_tb.DUT.SRAM_WEIGHT2.q}
-gui_set_radix -radix {unsigned} -signals {V1:top_tb.DUT.SRAM_WEIGHT2.q}
+gui_sg_addsignal -group "$_session_group_1" { top_tb.clk top_tb.we top_tb.address_1 top_tb.address_2 top_tb.address_3 top_tb.reset top_tb.mac_start top_tb.i top_tb.j }
+gui_set_radix -radix {decimal} -signals {V1:top_tb.i}
+gui_set_radix -radix {twosComplement} -signals {V1:top_tb.i}
+gui_set_radix -radix {decimal} -signals {V1:top_tb.j}
+gui_set_radix -radix {twosComplement} -signals {V1:top_tb.j}
 
-set _session_group_2 SRAM_WEIGHT1
+set _session_group_2 SIGMOID1
 gui_sg_create "$_session_group_2"
-set SRAM_WEIGHT1 "$_session_group_2"
+set SIGMOID1 "$_session_group_2"
 
-gui_sg_addsignal -group "$_session_group_2" { top_tb.DUT.SRAM_WEIGHT1.clk top_tb.DUT.SRAM_WEIGHT1.we top_tb.DUT.SRAM_WEIGHT1.d top_tb.DUT.SRAM_WEIGHT1.address top_tb.DUT.SRAM_WEIGHT1.q }
-gui_set_radix -radix {binary} -signals {V1:top_tb.DUT.SRAM_WEIGHT1.q}
-gui_set_radix -radix {unsigned} -signals {V1:top_tb.DUT.SRAM_WEIGHT1.q}
+gui_sg_addsignal -group "$_session_group_2" { top_tb.DUT.SIGMOID1.clk top_tb.DUT.SIGMOID1.reset top_tb.DUT.SIGMOID1.done top_tb.DUT.SIGMOID1.sig_in top_tb.DUT.SIGMOID1.sig_out top_tb.DUT.SIGMOID1.sig_ready top_tb.DUT.SIGMOID1.y top_tb.DUT.SIGMOID1.sig_rdy top_tb.DUT.SIGMOID1.i }
+gui_set_radix -radix {decimal} -signals {V1:top_tb.DUT.SIGMOID1.i}
+gui_set_radix -radix {twosComplement} -signals {V1:top_tb.DUT.SIGMOID1.i}
 
 # Global: Highlighting
 
@@ -214,7 +216,7 @@ gui_change_stack_mode -mode list
 # Post database loading setting...
 
 # Restore C1 time
-gui_set_time -C1_only 0
+gui_set_time -C1_only 1911540000
 
 
 
@@ -241,17 +243,17 @@ gui_hier_list_init -id ${Hier.1}
 gui_change_design -id ${Hier.1} -design V1
 catch {gui_list_expand -id ${Hier.1} top_tb}
 catch {gui_list_expand -id ${Hier.1} top_tb.DUT}
-catch {gui_list_select -id ${Hier.1} {top_tb.DUT.SRAM_WEIGHT2}}
-gui_view_scroll -id ${Hier.1} -vertical -set 14
+catch {gui_list_select -id ${Hier.1} {top_tb.DUT.SIGMOID1}}
+gui_view_scroll -id ${Hier.1} -vertical -set 420
 gui_view_scroll -id ${Hier.1} -horizontal -set 0
 
 # Data 'Data.1'
 gui_list_set_filter -id ${Data.1} -list { {Buffer 1} {Input 1} {Others 1} {Linkage 1} {Output 1} {LowPower 1} {Parameter 1} {All 1} {Aggregate 1} {LibBaseMember 1} {Event 1} {Assertion 1} {Constant 1} {Interface 1} {BaseMembers 1} {Signal 1} {$unit 1} {Inout 1} {Variable 1} }
 gui_list_set_filter -id ${Data.1} -text {*}
-gui_list_show_data -id ${Data.1} {top_tb.DUT.SRAM_WEIGHT1}
+gui_list_show_data -id ${Data.1} {top_tb.DUT.SIGMOID1}
 gui_view_scroll -id ${Data.1} -vertical -set 0
 gui_view_scroll -id ${Data.1} -horizontal -set 0
-gui_view_scroll -id ${Hier.1} -vertical -set 14
+gui_view_scroll -id ${Hier.1} -vertical -set 420
 gui_view_scroll -id ${Hier.1} -horizontal -set 0
 
 # Source 'Source.1'

@@ -1,0 +1,65 @@
+{
+    "NameTable": {
+        "mac_tb": [
+            "mac_tb",
+            "nVJPz",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ]
+    },
+    "MlibObjs": {},
+    "PrevCompiledModules": {
+        "...MASTER...": {
+            "amcQw_d": {
+                "bytes": 7110,
+                "mode": 4,
+                "mod": "...MASTER...",
+                "out": "amcQw_d.o",
+                "archive": "archive.1/_2939_archive_1.a"
+            }
+        },
+        "mac_tb": {
+            "nVJPz_d": {
+                "bytes": 33177,
+                "mode": 4,
+                "mod": "mac_tb",
+                "out": "nVJPz_d.o",
+                "archive": "archive.1/_2939_archive_1.a"
+            }
+        }
+    },
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 67063
+    },
+    "CompileStrategy": "fullobj",
+    "Misc": {
+        "archive_dir": "archive.1",
+        "default_output_dir": "csrc",
+        "daidir_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/mac/simv.daidir",
+        "cwd": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/mac",
+        "csrc": "csrc",
+        "csrc_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/mac/csrc",
+        "daidir": "simv.daidir"
+    },
+    "CurCompileModules": [
+        "...MASTER...",
+        "mac_tb"
+    ],
+    "PEModules": [],
+    "CurCompileUdps": {},
+    "LVLData": [
+        "SIM"
+    ],
+    "CompileProcesses": [
+        "cgproc.2939.json"
+    ],
+    "stat": {
+        "nMops": 2587
+    },
+    "CompileStatus": "Successful"
+}

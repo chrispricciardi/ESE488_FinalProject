@@ -1,33 +1,8 @@
 {
     "CurCompileModules": [
-        "...MASTER...",
-        "sigmoid_tb"
+        "...MASTER..."
     ],
     "MlibObjs": {},
-    "PrevCompiledModules": {
-        "sigmoid_tb": {
-            "gQCst_d": {
-                "bytes": 16942,
-                "mod": "sigmoid_tb",
-                "out": "gQCst_d.o",
-                "mode": 4,
-                "archive": "archive.2/_24407_archive_1.a"
-            }
-        },
-        "...MASTER...": {
-            "amcQw_d": {
-                "bytes": 7118,
-                "mod": "...MASTER...",
-                "out": "amcQw_d.o",
-                "mode": 4,
-                "archive": "archive.2/_24407_archive_1.a"
-            }
-        }
-    },
-    "SIMBData": {
-        "out": "amcQwB.o",
-        "bytes": 67197
-    },
     "NameTable": {
         "sigmoid_tb": [
             "sigmoid_tb",
@@ -41,25 +16,49 @@
         ]
     },
     "CompileStrategy": "fullobj",
-    "Misc": {
-        "cwd": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/sigmoid",
-        "csrc": "csrc",
-        "default_output_dir": "csrc",
-        "daidir": "simv.daidir",
-        "csrc_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/sigmoid/csrc",
-        "daidir_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/sigmoid/simv.daidir",
-        "archive_dir": "archive.2"
+    "PrevCompiledModules": {
+        "sigmoid_tb": {
+            "gQCst_d": {
+                "bytes": 17074,
+                "mod": "sigmoid_tb",
+                "out": "gQCst_d.o",
+                "mode": 4,
+                "archive": "archive.3/_prev_archive_1.a"
+            }
+        },
+        "...MASTER...": {
+            "amcQw_d": {
+                "bytes": 7118,
+                "mod": "...MASTER...",
+                "out": "amcQw_d.o",
+                "mode": 4,
+                "archive": "archive.3/_25639_archive_1.a"
+            }
+        }
     },
     "CurCompileUdps": {},
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 66887
+    },
     "LVLData": [
         "SIM"
     ],
     "PEModules": [],
-    "CompileStatus": "Successful",
     "CompileProcesses": [
-        "cgproc.24407.json"
+        "cgproc.25639.json"
     ],
+    "Misc": {
+        "cwd": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/sigmoid",
+        "csrc_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/sigmoid/csrc",
+        "csrc": "csrc",
+        "daidir": "simv.daidir",
+        "default_output_dir": "csrc",
+        "daidir_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/sigmoid/simv.daidir",
+        "archive_dir": "archive.3"
+    },
     "stat": {
-        "nMops": 610
-    }
+        "nMops": 0
+    },
+    "CompileStatus": "Successful"
 }

@@ -26,8 +26,8 @@ module mult_tb();
         reset = 1;
         clk = 0;
 	
-	in= 16'h1100;
-	w = 16'h1100;
+	in= 16'hffff;
+	w = 16'h0200;
 
         // 1
         #16

@@ -9,7 +9,7 @@ Report : timing
         -max_paths 20
 Design : sigmoid
 Version: J-2014.09-SP5
-Date   : Wed Nov 29 23:07:26 2017
+Date   : Sun Dec  3 12:46:40 2017
 ****************************************
 
 Operating Conditions: nom_pvt   Library: vtvt_tsmc180
@@ -28,10 +28,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)              0.00       0.00
   sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
   sig_rdy_reg/q (dp_1)                   271.30     271.30 r
-  U46/op (nor2_1)                        104.32     375.62 f
-  U47/op (nor2_1)                         80.51     456.13 r
-  sig_rdy_reg/ip (dp_1)                    0.00     456.13 r
-  data arrival time                                 456.13
+  U70/op (nor2_1)                        104.32     375.62 f
+  U71/op (nor2_1)                         80.65     456.27 r
+  sig_rdy_reg/ip (dp_1)                    0.00     456.27 r
+  data arrival time                                 456.27
 
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
@@ -40,9 +40,9 @@ Wire Load Model Mode: top
   data required time                                  0.00
   -----------------------------------------------------------
   data required time                                  0.00
-  data arrival time                                -456.13
+  data arrival time                                -456.27
   -----------------------------------------------------------
-  slack (MET)                                       456.13
+  slack (MET)                                       456.27
 
 
   Startpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
@@ -55,11 +55,12 @@ Wire Load Model Mode: top
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
   y_reg[8]/ck (dp_1)                       0.00       0.00 r
-  y_reg[8]/q (dp_1)                      270.93     270.93 r
-  U44/op (nor2_1)                         96.51     367.44 f
-  U45/op (not_ab_or_c_or_d)              110.84     478.28 r
-  y_reg[8]/ip (dp_1)                       0.00     478.28 r
-  data arrival time                                 478.28
+  y_reg[8]/q (dp_1)                      271.08     271.08 r
+  U57/op (nand2_1)                       102.22     373.30 f
+  U58/op (or2_1)                         118.82     492.13 f
+  U68/op (nand2_1)                        47.72     539.85 r
+  y_reg[8]/ip (dp_1)                       0.00     539.85 r
+  data arrival time                                 539.85
 
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
@@ -68,9 +69,9 @@ Wire Load Model Mode: top
   data required time                                  0.00
   -----------------------------------------------------------
   data required time                                  0.00
-  data arrival time                                -478.28
+  data arrival time                                -539.85
   -----------------------------------------------------------
-  slack (MET)                                       478.28
+  slack (MET)                                       539.85
 
 
   Startpoint: sig_rdy_reg
@@ -86,10 +87,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)              0.00       0.00
   sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
   sig_rdy_reg/q (dp_1)                   345.61     345.61 f
-  U46/op (nor2_1)                        126.70     472.32 r
-  U47/op (nor2_1)                         71.76     544.07 f
-  sig_rdy_reg/ip (dp_1)                    0.00     544.07 f
-  data arrival time                                 544.07
+  U70/op (nor2_1)                        126.70     472.32 r
+  U71/op (nor2_1)                         71.79     544.11 f
+  sig_rdy_reg/ip (dp_1)                    0.00     544.11 f
+  data arrival time                                 544.11
 
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
@@ -98,9 +99,9 @@ Wire Load Model Mode: top
   data required time                                  0.00
   -----------------------------------------------------------
   data required time                                  0.00
-  data arrival time                                -544.07
+  data arrival time                                -544.11
   -----------------------------------------------------------
-  slack (MET)                                       544.07
+  slack (MET)                                       544.11
 
 
   Startpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
@@ -113,11 +114,12 @@ Wire Load Model Mode: top
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
   y_reg[8]/ck (dp_1)                       0.00       0.00 r
-  y_reg[8]/q (dp_1)                      345.30     345.30 f
-  U44/op (nor2_1)                        125.97     471.27 r
-  U45/op (not_ab_or_c_or_d)               88.58     559.85 f
-  y_reg[8]/ip (dp_1)                       0.00     559.85 f
-  data arrival time                                 559.85
+  y_reg[8]/q (dp_1)                      345.43     345.43 f
+  U57/op (nand2_1)                        81.66     427.09 r
+  U58/op (or2_1)                          72.30     499.39 r
+  U68/op (nand2_1)                        58.24     557.63 f
+  y_reg[8]/ip (dp_1)                       0.00     557.63 f
+  data arrival time                                 557.63
 
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
@@ -126,9 +128,9 @@ Wire Load Model Mode: top
   data required time                                  0.00
   -----------------------------------------------------------
   data required time                                  0.00
-  data arrival time                                -559.85
+  data arrival time                                -557.63
   -----------------------------------------------------------
-  slack (MET)                                       559.85
+  slack (MET)                                       557.63
 
 
 1

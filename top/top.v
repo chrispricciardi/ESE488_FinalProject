@@ -27,14 +27,30 @@ input [17:0] address_1; //sram_weight1 address
 input [11:0] address_2; //sram_weight2 address
 input [9:0]  address_3; //sram_input address
 
-wire [15:0] d1,d2,d3,d4,d5,d6,d7,d8,d9,d10; //data to sram_input
-wire [15:0] in1_0, in2_0, in3_0, in4_0, in5_0, in6_0, in7_0, in8_0, in9_0, in10_0; //output of input SRAM	
-wire [15:0] in1_1, in2_1, in3_1, in4_1, in5_1, in6_1, in7_1, in8_1, in9_1, in10_1; //output of 1st MAC
-wire [15:0] in1_2, in2_2, in3_2, in4_2, in5_2, in6_2, in7_2, in8_2, in9_2, in10_2; //output of Sigma
-wire [15:0] dw1, dw2; //data to sram_weight1(2)
-wire [15:0] weight_1, weight_2; //output of sram_weight1(2)
+wire signed [15:0] d1,d2,d3,d4,d5,d6,d7,d8,d9,d10; //data to sram_input
+wire signed [15:0] in1_0, in2_0, in3_0, in4_0, in5_0, in6_0, in7_0, in8_0, in9_0, in10_0; //output of input SRAM	
+wire signed [15:0] in1_1, in2_1, in3_1, in4_1, in5_1, in6_1, in7_1, in8_1, in9_1, in10_1; //output of 1st MAC
+wire signed [15:0] in1_2, in2_2, in3_2, in4_2, in5_2, in6_2, in7_2, in8_2, in9_2, in10_2; //output of Sigmoid
+wire signed [15:0] dw1, dw2; //data to sram_weight1(2)
+wire signed [15:0] weight_1, weight_2; //output of sram_weight1(2)
 input mac_start; // mac signal set to input for testing
 wire  mac_done; // control signal from MAC
+wire sig_ready1,sig_ready2,sig_ready3,sig_ready4,sig_ready5,sig_ready6, sig_ready7,sig_ready8, sig_ready9,sig_ready10; //sigmoid ready signal (as if it wasn't obvious enough... Alan)
+
+reg signed [15:0] data = 0; 
+
+assign d1 = data; 
+assign d2 = data;
+assign d3 = data; 
+assign d4 = data;
+assign d5 = data; 
+assign d6 = data;
+assign d7 = data; 
+assign d8 = data;
+assign d9 = data; 
+assign d10 = data;
+assign dw1 = data; 
+assign dw2 = data; 
 
 
 //---INPUT SRAM---
@@ -110,8 +126,132 @@ mac MAC1(.clk(clk),
 	.mac_in(in1_0),
 	.weight(weight_1),
 	.mac_out(in1_1));
+mac MAC2(.clk(clk), 
+	.reset(reset),
+	.start(mac_start), 
+	.done(mac_done),
+	.mac_in(in2_0),
+	.weight(weight_1),
+	.mac_out(in2_1));
+mac MAC3(.clk(clk), 
+	.reset(reset),
+	.start(mac_start), 
+	.done(mac_done),
+	.mac_in(in3_0),
+	.weight(weight_1),
+	.mac_out(in3_1));
+mac MAC4(.clk(clk), 
+	.reset(reset),
+	.start(mac_start), 
+	.done(mac_done),
+	.mac_in(in4_0),
+	.weight(weight_1),
+	.mac_out(in4_1));
+mac MAC5(.clk(clk), 
+	.reset(reset),
+	.start(mac_start), 
+	.done(mac_done),
+	.mac_in(in5_0),
+	.weight(weight_1),
+	.mac_out(in5_1));
+mac MAC6(.clk(clk), 
+	.reset(reset),
+	.start(mac_start), 
+	.done(mac_done),
+	.mac_in(in6_0),
+	.weight(weight_1),
+	.mac_out(in6_1));
+mac MAC7(.clk(clk), 
+	.reset(reset),
+	.start(mac_start), 
+	.done(mac_done),
+	.mac_in(in7_0),
+	.weight(weight_1),
+	.mac_out(in7_1));
+mac MAC8(.clk(clk), 
+	.reset(reset),
+	.start(mac_start), 
+	.done(mac_done),
+	.mac_in(in8_0),
+	.weight(weight_1),
+	.mac_out(in8_1));
+mac MAC9(.clk(clk), 
+	.reset(reset),
+	.start(mac_start), 
+	.done(mac_done),
+	.mac_in(in9_0),
+	.weight(weight_1),
+	.mac_out(in9_1));
+mac MAC10(.clk(clk), 
+	.reset(reset),
+	.start(mac_start), 
+	.done(mac_done),
+	.mac_in(in10_0),
+	.weight(weight_1),
+	.mac_out(in10_1));
 
+//---SIGMOID---
 
+sigmoid SIGMOID1(.clk(clk), 
+		.reset(reset), 
+		.done(mac_done),
+		.sig_ready(sig_ready1), 
+		.sig_in(in1_1),
+		.sig_out(in1_2)); 
+sigmoid SIGMOID2(.clk(clk), 
+		.reset(reset), 
+		.done(mac_done),
+		.sig_ready(sig_ready2), 
+		.sig_in(in2_1),
+		.sig_out(in2_2)); 
+sigmoid SIGMOID3(.clk(clk), 
+		.reset(reset), 
+		.done(mac_done),
+		.sig_ready(sig_ready3), 
+		.sig_in(in3_1),
+		.sig_out(in3_2)); 
+sigmoid SIGMOID4(.clk(clk), 
+		.reset(reset), 
+		.done(mac_done),
+		.sig_ready(sig_ready4), 
+		.sig_in(in4_1),
+		.sig_out(in4_2)); 
+sigmoid SIGMOID5(.clk(clk), 
+		.reset(reset), 
+		.done(mac_done),
+		.sig_ready(sig_ready5), 
+		.sig_in(in5_1),
+		.sig_out(in5_2)); 
+sigmoid SIGMOID6(.clk(clk), 
+		.reset(reset), 
+		.done(mac_done),
+		.sig_ready(sig_ready6), 
+		.sig_in(in6_1),
+		.sig_out(in6_2)); 
+sigmoid SIGMOID7(.clk(clk), 
+		.reset(reset), 
+		.done(mac_done),
+		.sig_ready(sig_ready7), 
+		.sig_in(in7_1),
+		.sig_out(in7_2));  
+sigmoid SIGMOID8(.clk(clk), 
+		.reset(reset), 
+		.done(mac_done),
+		.sig_ready(sig_ready8), 
+		.sig_in(in8_1),
+		.sig_out(in8_2)); 
+sigmoid SIGMOID9(.clk(clk), 
+		.reset(reset), 
+		.done(mac_done),
+		.sig_ready(sig_ready9), 
+		.sig_in(in9_1),
+		.sig_out(in9_2)); 
+sigmoid SIGMOID10(.clk(clk), 
+		.reset(reset), 
+		.done(mac_done),
+		.sig_ready(sig_ready10), 
+		.sig_in(in10_1),
+		.sig_out(in10_2)); 
 
 /*
 control CONTROL(.clk(clk), 

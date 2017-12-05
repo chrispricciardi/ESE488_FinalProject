@@ -1,24 +1,32 @@
 {
+    "CurCompileModules": [
+        "...MASTER...",
+        "sigmoid_tb"
+    ],
     "MlibObjs": {},
     "PrevCompiledModules": {
         "sigmoid_tb": {
             "gQCst_d": {
-                "archive": "archive.1/_23949_archive_1.a",
+                "bytes": 16942,
                 "mod": "sigmoid_tb",
-                "bytes": 16482,
                 "out": "gQCst_d.o",
-                "mode": 4
+                "mode": 4,
+                "archive": "archive.2/_24407_archive_1.a"
             }
         },
         "...MASTER...": {
             "amcQw_d": {
-                "archive": "archive.1/_23949_archive_1.a",
-                "mod": "...MASTER...",
                 "bytes": 7118,
+                "mod": "...MASTER...",
                 "out": "amcQw_d.o",
-                "mode": 4
+                "mode": 4,
+                "archive": "archive.2/_24407_archive_1.a"
             }
         }
+    },
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 67197
     },
     "NameTable": {
         "sigmoid_tb": [
@@ -32,34 +40,26 @@
             "module"
         ]
     },
-    "SIMBData": {
-        "out": "amcQwB.o",
-        "bytes": 67197
-    },
-    "stat": {
-        "nMops": 602
+    "CompileStrategy": "fullobj",
+    "Misc": {
+        "cwd": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/sigmoid",
+        "csrc": "csrc",
+        "default_output_dir": "csrc",
+        "daidir": "simv.daidir",
+        "csrc_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/sigmoid/csrc",
+        "daidir_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/sigmoid/simv.daidir",
+        "archive_dir": "archive.2"
     },
     "CurCompileUdps": {},
-    "CompileStrategy": "fullobj",
-    "CurCompileModules": [
-        "...MASTER...",
-        "sigmoid_tb"
-    ],
     "LVLData": [
         "SIM"
     ],
-    "CompileStatus": "Successful",
     "PEModules": [],
+    "CompileStatus": "Successful",
     "CompileProcesses": [
-        "cgproc.23949.json"
+        "cgproc.24407.json"
     ],
-    "Misc": {
-        "daidir": "simv.daidir",
-        "cwd": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/sigmoid",
-        "csrc": "csrc",
-        "csrc_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/sigmoid/csrc",
-        "default_output_dir": "csrc",
-        "daidir_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/sigmoid/simv.daidir",
-        "archive_dir": "archive.1"
+    "stat": {
+        "nMops": 610
     }
 }

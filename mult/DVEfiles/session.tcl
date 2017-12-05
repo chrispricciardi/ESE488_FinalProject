@@ -1,13 +1,12 @@
 # Begin_DVE_Session_Save_Info
 # DVE full session
-# Saved on Sat Dec 2 16:16:36 2017
+# Saved on Mon Dec 4 19:58:10 2017
 # Designs open: 1
 #   V1: /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/mac/mac.vcd
 # Toplevel windows open: 1
 # 	TopLevel.1
 #   Source.1: 
-#   Group count = 2
-#   Group mult1 signal count = 7
+#   Group count = 1
 #   Group DUT signal count = 15
 # End_DVE_Session_Save_Info
 
@@ -67,7 +66,7 @@ if {![gui_exist_window -window TopLevel.1]} {
 } else { 
     set TopLevel.1 TopLevel.1
 }
-gui_show_window -window ${TopLevel.1} -show_state normal -rect {{391 349} {1328 928}}
+gui_show_window -window ${TopLevel.1} -show_state normal -rect {{176 176} {1112 754}}
 
 # ToolBar settings
 gui_set_toolbar_attributes -toolbar {TimeOperations} -dock_state top
@@ -108,23 +107,23 @@ gui_hide_toolbar -toolbar {Testbench}
 # End ToolBar settings
 
 # Docked window settings
-set HSPane.1 [gui_create_window -type HSPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 212]
+set HSPane.1 [gui_create_window -type HSPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 211]
 catch { set Hier.1 [gui_share_window -id ${HSPane.1} -type Hier] }
-gui_set_window_pref_key -window ${HSPane.1} -key dock_width -value_type integer -value 212
+gui_set_window_pref_key -window ${HSPane.1} -key dock_width -value_type integer -value 211
 gui_set_window_pref_key -window ${HSPane.1} -key dock_height -value_type integer -value -1
 gui_set_window_pref_key -window ${HSPane.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${HSPane.1} {{left 0} {top 0} {width 211} {height 375} {dock_state left} {dock_on_new_line true} {child_hier_colhier 166} {child_hier_coltype 100} {child_hier_colpd 0} {child_hier_col1 0} {child_hier_col2 1} {child_hier_col3 -1}}
-set DLPane.1 [gui_create_window -type DLPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 115]
+gui_update_layout -id ${HSPane.1} {{left 0} {top 0} {width 210} {height 374} {dock_state left} {dock_on_new_line true} {child_hier_colhier 166} {child_hier_coltype 100} {child_hier_colpd 0} {child_hier_col1 0} {child_hier_col2 1} {child_hier_col3 -1}}
+set DLPane.1 [gui_create_window -type DLPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 114]
 catch { set Data.1 [gui_share_window -id ${DLPane.1} -type Data] }
-gui_set_window_pref_key -window ${DLPane.1} -key dock_width -value_type integer -value 115
-gui_set_window_pref_key -window ${DLPane.1} -key dock_height -value_type integer -value 376
+gui_set_window_pref_key -window ${DLPane.1} -key dock_width -value_type integer -value 114
+gui_set_window_pref_key -window ${DLPane.1} -key dock_height -value_type integer -value 375
 gui_set_window_pref_key -window ${DLPane.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${DLPane.1} {{left 0} {top 0} {width 114} {height 375} {dock_state left} {dock_on_new_line true} {child_data_colvariable 140} {child_data_colvalue 100} {child_data_coltype 40} {child_data_col1 0} {child_data_col2 1} {child_data_col3 2}}
+gui_update_layout -id ${DLPane.1} {{left 0} {top 0} {width 113} {height 374} {dock_state left} {dock_on_new_line true} {child_data_colvariable 140} {child_data_colvalue 100} {child_data_coltype 40} {child_data_col1 0} {child_data_col2 1} {child_data_col3 2}}
 set Console.1 [gui_create_window -type Console -parent ${TopLevel.1} -dock_state bottom -dock_on_new_line true -dock_extent 105]
-gui_set_window_pref_key -window ${Console.1} -key dock_width -value_type integer -value 938
+gui_set_window_pref_key -window ${Console.1} -key dock_width -value_type integer -value 937
 gui_set_window_pref_key -window ${Console.1} -key dock_height -value_type integer -value 105
 gui_set_window_pref_key -window ${Console.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${Console.1} {{left 0} {top 0} {width 937} {height 105} {dock_state bottom} {dock_on_new_line true}}
+gui_update_layout -id ${Console.1} {{left 0} {top 0} {width 936} {height 105} {dock_state bottom} {dock_on_new_line true}}
 #### Start - Readjusting docked view's offset / size
 set dockAreaList { top left right bottom }
 foreach dockArea $dockAreaList {
@@ -147,8 +146,8 @@ gui_sync_global -id ${TopLevel.1} -option true
 
 # MDI window settings
 set Source.1 [gui_create_window -type {Source}  -parent ${TopLevel.1}]
-gui_show_window -window ${Source.1} -show_state normal -rect {{0 0} {602 325}}
-gui_update_layout -id ${Source.1} {{left 0} {top 0} {width 607} {height 350} {show_state normal} {dock_state undocked} {dock_on_new_line false}}
+gui_show_window -window ${Source.1} -show_state normal -rect {{0 0} {603 324}}
+gui_update_layout -id ${Source.1} {{left 0} {top 0} {width 608} {height 349} {show_state normal} {dock_state undocked} {dock_on_new_line false}}
 
 # End MDI window settings
 
@@ -187,22 +186,13 @@ gui_set_time_units 1ps
 
 # Global: Signal Groups
 gui_load_child_values {mac_tb.DUT}
-gui_load_child_values {mac_tb.DUT.mult1}
 
 
-set _session_group_1 mult1
+set _session_group_1 DUT
 gui_sg_create "$_session_group_1"
-set mult1 "$_session_group_1"
+set DUT "$_session_group_1"
 
-gui_sg_addsignal -group "$_session_group_1" { mac_tb.DUT.mult1.clk mac_tb.DUT.mult1.reset mac_tb.DUT.mult1.in mac_tb.DUT.mult1.w mac_tb.DUT.mult1.out mac_tb.DUT.mult1.i mac_tb.DUT.mult1.layer5 }
-gui_set_radix -radix {decimal} -signals {V1:mac_tb.DUT.mult1.i}
-gui_set_radix -radix {twosComplement} -signals {V1:mac_tb.DUT.mult1.i}
-
-set _session_group_2 DUT
-gui_sg_create "$_session_group_2"
-set DUT "$_session_group_2"
-
-gui_sg_addsignal -group "$_session_group_2" { mac_tb.DUT.clk mac_tb.DUT.reset mac_tb.DUT.start mac_tb.DUT.done mac_tb.DUT.mac_in mac_tb.DUT.weight mac_tb.DUT.mac_out mac_tb.DUT.psum mac_tb.DUT.mult_out mac_tb.DUT.stage1 mac_tb.DUT.stage2 mac_tb.DUT.stage3 mac_tb.DUT.stage4 mac_tb.DUT.stage5 mac_tb.DUT.stage6 }
+gui_sg_addsignal -group "$_session_group_1" { mac_tb.DUT.clk mac_tb.DUT.reset mac_tb.DUT.start mac_tb.DUT.done mac_tb.DUT.mac_in mac_tb.DUT.weight mac_tb.DUT.mult_out mac_tb.DUT.mac_out mac_tb.DUT.psum mac_tb.DUT.stage1 mac_tb.DUT.stage2 mac_tb.DUT.stage3 mac_tb.DUT.stage4 mac_tb.DUT.stage5 mac_tb.DUT.stage6 }
 
 # Global: Highlighting
 

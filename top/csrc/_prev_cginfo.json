@@ -1,49 +1,69 @@
 {
-    "CurCompileUdps": {},
     "MlibObjs": {},
-    "Misc": {
-        "daidir": "simv.daidir",
-        "csrc_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/csrc",
-        "cwd": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top",
-        "csrc": "csrc",
-        "archive_dir": "archive.22",
-        "daidir_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/simv.daidir",
-        "default_output_dir": "csrc"
-    },
-    "SIMBData": {
-        "out": "amcQwB.o",
-        "bytes": 69801
-    },
+    "CompileStatus": "Successful",
     "PrevCompiledModules": {
         "sram_input": {
             "wx9Rv_d": {
-                "bytes": 8144,
-                "archive": "archive.22/_prev_archive_1.a",
                 "mod": "sram_input",
-                "mode": 4,
-                "out": "wx9Rv_d.o"
+                "bytes": 8144,
+                "out": "wx9Rv_d.o",
+                "archive": "archive.39/_prev_archive_1.a",
+                "mode": 4
+            }
+        },
+        "sigmoid": {
+            "bYzLi_d": {
+                "mod": "sigmoid",
+                "bytes": 10726,
+                "out": "bYzLi_d.o",
+                "archive": "archive.39/_21674_archive_1.a",
+                "mode": 4
             }
         },
         "top_tb": {
             "W0eJz_d": {
-                "bytes": 53221,
-                "archive": "archive.22/_13108_archive_1.a",
                 "mod": "top_tb",
-                "out": "W0eJz_d.o",
+                "bytes": 50590,
+                "archive": "archive.39/_prev_archive_1.a",
+                "mode": 4,
+                "out": "W0eJz_d.o"
+            }
+        },
+        "mac": {
+            "duZ3t_d": {
+                "mod": "mac",
+                "bytes": 23819,
+                "out": "duZ3t_d.o",
+                "archive": "archive.39/_prev_archive_1.a",
                 "mode": 4
             }
         },
         "...MASTER...": {
             "amcQw_d": {
-                "bytes": 7110,
-                "archive": "archive.22/_13108_archive_1.a",
                 "mod": "...MASTER...",
-                "out": "amcQw_d.o",
-                "mode": 4
+                "bytes": 7110,
+                "archive": "archive.39/_21674_archive_1.a",
+                "mode": 4,
+                "out": "amcQw_d.o"
             }
         }
     },
+    "CompileStrategy": "fullobj",
+    "Misc": {
+        "cwd": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top",
+        "csrc": "csrc",
+        "default_output_dir": "csrc",
+        "csrc_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/csrc",
+        "daidir": "simv.daidir",
+        "archive_dir": "archive.39",
+        "daidir_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/simv.daidir"
+    },
     "NameTable": {
+        "sigmoid": [
+            "sigmoid",
+            "bYzLi",
+            "module"
+        ],
         "top_tb": [
             "top_tb",
             "W0eJz",
@@ -54,26 +74,34 @@
             "wx9Rv",
             "module"
         ],
+        "mac": [
+            "mac",
+            "duZ3t",
+            "module"
+        ],
         "...MASTER...": [
             "SIM",
             "amcQw",
             "module"
         ]
     },
-    "stat": {
-        "nMops": 3154
+    "CurCompileUdps": {},
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 70588
     },
-    "CompileStrategy": "fullobj",
     "CurCompileModules": [
         "...MASTER...",
-        "top_tb"
+        "sigmoid"
     ],
     "LVLData": [
         "SIM"
     ],
     "PEModules": [],
     "CompileProcesses": [
-        "cgproc.13108.json"
+        "cgproc.21674.json"
     ],
-    "CompileStatus": "Successful"
+    "stat": {
+        "nMops": 439
+    }
 }

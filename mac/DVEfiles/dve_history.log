@@ -1,0 +1,81 @@
+# Preference setting overrides
+gui_create_pref_key -category {Globals} -key {load_detail_for_funcov} -value_type {bool} -value {false}
+gui_create_pref_category -category {dlg_settings}
+gui_create_pref_key -category {dlg_settings} -key {tableWithImmediatePopup} -value_type {bool} -value {true}
+
+# State setting overrides
+gui_state_default_create -off -ini
+gui_set_state_value -category Globals -key recent_databases -value {{gui_open_db -file /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/mac/mac.vcd -design V1} {gui_open_db -file /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/mult/mult.vcd -design V1} {gui_open_db -file /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/top.vcd -design V1} {gui_open_db -file /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/sigmoid/sigmoid.vcd -design V1} {gui_open_db -file /home/warehouse/c.ricciardi/GitHub/fall-2017-lab4-chrispricciardi-1/top.vcd -design V1}}
+gui_set_state_value -category Layout -key child_console_size_x -value 937
+gui_set_state_value -category Layout -key child_console_size_y -value 105
+gui_set_state_value -category Layout -key child_data_size_x -value 114
+gui_set_state_value -category Layout -key child_data_size_y -value 375
+gui_set_state_value -category Layout -key child_hier_col3 -value {-1}
+gui_set_state_value -category Layout -key child_hier_colhier -value 166
+gui_set_state_value -category Layout -key child_hier_colpd -value 0
+gui_set_state_value -category Layout -key child_hier_size_x -value 211
+gui_set_state_value -category Layout -key child_hier_size_y -value 375
+gui_set_state_value -category Layout -key child_hier_sort_order -value 1
+gui_set_state_value -category Layout -key child_list_down -value 201
+gui_set_state_value -category Layout -key child_list_right -value 442
+gui_set_state_value -category Layout -key child_source_docknewline -value false
+gui_set_state_value -category Layout -key child_source_showstate -value normal
+gui_set_state_value -category Layout -key child_source_size_x -value 605
+gui_set_state_value -category Layout -key child_source_size_y -value 351
+gui_set_state_value -category Layout -key child_wave_colname -value 159
+gui_set_state_value -category Layout -key child_wave_colvalue -value 159
+gui_set_state_value -category Layout -key child_wave_left -value 323
+gui_set_state_value -category Layout -key child_wave_right -value 787
+gui_set_state_value -category Layout -key main_pos_x -value 176
+gui_set_state_value -category Layout -key main_pos_y -value 176
+gui_set_state_value -category Layout -key main_size_x -value 1112
+gui_set_state_value -category Layout -key main_size_y -value 754
+gui_set_state_value -category Layout -key stand_list_child_docknewline -value false
+gui_set_state_value -category Layout -key stand_list_child_pos_x -value {-2}
+gui_set_state_value -category Layout -key stand_list_child_pos_y -value {-15}
+gui_set_state_value -category Layout -key stand_list_child_size_x -value 602
+gui_set_state_value -category Layout -key stand_list_child_size_y -value 346
+gui_set_state_value -category Layout -key stand_list_top_pos_x -value 503
+gui_set_state_value -category Layout -key stand_list_top_pos_y -value 132
+gui_set_state_value -category Layout -key stand_list_top_size_y -value 629
+gui_set_state_value -category Layout -key stand_source_child_docknewline -value false
+gui_set_state_value -category Layout -key stand_source_child_showstate -value normal
+gui_set_state_value -category Layout -key stand_source_child_size_x -value 607
+gui_set_state_value -category Layout -key stand_source_child_size_y -value 350
+gui_set_state_value -category Layout -key stand_wave_child_docknewline -value false
+gui_set_state_value -category Layout -key stand_wave_child_pos_x -value {-2}
+gui_set_state_value -category Layout -key stand_wave_child_pos_y -value {-15}
+gui_set_state_value -category Layout -key stand_wave_child_size_x -value 1120
+gui_set_state_value -category Layout -key stand_wave_child_size_y -value 621
+gui_set_state_value -category Layout -key stand_wave_top_pos_x -value 589
+gui_set_state_value -category Layout -key stand_wave_top_pos_y -value 203
+gui_set_state_value -category Layout -key stand_wave_top_size_x -value 1704
+gui_set_state_value -category Layout -key stand_wave_top_size_y -value 928
+gui_create_state_key -category FindDialog -key m_pMatchCase -value_type bool -value false
+gui_create_state_key -category FindDialog -key m_pMatchWord -value_type bool -value false
+gui_create_state_key -category FindDialog -key m_pUseCombo -value_type string -value {}
+gui_create_state_key -category FindDialog -key m_pWrapAround -value_type bool -value true
+gui_state_default_create -off
+
+# Begin command logging
+gui_open_db -file /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/mac/mac.vcd -design V1
+gui_list_expand -id  Hier.1   mac_tb
+gui_list_select -id Hier.1 -current_item_name mac_tb.DUT -current_item_type Scope  -selected  { mac_tb.DUT   }
+gui_list_select -id Data.1 -selected  { mac_tb.DUT.clk   }
+gui_list_select -id Data.1 -selected  { mac_tb.DUT.clk  mac_tb.DUT.reset  mac_tb.DUT.start  mac_tb.DUT.done  {mac_tb.DUT.mac_in[15:0]}  {mac_tb.DUT.weight[15:0]}  {mac_tb.DUT.mac_out[15:0]}  {mac_tb.DUT.psum[15:0]}  {mac_tb.DUT.mult_out[15:0]}   }
+gui_list_select -id Data.1 -selected  { {mac_tb.DUT.weight[15:0]}   }
+gui_list_select -id Data.1 -selected  { mac_tb.DUT.clk   }
+gui_list_select -id Data.1 { mac_tb.DUT.reset  mac_tb.DUT.start  mac_tb.DUT.done  {mac_tb.DUT.mac_in[15:0]}  {mac_tb.DUT.weight[15:0]}  {mac_tb.DUT.mac_out[15:0]}  {mac_tb.DUT.psum[15:0]}  {mac_tb.DUT.mult_out[15:0]}  mac_tb.DUT.stage1  mac_tb.DUT.stage2  mac_tb.DUT.stage3  mac_tb.DUT.stage4  mac_tb.DUT.stage5  mac_tb.DUT.stage6   }
+gui_open_window Wave
+gui_list_add -id Wave.1 -from Data.1 { mac_tb.DUT.clk mac_tb.DUT.reset mac_tb.DUT.start mac_tb.DUT.done {mac_tb.DUT.mac_in[15:0]} {mac_tb.DUT.weight[15:0]} {mac_tb.DUT.mac_out[15:0]} {mac_tb.DUT.psum[15:0]} {mac_tb.DUT.mult_out[15:0]} mac_tb.DUT.stage1 mac_tb.DUT.stage2 mac_tb.DUT.stage3 mac_tb.DUT.stage4 mac_tb.DUT.stage5 mac_tb.DUT.stage6 } -insertionbar
+gui_zoom -window Wave.1 -full
+gui_wv_zoom_timerange -id  Wave.1 96643 160040
+gui_zoom -window Wave.1 -full
+gui_wv_zoom_timerange -id  Wave.1 105147 177823
+gui_zoom -window Wave.1 -full
+gui_wv_zoom_timerange -id  Wave.1 27833 209522
+gui_marker_move -id  Wave.1 C1 166055
+gui_list_select -id Wave.1 -selected  { {mac_tb.DUT.mult_out[15:0]}   }
+gui_list_select -id Wave.1 -selected  { {mac_tb.DUT.psum[15:0]}   }
+gui_marker_move -id  Wave.1 C1 142603
+gui_close_window -window TopLevel.2

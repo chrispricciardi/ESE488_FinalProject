@@ -8,7 +8,7 @@ Report : timing
         -max_paths 20
 Design : sigmoid
 Version: J-2014.09-SP5
-Date   : Wed Nov 29 23:07:26 2017
+Date   : Sun Dec  3 12:46:40 2017
 ****************************************
 
 Operating Conditions: nom_pvt   Library: vtvt_tsmc180
@@ -24,22 +24,23 @@ Wire Load Model Mode: top
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
   y_reg[8]/ck (dp_1)                       0.00       0.00 r
-  y_reg[8]/q (dp_1)                      345.30     345.30 f
-  U44/op (nor2_1)                        125.97     471.27 r
-  U45/op (not_ab_or_c_or_d)               93.42     564.69 f
-  y_reg[8]/ip (dp_1)                       0.00     564.69 f
-  data arrival time                                 564.69
+  y_reg[8]/q (dp_1)                      345.43     345.43 f
+  U57/op (nand2_1)                        81.66     427.09 r
+  U58/op (or2_1)                          81.27     508.36 r
+  U68/op (nand2_1)                        58.58     566.94 f
+  y_reg[8]/ip (dp_1)                       0.00     566.94 f
+  data arrival time                                 566.94
 
   clock clk (rise edge)                50000.00   50000.00
   clock network delay (ideal)              0.00   50000.00
   y_reg[8]/ck (dp_1)                       0.00   50000.00 r
-  library setup time                    -154.06   49845.94
-  data required time                              49845.94
+  library setup time                    -146.22   49853.78
+  data required time                              49853.78
   -----------------------------------------------------------
-  data required time                              49845.94
-  data arrival time                                -564.69
+  data required time                              49853.78
+  data arrival time                                -566.94
   -----------------------------------------------------------
-  slack (MET)                                     49281.25
+  slack (MET)                                     49286.84
 
 
   Startpoint: sig_rdy_reg
@@ -55,21 +56,21 @@ Wire Load Model Mode: top
   clock network delay (ideal)              0.00       0.00
   sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
   sig_rdy_reg/q (dp_1)                   345.61     345.61 f
-  U46/op (nor2_1)                        126.70     472.32 r
-  U47/op (nor2_1)                         77.32     549.64 f
+  U70/op (nor2_1)                        126.70     472.32 r
+  U71/op (nor2_1)                         77.32     549.64 f
   sig_rdy_reg/ip (dp_1)                    0.00     549.64 f
   data arrival time                                 549.64
 
   clock clk (rise edge)                50000.00   50000.00
   clock network delay (ideal)              0.00   50000.00
   sig_rdy_reg/ck (dp_1)                    0.00   50000.00 r
-  library setup time                    -145.94   49854.06
-  data required time                              49854.06
+  library setup time                    -146.67   49853.33
+  data required time                              49853.33
   -----------------------------------------------------------
-  data required time                              49854.06
+  data required time                              49853.33
   data arrival time                                -549.64
   -----------------------------------------------------------
-  slack (MET)                                     49304.42
+  slack (MET)                                     49303.69
 
 
   Startpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
@@ -82,22 +83,23 @@ Wire Load Model Mode: top
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
   y_reg[8]/ck (dp_1)                       0.00       0.00 r
-  y_reg[8]/q (dp_1)                      270.93     270.93 r
-  U44/op (nor2_1)                         96.51     367.44 f
-  U45/op (not_ab_or_c_or_d)              128.32     495.75 r
-  y_reg[8]/ip (dp_1)                       0.00     495.75 r
-  data arrival time                                 495.75
+  y_reg[8]/q (dp_1)                      271.08     271.08 r
+  U57/op (nand2_1)                       102.22     373.30 f
+  U58/op (or2_1)                         129.76     503.06 f
+  U68/op (nand2_1)                        47.83     550.90 r
+  y_reg[8]/ip (dp_1)                       0.00     550.90 r
+  data arrival time                                 550.90
 
   clock clk (rise edge)                50000.00   50000.00
   clock network delay (ideal)              0.00   50000.00
   y_reg[8]/ck (dp_1)                       0.00   50000.00 r
-  library setup time                    -148.75   49851.25
-  data required time                              49851.25
+  library setup time                    -141.32   49858.68
+  data required time                              49858.68
   -----------------------------------------------------------
-  data required time                              49851.25
-  data arrival time                                -495.75
+  data required time                              49858.68
+  data arrival time                                -550.90
   -----------------------------------------------------------
-  slack (MET)                                     49355.49
+  slack (MET)                                     49307.79
 
 
   Startpoint: sig_rdy_reg
@@ -113,8 +115,8 @@ Wire Load Model Mode: top
   clock network delay (ideal)              0.00       0.00
   sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
   sig_rdy_reg/q (dp_1)                   271.30     271.30 r
-  U46/op (nor2_1)                        104.32     375.62 f
-  U47/op (nor2_1)                         87.80     463.43 r
+  U70/op (nor2_1)                        104.32     375.62 f
+  U71/op (nor2_1)                         87.80     463.43 r
   sig_rdy_reg/ip (dp_1)                    0.00     463.43 r
   data arrival time                                 463.43
 

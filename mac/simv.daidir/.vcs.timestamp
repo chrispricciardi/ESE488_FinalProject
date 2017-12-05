@@ -148,13 +148,13 @@ ARC=lx-amd64
 ANLS=/project/linuxlab/cadence/anls
 0
 4
-1512102419 mac_tb.v
+1512438411 mac_tb.v
 1512102419 mult.v
-1512252801 mac.v
+1512438608 mac.v
 1429846701 /project/linuxlab/synopsys/vcs_mx/amd64/lib/vcsdp.tab
 4
 0 
 1429847291 /project/linuxlab/synopsys/vcs_mx/amd64/lib/libvirsim.so
 1429846793 /project/linuxlab/synopsys/vcs_mx/amd64/lib/liberrorinf.so
 1429846784 /project/linuxlab/synopsys/vcs_mx/amd64/lib/libsnpsmalloc.so
-1512252848 simv.daidir
+1512438613 simv.daidir

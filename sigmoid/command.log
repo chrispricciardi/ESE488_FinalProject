@@ -1,7 +1,7 @@
 #@ # 
 #@ # Running dc_shell Version J-2014.09-SP5 for amd64 -- Apr 22, 2015
-#@ # Date:   Wed Nov 29 23:06:19 2017
-#@ # Run by: william.@linuxlab008.seas.wustl.edu
+#@ # Date:   Sun Dec  3 12:45:33 2017
+#@ # Run by: c.riccia@linuxlab003.seas.wustl.edu
 #@ 
 
 source /project/linuxlab/synopsys/syncore/admin/setup/.synopsys_dc.setup
@@ -3756,8 +3756,8 @@ source /project/linuxlab/synopsys/syncore/admin/setup/.synopsys_dc.setup
 #@ 
 #@ # -- End source /project/linuxlab/synopsys/syncore/admin/setup/.synopsys_dc.setup
 
-source -echo -verbose /home/warehouse/william.coe/Desktop/ese461/final/sigmoid/sigmoid.tcl
-#@ # -- Starting source /home/warehouse/william.coe/Desktop/ese461/final/sigmoid/sigmoid.tcl
+source -echo -verbose /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/sigmoid/sigmoid.tcl
+#@ # -- Starting source /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/sigmoid/sigmoid.tcl
 
 #@ #######################################################################
 #@ # User Defined Parameters

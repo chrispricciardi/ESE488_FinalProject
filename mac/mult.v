@@ -9,9 +9,9 @@ module mult(
 //Data is stored as an 8.8 fixed point number
 input clk;
 input reset;
-input [15:0] in;
-input [15:0] w;
-output [15:0] out;
+input signed [15:0] in;
+input signed [15:0] w;
+output signed [15:0] out;
 
 //Define constants
 parameter vecLen=16;
@@ -19,11 +19,11 @@ parameter vecLen=16;
 //Define variables
 integer i;
 
-reg [31:0] layer1 [15:0];
-reg [31:0] layer2 [7:0];
-reg [31:0] layer3 [3:0];
-reg [31:0] layer4 [1:0];
-reg [31:0] layer5;
+reg signed [31:0] layer1 [15:0];
+reg signed [31:0] layer2 [7:0];
+reg signed [31:0] layer3 [3:0];
+reg signed [31:0] layer4 [1:0];
+reg signed [31:0] layer5;
 /***********************************************************************
 Because there are 5 layers, this design takes 5 clock cylces to complete
 ***********************************************************************/

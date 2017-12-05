@@ -45,28 +45,57 @@ module top_tb();
 	$readmemb("layer1_weight.txt", DUT.SRAM_WEIGHT1.mem);
 	$readmemb("layer2_weight.txt", DUT.SRAM_WEIGHT2.mem);
 
+	$readmemb("x_fix.txt", DUT.SIGMOID1.x);
+	$readmemb("y_fix.txt", DUT.SIGMOID1.LUT);
+	$readmemb("x_fix.txt", DUT.SIGMOID2.x);
+	$readmemb("y_fix.txt", DUT.SIGMOID2.LUT);
+	$readmemb("x_fix.txt", DUT.SIGMOID3.x);
+	$readmemb("y_fix.txt", DUT.SIGMOID3.LUT);
+	$readmemb("x_fix.txt", DUT.SIGMOID4.x);
+	$readmemb("y_fix.txt", DUT.SIGMOID4.LUT);
+	$readmemb("x_fix.txt", DUT.SIGMOID5.x);
+	$readmemb("y_fix.txt", DUT.SIGMOID5.LUT);
+	$readmemb("x_fix.txt", DUT.SIGMOID6.x);
+	$readmemb("y_fix.txt", DUT.SIGMOID6.LUT);
+	$readmemb("x_fix.txt", DUT.SIGMOID7.x);
+	$readmemb("y_fix.txt", DUT.SIGMOID7.LUT);
+	$readmemb("x_fix.txt", DUT.SIGMOID8.x);
+	$readmemb("y_fix.txt", DUT.SIGMOID8.LUT);
+	$readmemb("x_fix.txt", DUT.SIGMOID9.x);
+	$readmemb("y_fix.txt", DUT.SIGMOID9.LUT);
+	$readmemb("x_fix.txt", DUT.SIGMOID10.x);
+	$readmemb("y_fix.txt", DUT.SIGMOID10.LUT);
+
+
+
 
 		clk = 0;
 		reset = 1;
 		we = 0; //testing
 		address_3 = 0; 
+		mac_start = 0; 
+		address_2 = 0; 
 
 		#20		
 		reset = 0; 
-		mac_start = 1; 
-
-		#20 
-		mac_start = 0;
 
 
-		for (j = 0; j < 784; j=j+1)begin 
-		#20
-		address_3 = j; 
-		address_1 = j; 
+		for(i = 0; i< 200; i=i+1)begin 
+			for (j = 0; j < 784; j=j+1)begin 
+				#20
+				address_3 = j; 
+				address_1 = i*784+j;
+				if (j == 783) begin 
+					mac_start = 1;  
+				end
+				else begin 
+					mac_start = 0; 
+				end			
+			end
+		end	
 
-		end
-
-		#100
+		
+		#300
 		$finish;
 
         $finish;

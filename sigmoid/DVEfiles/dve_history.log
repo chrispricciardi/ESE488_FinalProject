@@ -173,3 +173,38 @@ gui_open_window Wave
 gui_list_add -id Wave.1 -from Hier.1 { sigmoid_tb } -insertionbar
 gui_zoom -window Wave.1 -full
 gui_close_window -window TopLevel.2
+gui_list_select -id Hier.1 -current_item_name sigmoid_tb -current_item_type Scope  -selected  {  }
+gui_list_select -id Hier.1 -current_item_name sigmoid_tb.DUT -current_item_type Scope  -selected  { sigmoid_tb.DUT   }
+gui_open_window Wave
+gui_list_add -id Wave.1 -from Hier.1 { sigmoid_tb.DUT } -insertionbar
+gui_zoom -window Wave.1 -full
+gui_close_window -window TopLevel.2
+gui_update_design -all
+gui_close_db -file /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/sigmoid/sigmoid.vcd.vpd -design V1
+gui_open_db -file /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/mac/mac.vcd -design V1
+gui_list_expand -id  Hier.1   mac_tb
+gui_list_expand -id  Hier.1   mac_tb.DUT
+gui_list_select -id Hier.1 -current_item_name mac_tb.DUT.mult1 -current_item_type Scope  -selected  { mac_tb.DUT.mult1   }
+gui_open_window Wave
+gui_list_add -id Wave.1 -from Hier.1 { mac_tb.DUT.mult1 } -insertionbar
+gui_close_window -window TopLevel.2
+gui_open_window Wave
+gui_list_add -id Wave.1 -from Hier.1 { mac_tb.DUT.mult1 } -insertionbar
+gui_zoom -window Wave.1 -full
+gui_close_window -window TopLevel.2
+gui_list_select -id Hier.1 -current_item_name mac_tb.DUT -current_item_type Scope  -selected  { mac_tb.DUT   }
+gui_open_window Wave
+gui_list_add -id Wave.1 -from Hier.1 { mac_tb.DUT } -insertionbar
+gui_zoom -window Wave.1 -full
+gui_wv_zoom_timerange -id  Wave.1 249243 472571
+gui_wv_scroll_hslidermove -id  Wave.1 774
+gui_list_select -id Wave.1 -selected  { {mac_tb.DUT.mac_in[15:0]}   }
+gui_list_select -id Wave.1 -selected  { {mac_tb.DUT.weight[15:0]}   }
+gui_wv_scroll_hslidermove -id  Wave.1 0
+gui_close_window -window TopLevel.2
+gui_close_db -file /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/mac/mac.vcd.vpd -design V1
+gui_open_db -file /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/sigmoid/sigmoid.vcd -design V1
+gui_list_select -id Hier.1 -current_item_name sigmoid_tb -current_item_type Scope  -selected  { sigmoid_tb   }
+gui_open_window Wave
+gui_list_add -id Wave.1 -from Hier.1 { sigmoid_tb } -insertionbar
+gui_zoom -window Wave.1 -full

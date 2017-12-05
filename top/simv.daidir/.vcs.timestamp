@@ -1,5 +1,5 @@
 0 
-33
+34
 +itf+/project/linuxlab/synopsys/vcs_mx/amd64/lib/vcsdp.tab
 +lint=all,noVCDE
 +v2k
@@ -28,6 +28,7 @@
 /project/linuxlab/synopsys/vcs_mx/amd64/bin/vcs1
 mac.v
 mult.v
+sigmoid.v
 sram_input.v
 sram_weight1.v
 sram_weight2.v
@@ -151,18 +152,19 @@ ARM=/project/linuxlab/synopsys/arm
 ARC=lx-amd64
 ANLS=/project/linuxlab/cadence/anls
 0
-8
-1512102419 mac.v
-1512102420 mult.v
+9
+1512444976 sigmoid.v
+1512438608 mac.v
+1512439670 mult.v
 1512166673 sram_weight2.v
 1512166488 sram_weight1.v
 1512165586 sram_input.v
-1512252700 top_tb.v
-1512249940 top.v
+1512445802 top_tb.v
+1512442772 top.v
 1429846701 /project/linuxlab/synopsys/vcs_mx/amd64/lib/vcsdp.tab
 4
 0 
 1429847291 /project/linuxlab/synopsys/vcs_mx/amd64/lib/libvirsim.so
 1429846793 /project/linuxlab/synopsys/vcs_mx/amd64/lib/liberrorinf.so
 1429846784 /project/linuxlab/synopsys/vcs_mx/amd64/lib/libsnpsmalloc.so
-1512252705 simv.daidir
+1512445809 simv.daidir

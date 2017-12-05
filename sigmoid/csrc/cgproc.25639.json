@@ -1,0 +1,27 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "sigmoid_tb": {}
+    },
+    "ObjArchives": [
+        {
+            "objects": [
+                [
+                    "amcQw_d.o",
+                    7118
+                ]
+            ],
+            "archive": "archive.3/_25639_archive_1.a",
+            "size": 7118
+        }
+    ],
+    "CompUnits": {
+        "amcQw_d": {
+            "mod": "...MASTER...",
+            "out": "amcQw_d.o",
+            "bytes": 7118,
+            "mode": 4,
+            "archive": "archive.3/_25639_archive_1.a"
+        }
+    }
+}

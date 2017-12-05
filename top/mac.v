@@ -12,21 +12,19 @@ input clk;
 input reset;
 input start;	//Set start high whenever you enter a new data set
 output done;	//Done is output when the MAC is done and restarting calculations with a new set
-input [15:0] mac_in;
-input [15:0] weight;
-output [15:0] mac_out;
+input signed [15:0] mac_in;
+input signed [15:0] weight;
+output signed [15:0] mac_out;
 
 //Define variables
-reg [15:0] psum;
-wire [15:0] mult_out;
+reg signed [15:0] psum;
+wire signed [15:0] mult_out;
 
 //Stages 1-5 correspond to the multiplier module
 //Stage 6 corresponds to the accumulate stage
 reg stage1, stage2, stage3, stage4, stage5, stage6;
 
 mult mult1(clk, reset, mac_in, weight, mult_out);
-
-
 
 assign mac_out = psum;
 assign done = stage6;

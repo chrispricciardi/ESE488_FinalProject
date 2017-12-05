@@ -41,8 +41,8 @@ module mac_tb();
 	
 	#20
 	start=0;
-	mac_in= 16'h0100;
-	weight= 16'h0100;
+	mac_in= 16'hffff;
+	weight= 16'h0200;
 
 	#200
 	mac_in= 16'h0100;
