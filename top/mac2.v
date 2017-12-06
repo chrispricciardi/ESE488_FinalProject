@@ -21,20 +21,44 @@ output signed [15:0] mac_out;
 //Define variables
 reg signed [15:0] psum;
 wire signed [15:0] mult_out;
+wire mac2_sel; //select signal to toggle the MAC input
+wire [15:0] sig_mux;
 
 //Stages 1-5 correspond to the multiplier module
 //Stage 6 corresponds to the accumulate stage
 reg stage1, stage2, stage3, stage4, stage5, stage6;
+integer i;
 
 mult mult1(clk, reset, sig_mux, weight, mult_out);
 
+
 assign mac_out = psum;
 assign done = stage6;
-assign sig_mux = (sig_rdy == 1)? mac_in : 16'h0000; //"mux the sigmoid output DONE" -ALAN
 
 
+//Handles the address timing
+reg [9:0] shift_r;
+always @(posedge clk) begin
+	if(reset==1) begin
+		for(i=0; i<10; i=i+1)begin
+			shift_r[i]<=0;
+		end
+	end
+	else begin
+		shift_r[0]<= sig_rdy;
+		for(i=0; i<9; i=i+1) begin
+			shift_r[i+1]<=shift_r[i];
+		end
+	end
+end
 
 
+assign mac2_sel= shift_r[0] | shift_r[1] | shift_r[2] | shift_r[3] | shift_r[4] | shift_r[5] | shift_r[6] | shift_r[7] |shift_r[8] | shift_r[9];
+
+assign sig_mux = (mac2_sel == 1)? mac_in : 16'h0000; //"mux the sigmoid output DONE" -ALAN
+
+
+	
 always @(posedge clk) 
 begin
 	//Reset if reset is high 

@@ -1,17 +1,7 @@
 {
-    "mac": [
-        "mac",
-        "duZ3t",
-        "module"
-    ],
-    "sram_input": [
-        "sram_input",
-        "wx9Rv",
-        "module"
-    ],
-    "top_tb": [
-        "top_tb",
-        "W0eJz",
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
         "module"
     ],
     "sigmoid": [
@@ -19,9 +9,29 @@
         "bYzLi",
         "module"
     ],
-    "...MASTER...": [
-        "SIM",
-        "amcQw",
+    "mac2": [
+        "mac2",
+        "wpikC",
+        "module"
+    ],
+    "top_tb": [
+        "top_tb",
+        "W0eJz",
+        "module"
+    ],
+    "sram_input": [
+        "sram_input",
+        "wx9Rv",
+        "module"
+    ],
+    "mult": [
+        "mult",
+        "SRUFi",
+        "module"
+    ],
+    "mac": [
+        "mac",
+        "duZ3t",
         "module"
     ]
 }

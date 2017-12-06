@@ -1,5 +1,5 @@
 0 
-34
+36
 +itf+/project/linuxlab/synopsys/vcs_mx/amd64/lib/vcsdp.tab
 +lint=all,noVCDE
 +v2k
@@ -27,9 +27,11 @@
 -timescale=1ns/10ps
 /project/linuxlab/synopsys/vcs_mx/amd64/bin/vcs1
 mac.v
+mac2.v
 mult.v
 sigmoid.v
 sram_input.v
+sram_output.v
 sram_weight1.v
 sram_weight2.v
 top.v
@@ -46,7 +48,7 @@ XDG_DATA_DIRS=/usr/local/share:/usr/share
 XDG_CURRENT_DESKTOP=XFCE
 XDG_CONFIG_DIRS=/etc/xdg
 VTVT=/project/linuxlab/cadence/vendors/VTVT
-VNCDESKTOP=TurboVNC: linuxlab008.seas.wustl.edu:20 (c.ricciardi)
+VNCDESKTOP=TurboVNC: linuxlab008.seas.wustl.edu:1 (c.ricciardi)
 VMR_MODE_FLAG=64
 VGL_COMPRESS=0
 VERA_HOME=/project/linuxlab/synopsys/vera
@@ -60,9 +62,9 @@ VCS_ARCH=amd64
 UNAME=/bin/uname
 TOOL_HOME=/project/linuxlab/synopsys/vcs_mx/amd64
 SYNOPSYS=/project/linuxlab/synopsys
-SSH_AUTH_SOCK=/tmp/ssh-DTSTvNtir7EN/agent.23074
+SSH_AUTH_SOCK=/tmp/ssh-AuiLmZRXehtf/agent.13510
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
-SSH_AGENT_PID=23075
+SSH_AGENT_PID=13511
 SPB=/project/linuxlab/cadence/spb
 SNPSLMD_LICENSE_FILE=27032@licensing02.seas.wustl.edu:/project/linuxlab/synopsys/vcs_mx/flexlm//license.dat
 SKIP_CDS_DIALOG=1
@@ -70,24 +72,24 @@ SGE_TASK_STEPSIZE=undefined
 SGE_TASK_LAST=undefined
 SGE_TASK_ID=undefined
 SGE_TASK_FIRST=undefined
-SGE_STDOUT_PATH=/home/warehouse/c.ricciardi/equeue/spool/11-30-2017_22-24-41/LinuxDesktop.o82953
+SGE_STDOUT_PATH=/home/warehouse/c.ricciardi/equeue/spool/12-05-2017_14-02-53/LinuxDesktop.o83268
 SGE_STDIN_PATH=/dev/null
-SGE_STDERR_PATH=/home/warehouse/c.ricciardi/equeue/spool/11-30-2017_22-24-41/LinuxDesktop.o82953
+SGE_STDERR_PATH=/home/warehouse/c.ricciardi/equeue/spool/12-05-2017_14-02-53/LinuxDesktop.o83268
 SGE_ROOT=/project/linuxlab/sge
-SGE_O_WORKDIR=/home/warehouse/c.ricciardi/equeue/spool/11-30-2017_22-24-41
+SGE_O_WORKDIR=/home/warehouse/c.ricciardi/equeue/spool/12-05-2017_14-02-53
 SGE_O_SHELL=/sbin/nologin
 SGE_O_PATH=/sbin:/bin:/usr/sbin:/usr/bin
 SGE_O_MAIL=/var/mail/c.ricciardi
 SGE_O_LOGNAME=c.ricciardi
 SGE_O_HOST=acadeq
 SGE_O_HOME=/home/warehouse/c.ricciardi
-SGE_CWD_PATH=/home/warehouse/c.ricciardi/equeue/spool/11-30-2017_22-24-41
+SGE_CWD_PATH=/home/warehouse/c.ricciardi/equeue/spool/12-05-2017_14-02-53
 SGE_CLUSTER_NAME=ENGINEERING
 SGE_CELL=LINUXLAB
 SGE_BINARY_PATH=/project/linuxlab/sge/bin/lx-amd64
 SGE_ARCH=lx-amd64
 SGE_ACCOUNT=sge
-SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/23057,unix/unix:/tmp/.ICE-unix/23057
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/13494,unix/unix:/tmp/.ICE-unix/13494
 SCRNAME=vcs
 SCRIPT_NAME=vcs
 RESTARTED=0
@@ -125,12 +127,12 @@ LOADEDMODULES=ese461
 LESSOPEN=||/usr/bin/lesspipe.sh %s
 LC_ALL=C
 KDEDIRS=/usr
-JOB_SCRIPT=/project/linuxlab/sge/LINUXLAB/spool/linuxlab008/job_scripts/82953
+JOB_SCRIPT=/project/linuxlab/sge/LINUXLAB/spool/linuxlab008/job_scripts/83268
 JOB_NAME=LinuxDesktop
 INCISIVE=/project/linuxlab/cadence/incisive
 IC=/project/linuxlab/cadence/ic
 HISTCONTROL=ignoredups
-GPG_AGENT_INFO=/home/warehouse/c.ricciardi/.gnupg/S.gpg-agent:23077:1
+GPG_AGENT_INFO=/home/warehouse/c.ricciardi/.gnupg/S.gpg-agent:13513:1
 GLADE_PIXMAP_PATH=:
 GLADE_MODULE_PATH=:
 GLADE_CATALOG_PATH=:
@@ -139,7 +141,7 @@ ETS=/project/linuxlab/cadence/ets
 ENVIRONMENT=BATCH
 EDI=/project/linuxlab/cadence/edi
 DESKTOP_SESSION=xfce
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-RqiYCcFhu2,guid=ac59f3ae2ecb3c4ff3758c045a20d98f
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-EJRJPme8Xu,guid=f2735c8af38835e7ae035c745a26fb72
 CVS_RSH=ssh
 CONFRML=/project/linuxlab/cadence/confrml
 COLORTERM=xfce4-terminal
@@ -152,19 +154,21 @@ ARM=/project/linuxlab/synopsys/arm
 ARC=lx-amd64
 ANLS=/project/linuxlab/cadence/anls
 0
-9
-1512444976 sigmoid.v
+11
+1512532100 sram_output.v
+1512532591 sigmoid.v
+1512528462 mac2.v
 1512438608 mac.v
 1512439670 mult.v
-1512166673 sram_weight2.v
-1512166488 sram_weight1.v
-1512165586 sram_input.v
-1512445802 top_tb.v
-1512442772 top.v
+1512532159 sram_weight2.v
+1512532139 sram_weight1.v
+1512531020 sram_input.v
+1512532323 top_tb.v
+1512532068 top.v
 1429846701 /project/linuxlab/synopsys/vcs_mx/amd64/lib/vcsdp.tab
 4
 0 
 1429847291 /project/linuxlab/synopsys/vcs_mx/amd64/lib/libvirsim.so
 1429846793 /project/linuxlab/synopsys/vcs_mx/amd64/lib/liberrorinf.so
 1429846784 /project/linuxlab/synopsys/vcs_mx/amd64/lib/libsnpsmalloc.so
-1512445809 simv.daidir
+1512532598 simv.daidir

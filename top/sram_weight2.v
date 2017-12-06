@@ -9,11 +9,11 @@ q
 
 input clk;	
 input we;		//if(we) > [write enable] else > [read enable]
-input [15:0] d; 	//data input (high impedance for this design)
+input signed [15:0] d; 	//data input (high impedance for this design)
 input [11:0] address;	//memory address
-output reg [15:0] q; 	//output
+output reg signed [15:0] q; 	//output
 
-reg[15:0] mem [0:1999];  
+reg signed [15:0] mem [0:1999];  
 
 always @(posedge clk)
 begin 

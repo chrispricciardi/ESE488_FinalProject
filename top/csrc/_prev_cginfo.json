@@ -1,62 +1,83 @@
 {
     "MlibObjs": {},
-    "CompileStatus": "Successful",
     "PrevCompiledModules": {
-        "sram_input": {
-            "wx9Rv_d": {
-                "mod": "sram_input",
-                "bytes": 8144,
-                "out": "wx9Rv_d.o",
-                "archive": "archive.39/_prev_archive_1.a",
-                "mode": 4
-            }
-        },
-        "sigmoid": {
-            "bYzLi_d": {
-                "mod": "sigmoid",
-                "bytes": 10726,
-                "out": "bYzLi_d.o",
-                "archive": "archive.39/_21674_archive_1.a",
-                "mode": 4
-            }
-        },
-        "top_tb": {
-            "W0eJz_d": {
-                "mod": "top_tb",
-                "bytes": 50590,
-                "archive": "archive.39/_prev_archive_1.a",
+        "mac2": {
+            "wpikC_d": {
+                "bytes": 12835,
+                "archive": "archive.53/_prev_archive_1.a",
+                "mod": "mac2",
                 "mode": 4,
-                "out": "W0eJz_d.o"
+                "out": "wpikC_d.o"
             }
         },
         "mac": {
             "duZ3t_d": {
+                "bytes": 10408,
+                "archive": "archive.53/_prev_archive_1.a",
                 "mod": "mac",
-                "bytes": 23819,
-                "out": "duZ3t_d.o",
-                "archive": "archive.39/_prev_archive_1.a",
+                "mode": 4,
+                "out": "duZ3t_d.o"
+            }
+        },
+        "sram_input": {
+            "wx9Rv_d": {
+                "bytes": 8146,
+                "archive": "archive.53/_prev_archive_1.a",
+                "mod": "sram_input",
+                "mode": 4,
+                "out": "wx9Rv_d.o"
+            }
+        },
+        "sigmoid": {
+            "bYzLi_d": {
+                "bytes": 11656,
+                "archive": "archive.53/_prev_archive_1.a",
+                "mod": "sigmoid",
+                "mode": 4,
+                "out": "bYzLi_d.o"
+            }
+        },
+        "top_tb": {
+            "W0eJz_d": {
+                "bytes": 76494,
+                "archive": "archive.53/_prev_archive_1.a",
+                "mod": "top_tb",
+                "out": "W0eJz_d.o",
                 "mode": 4
+            }
+        },
+        "mult": {
+            "SRUFi_d": {
+                "bytes": 19306,
+                "archive": "archive.53/_prev_archive_1.a",
+                "mod": "mult",
+                "mode": 4,
+                "out": "SRUFi_d.o"
             }
         },
         "...MASTER...": {
             "amcQw_d": {
-                "mod": "...MASTER...",
                 "bytes": 7110,
-                "archive": "archive.39/_21674_archive_1.a",
-                "mode": 4,
-                "out": "amcQw_d.o"
+                "archive": "archive.53/_15103_archive_1.a",
+                "mod": "...MASTER...",
+                "out": "amcQw_d.o",
+                "mode": 4
             }
         }
     },
-    "CompileStrategy": "fullobj",
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 71442
+    },
+    "CompileStatus": "Successful",
     "Misc": {
-        "cwd": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top",
-        "csrc": "csrc",
         "default_output_dir": "csrc",
+        "csrc": "csrc",
+        "cwd": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top",
         "csrc_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/csrc",
-        "daidir": "simv.daidir",
-        "archive_dir": "archive.39",
-        "daidir_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/simv.daidir"
+        "archive_dir": "archive.53",
+        "daidir_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/simv.daidir",
+        "daidir": "simv.daidir"
     },
     "NameTable": {
         "sigmoid": [
@@ -69,14 +90,24 @@
             "W0eJz",
             "module"
         ],
-        "sram_input": [
-            "sram_input",
-            "wx9Rv",
+        "mac2": [
+            "mac2",
+            "wpikC",
             "module"
         ],
         "mac": [
             "mac",
             "duZ3t",
+            "module"
+        ],
+        "sram_input": [
+            "sram_input",
+            "wx9Rv",
+            "module"
+        ],
+        "mult": [
+            "mult",
+            "SRUFi",
             "module"
         ],
         "...MASTER...": [
@@ -85,23 +116,19 @@
             "module"
         ]
     },
-    "CurCompileUdps": {},
-    "SIMBData": {
-        "out": "amcQwB.o",
-        "bytes": 70588
-    },
     "CurCompileModules": [
-        "...MASTER...",
-        "sigmoid"
+        "...MASTER..."
+    ],
+    "CompileStrategy": "fullobj",
+    "CurCompileUdps": {},
+    "CompileProcesses": [
+        "cgproc.15103.json"
     ],
     "LVLData": [
         "SIM"
     ],
     "PEModules": [],
-    "CompileProcesses": [
-        "cgproc.21674.json"
-    ],
     "stat": {
-        "nMops": 439
+        "nMops": 0
     }
 }

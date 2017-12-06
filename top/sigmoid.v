@@ -4,8 +4,11 @@ module sigmoid(
 	clk,
 	reset,
 	done,
+	d,
+	we,
 	sig_ready,
 	sig_in,
+	address,//BS address
 	sig_out
 );
 
@@ -13,6 +16,9 @@ module sigmoid(
 input clk;
 input reset;
 input done;
+input [6:0] address; //address for writing to sigmoid 
+input we; //write enable for registers holding Sigmoid values
+input signed [15:0] d; //data input to Sigmoid value register
 input signed [15:0] sig_in;
 output [15:0] sig_out;
 output sig_ready;
@@ -35,6 +41,14 @@ assign sig_ready = sig_rdy;
 //Define the sigmoid lookup table
 always @(posedge clk) 
 begin
+
+	
+	if (we == 1)begin 
+	x[address] <= d; 
+	LUT[address] <= d;
+
+	end else if(we == 0)begin 
+
 
 	if(sig_rdy)begin 
 	sig_rdy <= 0; 
@@ -96,6 +110,7 @@ begin
 		//The sigmoid function is now ready
 		#5 sig_rdy <= 1;
 		
+		end
 	end
 end
 
