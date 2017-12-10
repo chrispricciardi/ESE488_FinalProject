@@ -4,7 +4,7 @@ Report : power
         -analysis_effort low
 Design : sigmoid
 Version: J-2014.09-SP5
-Date   : Sun Dec  3 12:46:40 2017
+Date   : Tue Dec  5 22:30:43 2017
 ****************************************
 
 
@@ -26,12 +26,12 @@ Power-specific unit information :
     Leakage Power Units = 1mW
 
 
-  Cell Internal Power  =   4.1741 uW   (90%)
-  Net Switching Power  = 473.4229 nW   (10%)
+  Cell Internal Power  =   7.0098 mW   (97%)
+  Net Switching Power  = 244.6789 uW    (3%)
                          ---------
-Total Dynamic Power    =   4.6475 uW  (100%)
+Total Dynamic Power    =   7.2545 mW  (100%)
 
-Cell Leakage Power     =   4.6539 nW
+Cell Leakage Power     =   8.7927 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -41,9 +41,9 @@ io_pad             0.0000            0.0000            0.0000            0.0000 
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register       3.7088e-03        2.5741e-04        4.3192e-06        3.9705e-03  (  85.35%)
+register           6.7972        2.4248e-03        8.3642e-03            6.8079  (  93.73%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational  4.6534e-04        2.1602e-04        3.3469e-07        6.8169e-04  (  14.65%)
+combinational      0.2126            0.2423        4.2852e-04            0.4553  (   6.27%)
 --------------------------------------------------------------------------------------------------
-Total          4.1741e-03 mW     4.7342e-04 mW     4.6539e-06 mW     4.6522e-03 mW
+Total              7.0098 mW         0.2447 mW     8.7927e-03 mW         7.2633 mW
 1

@@ -10,6 +10,7 @@ module top_tb();
 	reg [5:0] address_4;
 	reg [6:0] address_5; //BS sigmoid address
 	reg reset;
+	reg [6:0] sel; //select signal to MUX
 	reg mac1_start;
 	reg mac2_start;
 	wire mac1_done; 
@@ -25,12 +26,13 @@ module top_tb();
 	.address_1(address_1),
 	.address_2(address_2), //testing
 	.address_3(address_3),
-	.address_4(address_4),
+	//.address_4(address_4),
 	.address_5(address_5),
 	.mac1_start(mac1_start),
 	.mac2_start(mac2_start), 
 	.mac1_done(mac1_done), 
 	.mac2_done(mac2_done),
+	.sel(sel),
         .reset(reset)
         );
 
@@ -40,6 +42,7 @@ module top_tb();
         $dumpvars(0, top_tb);
 
 //---Read input data input SRAM---
+	$readmemb("test_image10_fix.txt", DUT.SRAM_INPUT0.mem);
 	$readmemb("test_image1_fix.txt", DUT.SRAM_INPUT1.mem);
 	$readmemb("test_image2_fix.txt", DUT.SRAM_INPUT2.mem);
 	$readmemb("test_image3_fix.txt", DUT.SRAM_INPUT3.mem);
@@ -49,11 +52,13 @@ module top_tb();
 	$readmemb("test_image7_fix.txt", DUT.SRAM_INPUT7.mem);
 	$readmemb("test_image8_fix.txt", DUT.SRAM_INPUT8.mem);
 	$readmemb("test_image9_fix.txt", DUT.SRAM_INPUT9.mem);
-	$readmemb("test_image10_fix.txt", DUT.SRAM_INPUT10.mem);
+
 //---Read weights into weight SRAMS---
 	$readmemb("layer1_weight.txt", DUT.SRAM_WEIGHT1.mem);
 	$readmemb("layer2_weight.txt", DUT.SRAM_WEIGHT2.mem);
 //---Read Sigmoid values into 1st sigmoids---
+	$readmemb("x_fix.txt", DUT.SIGMOID1_0.x);
+	$readmemb("y_fix.txt", DUT.SIGMOID1_0.LUT);
 	$readmemb("x_fix.txt", DUT.SIGMOID1_1.x);
 	$readmemb("y_fix.txt", DUT.SIGMOID1_1.LUT);
 	$readmemb("x_fix.txt", DUT.SIGMOID1_2.x);
@@ -72,9 +77,9 @@ module top_tb();
 	$readmemb("y_fix.txt", DUT.SIGMOID1_8.LUT);
 	$readmemb("x_fix.txt", DUT.SIGMOID1_9.x);
 	$readmemb("y_fix.txt", DUT.SIGMOID1_9.LUT);
-	$readmemb("x_fix.txt", DUT.SIGMOID1_10.x);
-	$readmemb("y_fix.txt", DUT.SIGMOID1_10.LUT);
+
 //---Reading Sigmoid values into 2nd Sigmoids
+/*
 	$readmemb("x_fix.txt", DUT.SIGMOID2_1.x);
 	$readmemb("y_fix.txt", DUT.SIGMOID2_1.LUT);
 	$readmemb("x_fix.txt", DUT.SIGMOID2_2.x);
@@ -95,7 +100,7 @@ module top_tb();
 	$readmemb("y_fix.txt", DUT.SIGMOID2_9.LUT);
 	$readmemb("x_fix.txt", DUT.SIGMOID2_10.x);
 	$readmemb("y_fix.txt", DUT.SIGMOID2_10.LUT);
-
+*/
 		clk = 0;
 		reset = 1;
 		we = 0; //testing
@@ -103,11 +108,13 @@ module top_tb();
 		mac1_start = 0; 
 		mac2_start = 0; 
 		address_2 = 0; 
-		address_4 = 0; 
+		//address_4 = 0; 
 		address_5 = 0; 
+		sel = 4'b1010; 
 
 		#20		
 		reset = 0; 
+		sel = 4'b0000;
 
 		for(i = 0; i< 200; i=i+1)begin 
 			for (j = 0; j < 784; j=j+1)begin 
@@ -120,13 +127,12 @@ module top_tb();
 				else begin 
 					mac1_start = 0; 
 				end
-				if(mac1_done == 1) begin 
-					address_2=address_2+1;
-				end 			
+				//if(mac1_done == 1) begin 
+				//	address_2=address_2+1;
+		
+				//end 			
 			end
 		end	
-
-		
 		#300
 		$finish;
 

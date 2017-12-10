@@ -9,22 +9,240 @@ Report : timing
         -max_paths 1000000
 Design : sigmoid
 Version: J-2014.09-SP5
-Date   : Sun Dec  3 12:46:40 2017
+Date   : Tue Dec  5 22:30:43 2017
 ****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
 
 Operating Conditions: nom_pvt   Library: vtvt_tsmc180
 Wire Load Model Mode: top
 
-  Startpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: sig_out[8] (output port)
+  Startpoint: y_reg[15] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[15]
+            (output port)
   Path Group: (none)
   Path Type: min
 
   Point                                    Incr       Path
   -----------------------------------------------------------
-  y_reg[8]/ck (dp_1)                       0.00       0.00 r
-  y_reg[8]/q (dp_1)                      271.08     271.08 r
-  sig_out[8] (out)                         0.00     271.08 r
+  y_reg[15]/ck (dp_1)                      0.00 #     0.00 r
+  y_reg[15]/q (dp_1)                     271.08     271.08 r
+  sig_out[15] (out)                        0.00     271.08 r
+  data arrival time                                 271.08
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[14] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[14]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[14]/ck (dp_1)                      0.00 #     0.00 r
+  y_reg[14]/q (dp_1)                     271.08     271.08 r
+  sig_out[14] (out)                        0.00     271.08 r
+  data arrival time                                 271.08
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[13] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[13]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[13]/ck (dp_1)                      0.00 #     0.00 r
+  y_reg[13]/q (dp_1)                     271.08     271.08 r
+  sig_out[13] (out)                        0.00     271.08 r
+  data arrival time                                 271.08
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[12] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[12]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[12]/ck (dp_1)                      0.00 #     0.00 r
+  y_reg[12]/q (dp_1)                     271.08     271.08 r
+  sig_out[12] (out)                        0.00     271.08 r
+  data arrival time                                 271.08
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[11] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[11]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[11]/ck (dp_1)                      0.00 #     0.00 r
+  y_reg[11]/q (dp_1)                     271.08     271.08 r
+  sig_out[11] (out)                        0.00     271.08 r
+  data arrival time                                 271.08
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[10] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[10]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[10]/ck (dp_1)                      0.00 #     0.00 r
+  y_reg[10]/q (dp_1)                     271.08     271.08 r
+  sig_out[10] (out)                        0.00     271.08 r
+  data arrival time                                 271.08
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[9] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[9] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[9]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[9]/q (dp_1)                      271.08     271.08 r
+  sig_out[9] (out)                         0.00     271.08 r
+  data arrival time                                 271.08
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[7] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[7] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[7]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[7]/q (dp_1)                      271.08     271.08 r
+  sig_out[7] (out)                         0.00     271.08 r
+  data arrival time                                 271.08
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[6] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[6] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[6]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[6]/q (dp_1)                      271.08     271.08 r
+  sig_out[6] (out)                         0.00     271.08 r
+  data arrival time                                 271.08
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[5] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[5] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[5]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[5]/q (dp_1)                      271.08     271.08 r
+  sig_out[5] (out)                         0.00     271.08 r
+  data arrival time                                 271.08
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[4] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[4] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[4]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[4]/q (dp_1)                      271.08     271.08 r
+  sig_out[4] (out)                         0.00     271.08 r
+  data arrival time                                 271.08
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[3] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[3] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[3]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[3]/q (dp_1)                      271.08     271.08 r
+  sig_out[3] (out)                         0.00     271.08 r
+  data arrival time                                 271.08
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[2] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[2] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[2]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[2]/q (dp_1)                      271.08     271.08 r
+  sig_out[2] (out)                         0.00     271.08 r
+  data arrival time                                 271.08
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[1] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[1] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[1]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[1]/q (dp_1)                      271.08     271.08 r
+  sig_out[1] (out)                         0.00     271.08 r
+  data arrival time                                 271.08
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[0] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[0] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[0]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[0]/q (dp_1)                      271.08     271.08 r
+  sig_out[0] (out)                         0.00     271.08 r
   data arrival time                                 271.08
   -----------------------------------------------------------
   (Path is unconstrained)
@@ -38,10 +256,10 @@ Wire Load Model Mode: top
 
   Point                                    Incr       Path
   -----------------------------------------------------------
-  sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
-  sig_rdy_reg/q (dp_1)                   271.30     271.30 r
-  sig_ready (out)                          0.00     271.30 r
-  data arrival time                                 271.30
+  sig_rdy_reg/ck (dp_1)                    0.00 #     0.00 r
+  sig_rdy_reg/q (dp_1)                   272.41     272.41 r
+  sig_ready (out)                          0.00     272.41 r
+  data arrival time                                 272.41
   -----------------------------------------------------------
   (Path is unconstrained)
 
@@ -53,9 +271,240 @@ Wire Load Model Mode: top
 
   Point                                    Incr       Path
   -----------------------------------------------------------
-  y_reg[8]/ck (dp_1)                       0.00       0.00 r
-  y_reg[8]/q (dp_1)                      345.43     345.43 f
-  sig_out[8] (out)                         0.00     345.43 f
+  y_reg[8]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[8]/q (dp_1)                      272.41     272.41 r
+  sig_out[8] (out)                         0.00     272.41 r
+  data arrival time                                 272.41
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[15] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[15]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[15]/ck (dp_1)                      0.00 #     0.00 r
+  y_reg[15]/q (dp_1)                     345.43     345.43 f
+  sig_out[15] (out)                        0.00     345.43 f
+  data arrival time                                 345.43
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[14] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[14]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[14]/ck (dp_1)                      0.00 #     0.00 r
+  y_reg[14]/q (dp_1)                     345.43     345.43 f
+  sig_out[14] (out)                        0.00     345.43 f
+  data arrival time                                 345.43
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[13] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[13]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[13]/ck (dp_1)                      0.00 #     0.00 r
+  y_reg[13]/q (dp_1)                     345.43     345.43 f
+  sig_out[13] (out)                        0.00     345.43 f
+  data arrival time                                 345.43
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[12] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[12]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[12]/ck (dp_1)                      0.00 #     0.00 r
+  y_reg[12]/q (dp_1)                     345.43     345.43 f
+  sig_out[12] (out)                        0.00     345.43 f
+  data arrival time                                 345.43
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[11] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[11]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[11]/ck (dp_1)                      0.00 #     0.00 r
+  y_reg[11]/q (dp_1)                     345.43     345.43 f
+  sig_out[11] (out)                        0.00     345.43 f
+  data arrival time                                 345.43
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[10] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[10]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[10]/ck (dp_1)                      0.00 #     0.00 r
+  y_reg[10]/q (dp_1)                     345.43     345.43 f
+  sig_out[10] (out)                        0.00     345.43 f
+  data arrival time                                 345.43
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[9] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[9] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[9]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[9]/q (dp_1)                      345.43     345.43 f
+  sig_out[9] (out)                         0.00     345.43 f
+  data arrival time                                 345.43
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[7] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[7] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[7]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[7]/q (dp_1)                      345.43     345.43 f
+  sig_out[7] (out)                         0.00     345.43 f
+  data arrival time                                 345.43
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[6] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[6] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[6]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[6]/q (dp_1)                      345.43     345.43 f
+  sig_out[6] (out)                         0.00     345.43 f
+  data arrival time                                 345.43
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[5] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[5] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[5]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[5]/q (dp_1)                      345.43     345.43 f
+  sig_out[5] (out)                         0.00     345.43 f
+  data arrival time                                 345.43
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[4] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[4] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[4]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[4]/q (dp_1)                      345.43     345.43 f
+  sig_out[4] (out)                         0.00     345.43 f
+  data arrival time                                 345.43
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[3] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[3] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[3]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[3]/q (dp_1)                      345.43     345.43 f
+  sig_out[3] (out)                         0.00     345.43 f
+  data arrival time                                 345.43
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[2] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[2] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[2]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[2]/q (dp_1)                      345.43     345.43 f
+  sig_out[2] (out)                         0.00     345.43 f
+  data arrival time                                 345.43
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[1] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[1] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[1]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[1]/q (dp_1)                      345.43     345.43 f
+  sig_out[1] (out)                         0.00     345.43 f
+  data arrival time                                 345.43
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[0] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[0] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[0]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[0]/q (dp_1)                      345.43     345.43 f
+  sig_out[0] (out)                         0.00     345.43 f
   data arrival time                                 345.43
   -----------------------------------------------------------
   (Path is unconstrained)
@@ -69,10 +518,25 @@ Wire Load Model Mode: top
 
   Point                                    Incr       Path
   -----------------------------------------------------------
-  sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
-  sig_rdy_reg/q (dp_1)                   345.61     345.61 f
-  sig_ready (out)                          0.00     345.61 f
-  data arrival time                                 345.61
+  sig_rdy_reg/ck (dp_1)                    0.00 #     0.00 r
+  sig_rdy_reg/q (dp_1)                   346.53     346.53 f
+  sig_ready (out)                          0.00     346.53 f
+  data arrival time                                 346.53
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sig_out[8] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  y_reg[8]/ck (dp_1)                       0.00 #     0.00 r
+  y_reg[8]/q (dp_1)                      346.53     346.53 f
+  sig_out[8] (out)                         0.00     346.53 f
+  data arrival time                                 346.53
   -----------------------------------------------------------
   (Path is unconstrained)
 

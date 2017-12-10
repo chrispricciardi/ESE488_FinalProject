@@ -8,13 +8,16 @@ Report : timing
         -max_paths 20
 Design : sigmoid
 Version: J-2014.09-SP5
-Date   : Sun Dec  3 12:46:40 2017
+Date   : Tue Dec  5 22:30:43 2017
 ****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
 
 Operating Conditions: nom_pvt   Library: vtvt_tsmc180
 Wire Load Model Mode: top
 
-  Startpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
+  Startpoint: x_reg[14][1]
+              (rising edge-triggered flip-flop clocked by clk)
   Endpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -23,57 +26,68 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  y_reg[8]/ck (dp_1)                       0.00       0.00 r
-  y_reg[8]/q (dp_1)                      345.43     345.43 f
-  U57/op (nand2_1)                        81.66     427.09 r
-  U58/op (or2_1)                          81.27     508.36 r
-  U68/op (nand2_1)                        58.58     566.94 f
-  y_reg[8]/ip (dp_1)                       0.00     566.94 f
-  data arrival time                                 566.94
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  235.24     235.24 f
+  U27449/op (inv_1)                       50.28     285.51 r
+  U27451/op (not_ab_or_c_or_d)           133.73     419.24 f
+  U27453/op (not_ab_or_c_or_d)           171.21     590.45 r
+  U27457/op (not_ab_or_c_or_d)           216.56     807.02 f
+  U27460/op (nor2_1)                     110.23     917.25 r
+  U27461/op (ab_or_c_or_d)                92.92    1010.17 r
+  U27464/op (and3_1)                     162.57    1172.74 r
+  U27466/op (not_ab_or_c_or_d)           135.40    1308.14 f
+  U27467/op (or2_1)                      170.05    1478.19 f
+  U27469/op (nand2_1)                     49.33    1527.52 r
+  U27470/op (not_ab_or_c_or_d)           102.45    1629.97 f
+  U27471/op (not_ab_or_c_or_d)           151.59    1781.56 r
+  U27473/op (nor2_1)                      90.05    1871.61 f
+  U27475/op (not_ab_or_c_or_d)           127.79    1999.39 r
+  U27476/op (nor2_1)                     122.93    2122.32 f
+  U27495/op (not_ab_or_c_or_d)           161.72    2284.04 r
+  U27497/op (nor2_1)                      85.14    2369.18 f
+  U27553/op (nor4_1)                    1129.59    3498.76 r
+  U27554/op (nor2_1)                     289.60    3788.36 f
+  U27634/op (nand3_1)                    129.16    3917.52 r
+  U27635/op (nor2_1)                     119.44    4036.97 f
+  U27644/op (nand2_1)                     81.27    4118.24 r
+  U27645/op (nor2_1)                     107.64    4225.87 f
+  U28774/op (inv_1)                       67.92    4293.79 r
+  U28791/op (nor2_1)                     499.02    4792.81 f
+  U30211/op (nand2_1)                     88.44    4881.25 r
+  U30214/op (nand4_1)                    148.38    5029.63 f
+  U30220/op (not_ab_or_c_or_d)           137.21    5166.84 r
+  U30224/op (nand4_1)                    164.72    5331.56 f
+  U30225/op (not_ab_or_c_or_d)           136.66    5468.22 r
+  U30226/op (nor2_1)                      86.34    5554.56 f
+  U30232/op (not_ab_or_c_or_d)           130.06    5684.62 r
+  U30235/op (nand4_1)                    160.46    5845.08 f
+  U30273/op (not_ab_or_c_or_d)           150.32    5995.40 r
+  U30292/op (nand3_1)                    132.04    6127.44 f
+  U30293/op (nand2_1)                     62.38    6189.82 r
+  U30296/op (nand3_1)                    108.64    6298.46 f
+  U30297/op (not_ab_or_c_or_d)           127.24    6425.70 r
+  U30298/op (nor2_1)                      87.20    6512.89 f
+  U30299/op (not_ab_or_c_or_d)           126.25    6639.14 r
+  U30302/op (nand4_1)                    169.03    6808.17 f
+  U30303/op (nand2_1)                     59.77    6867.94 r
+  U30305/op (nand3_1)                    114.01    6981.94 f
+  y_reg[8]/ip (dp_1)                       0.00    6981.94 f
+  data arrival time                                6981.94
 
   clock clk (rise edge)                50000.00   50000.00
   clock network delay (ideal)              0.00   50000.00
   y_reg[8]/ck (dp_1)                       0.00   50000.00 r
-  library setup time                    -146.22   49853.78
-  data required time                              49853.78
+  library setup time                    -153.71   49846.29
+  data required time                              49846.29
   -----------------------------------------------------------
-  data required time                              49853.78
-  data arrival time                                -566.94
+  data required time                              49846.29
+  data arrival time                               -6981.94
   -----------------------------------------------------------
-  slack (MET)                                     49286.84
+  slack (MET)                                     42864.34
 
 
-  Startpoint: sig_rdy_reg
+  Startpoint: x_reg[14][1]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: sig_rdy_reg
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: clk
-  Path Type: max
-
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clock clk (rise edge)                    0.00       0.00
-  clock network delay (ideal)              0.00       0.00
-  sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
-  sig_rdy_reg/q (dp_1)                   345.61     345.61 f
-  U70/op (nor2_1)                        126.70     472.32 r
-  U71/op (nor2_1)                         77.32     549.64 f
-  sig_rdy_reg/ip (dp_1)                    0.00     549.64 f
-  data arrival time                                 549.64
-
-  clock clk (rise edge)                50000.00   50000.00
-  clock network delay (ideal)              0.00   50000.00
-  sig_rdy_reg/ck (dp_1)                    0.00   50000.00 r
-  library setup time                    -146.67   49853.33
-  data required time                              49853.33
-  -----------------------------------------------------------
-  data required time                              49853.33
-  data arrival time                                -549.64
-  -----------------------------------------------------------
-  slack (MET)                                     49303.69
-
-
-  Startpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
   Endpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -82,30 +96,69 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  y_reg[8]/ck (dp_1)                       0.00       0.00 r
-  y_reg[8]/q (dp_1)                      271.08     271.08 r
-  U57/op (nand2_1)                       102.22     373.30 f
-  U58/op (or2_1)                         129.76     503.06 f
-  U68/op (nand2_1)                        47.83     550.90 r
-  y_reg[8]/ip (dp_1)                       0.00     550.90 r
-  data arrival time                                 550.90
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  235.24     235.24 f
+  U27449/op (inv_1)                       50.28     285.51 r
+  U27451/op (not_ab_or_c_or_d)           133.73     419.24 f
+  U27453/op (not_ab_or_c_or_d)           171.21     590.45 r
+  U27457/op (not_ab_or_c_or_d)           216.56     807.02 f
+  U27460/op (nor2_1)                     110.23     917.25 r
+  U27461/op (ab_or_c_or_d)                92.92    1010.17 r
+  U27464/op (and3_1)                     162.57    1172.74 r
+  U27466/op (not_ab_or_c_or_d)           135.40    1308.14 f
+  U27468/op (or2_1)                      171.60    1479.74 f
+  U27469/op (nand2_1)                     47.40    1527.15 r
+  U27470/op (not_ab_or_c_or_d)           102.45    1629.60 f
+  U27471/op (not_ab_or_c_or_d)           151.59    1781.19 r
+  U27473/op (nor2_1)                      90.05    1871.24 f
+  U27475/op (not_ab_or_c_or_d)           127.79    1999.02 r
+  U27476/op (nor2_1)                     122.93    2121.95 f
+  U27495/op (not_ab_or_c_or_d)           161.72    2283.67 r
+  U27497/op (nor2_1)                      85.14    2368.81 f
+  U27553/op (nor4_1)                    1129.59    3498.40 r
+  U27554/op (nor2_1)                     289.60    3787.99 f
+  U27634/op (nand3_1)                    129.16    3917.15 r
+  U27635/op (nor2_1)                     119.44    4036.60 f
+  U27644/op (nand2_1)                     81.27    4117.87 r
+  U27645/op (nor2_1)                     107.63    4225.50 f
+  U28774/op (inv_1)                       67.92    4293.42 r
+  U28791/op (nor2_1)                     499.02    4792.44 f
+  U30211/op (nand2_1)                     88.44    4880.88 r
+  U30214/op (nand4_1)                    148.38    5029.26 f
+  U30220/op (not_ab_or_c_or_d)           137.21    5166.47 r
+  U30224/op (nand4_1)                    164.72    5331.19 f
+  U30225/op (not_ab_or_c_or_d)           136.66    5467.85 r
+  U30226/op (nor2_1)                      86.34    5554.19 f
+  U30232/op (not_ab_or_c_or_d)           130.06    5684.25 r
+  U30235/op (nand4_1)                    160.46    5844.71 f
+  U30273/op (not_ab_or_c_or_d)           150.32    5995.03 r
+  U30292/op (nand3_1)                    132.04    6127.07 f
+  U30293/op (nand2_1)                     62.38    6189.45 r
+  U30296/op (nand3_1)                    108.64    6298.09 f
+  U30297/op (not_ab_or_c_or_d)           127.24    6425.33 r
+  U30298/op (nor2_1)                      87.20    6512.52 f
+  U30299/op (not_ab_or_c_or_d)           126.25    6638.77 r
+  U30302/op (nand4_1)                    169.03    6807.80 f
+  U30303/op (nand2_1)                     59.77    6867.57 r
+  U30305/op (nand3_1)                    114.01    6981.58 f
+  y_reg[8]/ip (dp_1)                       0.00    6981.58 f
+  data arrival time                                6981.58
 
   clock clk (rise edge)                50000.00   50000.00
   clock network delay (ideal)              0.00   50000.00
   y_reg[8]/ck (dp_1)                       0.00   50000.00 r
-  library setup time                    -141.32   49858.68
-  data required time                              49858.68
+  library setup time                    -153.71   49846.29
+  data required time                              49846.29
   -----------------------------------------------------------
-  data required time                              49858.68
-  data arrival time                                -550.90
+  data required time                              49846.29
+  data arrival time                               -6981.58
   -----------------------------------------------------------
-  slack (MET)                                     49307.79
+  slack (MET)                                     42864.71
 
 
-  Startpoint: sig_rdy_reg
+  Startpoint: x_reg[14][1]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: sig_rdy_reg
-            (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
 
@@ -113,23 +166,1240 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
-  sig_rdy_reg/q (dp_1)                   271.30     271.30 r
-  U70/op (nor2_1)                        104.32     375.62 f
-  U71/op (nor2_1)                         87.80     463.43 r
-  sig_rdy_reg/ip (dp_1)                    0.00     463.43 r
-  data arrival time                                 463.43
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  235.24     235.24 f
+  U27449/op (inv_1)                       50.28     285.51 r
+  U27451/op (not_ab_or_c_or_d)           133.73     419.24 f
+  U27453/op (not_ab_or_c_or_d)           171.21     590.45 r
+  U27457/op (not_ab_or_c_or_d)           216.56     807.02 f
+  U27460/op (nor2_1)                     110.23     917.25 r
+  U27461/op (ab_or_c_or_d)                92.92    1010.17 r
+  U27464/op (and3_1)                     162.57    1172.74 r
+  U27466/op (not_ab_or_c_or_d)           135.40    1308.14 f
+  U27467/op (or2_1)                      170.05    1478.19 f
+  U27469/op (nand2_1)                     49.33    1527.52 r
+  U27470/op (not_ab_or_c_or_d)           102.45    1629.97 f
+  U27471/op (not_ab_or_c_or_d)           151.59    1781.56 r
+  U27473/op (nor2_1)                      90.05    1871.61 f
+  U27475/op (not_ab_or_c_or_d)           127.79    1999.39 r
+  U27476/op (nor2_1)                     122.93    2122.32 f
+  U27495/op (not_ab_or_c_or_d)           161.72    2284.04 r
+  U27497/op (nor2_1)                      85.14    2369.18 f
+  U27553/op (nor4_1)                    1129.58    3498.76 r
+  U27554/op (nor2_1)                     289.60    3788.36 f
+  U27634/op (nand3_1)                    129.16    3917.52 r
+  U27635/op (nor2_1)                     119.44    4036.97 f
+  U27644/op (nand2_1)                     81.27    4118.24 r
+  U27645/op (nor2_1)                     107.63    4225.87 f
+  U28774/op (inv_1)                       67.92    4293.79 r
+  U28775/op (nor2_1)                     499.02    4792.81 f
+  U30217/op (nand2_1)                     88.84    4881.65 r
+  U30219/op (nand4_1)                    150.15    5031.80 f
+  U30220/op (not_ab_or_c_or_d)           134.62    5166.42 r
+  U30224/op (nand4_1)                    164.72    5331.14 f
+  U30225/op (not_ab_or_c_or_d)           136.66    5467.80 r
+  U30226/op (nor2_1)                      86.34    5554.14 f
+  U30232/op (not_ab_or_c_or_d)           130.06    5684.21 r
+  U30235/op (nand4_1)                    160.46    5844.66 f
+  U30273/op (not_ab_or_c_or_d)           150.32    5994.98 r
+  U30292/op (nand3_1)                    132.04    6127.02 f
+  U30293/op (nand2_1)                     62.38    6189.40 r
+  U30296/op (nand3_1)                    108.64    6298.04 f
+  U30297/op (not_ab_or_c_or_d)           127.24    6425.28 r
+  U30298/op (nor2_1)                      87.20    6512.48 f
+  U30299/op (not_ab_or_c_or_d)           126.25    6638.73 r
+  U30302/op (nand4_1)                    169.03    6807.75 f
+  U30303/op (nand2_1)                     59.77    6867.52 r
+  U30305/op (nand3_1)                    114.01    6981.53 f
+  y_reg[8]/ip (dp_1)                       0.00    6981.53 f
+  data arrival time                                6981.53
 
   clock clk (rise edge)                50000.00   50000.00
   clock network delay (ideal)              0.00   50000.00
-  sig_rdy_reg/ck (dp_1)                    0.00   50000.00 r
-  library setup time                    -143.77   49856.23
-  data required time                              49856.23
+  y_reg[8]/ck (dp_1)                       0.00   50000.00 r
+  library setup time                    -153.71   49846.29
+  data required time                              49846.29
   -----------------------------------------------------------
-  data required time                              49856.23
-  data arrival time                                -463.43
+  data required time                              49846.29
+  data arrival time                               -6981.53
   -----------------------------------------------------------
-  slack (MET)                                     49392.81
+  slack (MET)                                     42864.76
+
+
+  Startpoint: x_reg[14][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[15] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  235.24     235.24 f
+  U27449/op (inv_1)                       50.28     285.51 r
+  U27451/op (not_ab_or_c_or_d)           133.73     419.24 f
+  U27453/op (not_ab_or_c_or_d)           171.21     590.45 r
+  U27457/op (not_ab_or_c_or_d)           216.56     807.02 f
+  U27460/op (nor2_1)                     110.23     917.25 r
+  U27461/op (ab_or_c_or_d)                92.92    1010.17 r
+  U27464/op (and3_1)                     162.57    1172.74 r
+  U27466/op (not_ab_or_c_or_d)           135.40    1308.14 f
+  U27467/op (or2_1)                      170.05    1478.19 f
+  U27469/op (nand2_1)                     49.33    1527.52 r
+  U27470/op (not_ab_or_c_or_d)           102.45    1629.97 f
+  U27471/op (not_ab_or_c_or_d)           151.59    1781.56 r
+  U27473/op (nor2_1)                      90.05    1871.61 f
+  U27475/op (not_ab_or_c_or_d)           127.79    1999.39 r
+  U27476/op (nor2_1)                     122.93    2122.32 f
+  U27495/op (not_ab_or_c_or_d)           161.72    2284.04 r
+  U27497/op (nor2_1)                      85.14    2369.18 f
+  U27553/op (nor4_1)                    1129.59    3498.76 r
+  U27554/op (nor2_1)                     289.60    3788.36 f
+  U27634/op (nand3_1)                    129.16    3917.52 r
+  U27635/op (nor2_1)                     119.44    4036.97 f
+  U27644/op (nand2_1)                     81.27    4118.24 r
+  U27645/op (nor2_1)                     107.64    4225.87 f
+  U27718/op (nand3_1)                    106.88    4332.75 r
+  U27719/op (nor3_1)                     160.70    4493.45 f
+  U27781/op (nand3_1)                     95.12    4588.57 r
+  U27782/op (nor2_1)                     526.30    5114.87 f
+  U31382/op (nand2_1)                     94.20    5209.07 r
+  U31385/op (nand4_1)                    152.86    5361.93 f
+  U31386/op (not_ab_or_c_or_d)           136.71    5498.65 r
+  U31387/op (nor2_1)                      85.71    5584.35 f
+  U31393/op (not_ab_or_c_or_d)           130.06    5714.42 r
+  U31396/op (nand4_1)                    160.46    5874.87 f
+  U31434/op (not_ab_or_c_or_d)           150.31    6025.19 r
+  U31453/op (nand3_1)                    132.04    6157.23 f
+  U31454/op (nand2_1)                     62.39    6219.62 r
+  U31457/op (nand3_1)                    108.64    6328.26 f
+  U31458/op (not_ab_or_c_or_d)           127.24    6455.50 r
+  U31459/op (nor2_1)                      87.20    6542.70 f
+  U31460/op (not_ab_or_c_or_d)           126.25    6668.95 r
+  U31463/op (nand4_1)                    171.80    6840.75 f
+  U31464/op (nand2_1)                     59.23    6899.99 r
+  U31466/op (nand2_1)                     72.37    6972.36 f
+  y_reg[15]/ip (dp_1)                      0.00    6972.36 f
+  data arrival time                                6972.36
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[15]/ck (dp_1)                      0.00   50000.00 r
+  library setup time                    -148.91   49851.09
+  data required time                              49851.09
+  -----------------------------------------------------------
+  data required time                              49851.09
+  data arrival time                               -6972.36
+  -----------------------------------------------------------
+  slack (MET)                                     42878.73
+
+
+  Startpoint: x_reg[14][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[15] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  235.24     235.24 f
+  U27449/op (inv_1)                       50.28     285.51 r
+  U27451/op (not_ab_or_c_or_d)           133.73     419.24 f
+  U27453/op (not_ab_or_c_or_d)           171.21     590.45 r
+  U27457/op (not_ab_or_c_or_d)           216.56     807.02 f
+  U27460/op (nor2_1)                     110.23     917.25 r
+  U27461/op (ab_or_c_or_d)                92.92    1010.17 r
+  U27464/op (and3_1)                     162.57    1172.74 r
+  U27466/op (not_ab_or_c_or_d)           135.40    1308.14 f
+  U27468/op (or2_1)                      171.60    1479.74 f
+  U27469/op (nand2_1)                     47.40    1527.15 r
+  U27470/op (not_ab_or_c_or_d)           102.45    1629.60 f
+  U27471/op (not_ab_or_c_or_d)           151.59    1781.19 r
+  U27473/op (nor2_1)                      90.05    1871.24 f
+  U27475/op (not_ab_or_c_or_d)           127.79    1999.02 r
+  U27476/op (nor2_1)                     122.93    2121.95 f
+  U27495/op (not_ab_or_c_or_d)           161.72    2283.67 r
+  U27497/op (nor2_1)                      85.14    2368.81 f
+  U27553/op (nor4_1)                    1129.59    3498.40 r
+  U27554/op (nor2_1)                     289.60    3787.99 f
+  U27634/op (nand3_1)                    129.16    3917.15 r
+  U27635/op (nor2_1)                     119.44    4036.60 f
+  U27644/op (nand2_1)                     81.27    4117.87 r
+  U27645/op (nor2_1)                     107.63    4225.50 f
+  U27718/op (nand3_1)                    106.88    4332.38 r
+  U27719/op (nor3_1)                     160.70    4493.08 f
+  U27781/op (nand3_1)                     95.12    4588.20 r
+  U27782/op (nor2_1)                     526.30    5114.50 f
+  U31382/op (nand2_1)                     94.20    5208.71 r
+  U31385/op (nand4_1)                    152.86    5361.56 f
+  U31386/op (not_ab_or_c_or_d)           136.71    5498.28 r
+  U31387/op (nor2_1)                      85.71    5583.99 f
+  U31393/op (not_ab_or_c_or_d)           130.06    5714.05 r
+  U31396/op (nand4_1)                    160.46    5874.51 f
+  U31434/op (not_ab_or_c_or_d)           150.31    6024.82 r
+  U31453/op (nand3_1)                    132.04    6156.86 f
+  U31454/op (nand2_1)                     62.39    6219.26 r
+  U31457/op (nand3_1)                    108.64    6327.90 f
+  U31458/op (not_ab_or_c_or_d)           127.24    6455.14 r
+  U31459/op (nor2_1)                      87.20    6542.33 f
+  U31460/op (not_ab_or_c_or_d)           126.25    6668.58 r
+  U31463/op (nand4_1)                    171.80    6840.38 f
+  U31464/op (nand2_1)                     59.23    6899.62 r
+  U31466/op (nand2_1)                     72.37    6971.99 f
+  y_reg[15]/ip (dp_1)                      0.00    6971.99 f
+  data arrival time                                6971.99
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[15]/ck (dp_1)                      0.00   50000.00 r
+  library setup time                    -148.91   49851.09
+  data required time                              49851.09
+  -----------------------------------------------------------
+  data required time                              49851.09
+  data arrival time                               -6971.99
+  -----------------------------------------------------------
+  slack (MET)                                     42879.11
+
+
+  Startpoint: x_reg[14][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[15] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  235.24     235.24 f
+  U27449/op (inv_1)                       50.28     285.51 r
+  U27451/op (not_ab_or_c_or_d)           133.73     419.24 f
+  U27453/op (not_ab_or_c_or_d)           171.21     590.45 r
+  U27457/op (not_ab_or_c_or_d)           216.56     807.02 f
+  U27458/op (nand2_1)                     64.26     871.28 r
+  U27461/op (ab_or_c_or_d)               136.27    1007.55 r
+  U27464/op (and3_1)                     162.57    1170.12 r
+  U27466/op (not_ab_or_c_or_d)           135.40    1305.52 f
+  U27467/op (or2_1)                      170.05    1475.57 f
+  U27469/op (nand2_1)                     49.33    1524.90 r
+  U27470/op (not_ab_or_c_or_d)           102.45    1627.35 f
+  U27471/op (not_ab_or_c_or_d)           151.59    1778.94 r
+  U27473/op (nor2_1)                      90.05    1868.99 f
+  U27475/op (not_ab_or_c_or_d)           127.79    1996.78 r
+  U27476/op (nor2_1)                     122.93    2119.70 f
+  U27495/op (not_ab_or_c_or_d)           161.72    2281.43 r
+  U27497/op (nor2_1)                      85.14    2366.56 f
+  U27553/op (nor4_1)                    1129.59    3496.15 r
+  U27554/op (nor2_1)                     289.60    3785.74 f
+  U27634/op (nand3_1)                    129.16    3914.91 r
+  U27635/op (nor2_1)                     119.44    4034.35 f
+  U27644/op (nand2_1)                     81.27    4115.62 r
+  U27645/op (nor2_1)                     107.64    4223.25 f
+  U27718/op (nand3_1)                    106.88    4330.13 r
+  U27719/op (nor3_1)                     160.70    4490.83 f
+  U27781/op (nand3_1)                     95.12    4585.95 r
+  U27782/op (nor2_1)                     526.30    5112.26 f
+  U31382/op (nand2_1)                     94.20    5206.46 r
+  U31385/op (nand4_1)                    152.86    5359.31 f
+  U31386/op (not_ab_or_c_or_d)           136.71    5496.03 r
+  U31387/op (nor2_1)                      85.71    5581.74 f
+  U31393/op (not_ab_or_c_or_d)           130.06    5711.80 r
+  U31396/op (nand4_1)                    160.46    5872.26 f
+  U31434/op (not_ab_or_c_or_d)           150.31    6022.57 r
+  U31453/op (nand3_1)                    132.04    6154.61 f
+  U31454/op (nand2_1)                     62.39    6217.01 r
+  U31457/op (nand3_1)                    108.64    6325.65 f
+  U31458/op (not_ab_or_c_or_d)           127.24    6452.89 r
+  U31459/op (nor2_1)                      87.20    6540.08 f
+  U31460/op (not_ab_or_c_or_d)           126.25    6666.33 r
+  U31463/op (nand4_1)                    171.80    6838.13 f
+  U31464/op (nand2_1)                     59.23    6897.37 r
+  U31466/op (nand2_1)                     72.37    6969.74 f
+  y_reg[15]/ip (dp_1)                      0.00    6969.74 f
+  data arrival time                                6969.74
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[15]/ck (dp_1)                      0.00   50000.00 r
+  library setup time                    -148.91   49851.09
+  data required time                              49851.09
+  -----------------------------------------------------------
+  data required time                              49851.09
+  data arrival time                               -6969.74
+  -----------------------------------------------------------
+  slack (MET)                                     42881.36
+
+
+  Startpoint: x_reg[14][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[12] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  143.95     143.95 r
+  U27449/op (inv_1)                       40.21     184.16 f
+  U27451/op (not_ab_or_c_or_d)           134.21     318.37 r
+  U27453/op (not_ab_or_c_or_d)           119.27     437.64 f
+  U27457/op (not_ab_or_c_or_d)           244.83     682.46 r
+  U27458/op (nand2_1)                     96.22     778.68 f
+  U27461/op (ab_or_c_or_d)               179.66     958.35 f
+  U27464/op (and3_1)                     141.14    1099.48 f
+  U27466/op (not_ab_or_c_or_d)           151.13    1250.61 r
+  U27468/op (or2_1)                      108.77    1359.38 r
+  U27469/op (nand2_1)                     64.76    1424.14 f
+  U27470/op (not_ab_or_c_or_d)           118.03    1542.17 r
+  U27471/op (not_ab_or_c_or_d)           107.76    1649.93 f
+  U27473/op (nor2_1)                     144.13    1794.06 r
+  U27475/op (not_ab_or_c_or_d)           111.26    1905.32 f
+  U27476/op (nor2_1)                     175.91    2081.23 r
+  U27495/op (not_ab_or_c_or_d)           165.75    2246.98 f
+  U27497/op (nor2_1)                      94.04    2341.02 r
+  U27553/op (nor4_1)                    1082.01    3423.04 f
+  U27554/op (nor2_1)                     194.01    3617.05 r
+  U27634/op (nand3_1)                    168.16    3785.21 f
+  U27635/op (nor2_1)                     137.41    3922.62 r
+  U27644/op (nand2_1)                    102.93    4025.56 f
+  U27645/op (nor2_1)                     124.48    4150.04 r
+  U27718/op (nand3_1)                    178.33    4328.37 f
+  U27719/op (nor3_1)                     215.50    4543.87 r
+  U27781/op (nand3_1)                    169.59    4713.46 f
+  U27782/op (nor2_1)                     560.81    5274.27 r
+  U30888/op (nand2_1)                    159.94    5434.21 f
+  U30891/op (nand4_1)                     92.38    5526.58 r
+  U30892/op (not_ab_or_c_or_d)            99.13    5625.72 f
+  U30893/op (nor2_1)                     118.99    5744.71 r
+  U30899/op (not_ab_or_c_or_d)           112.72    5857.43 f
+  U30902/op (nand4_1)                    105.49    5962.92 r
+  U30940/op (not_ab_or_c_or_d)           143.34    6106.26 f
+  U30941/op (or2_1)                      181.12    6287.38 f
+  U30942/op (nand2_1)                     44.96    6332.34 r
+  U30956/op (not_ab_or_c_or_d)           103.53    6435.87 f
+  U30960/op (nand4_1)                    106.10    6541.97 r
+  U30961/op (nand2_1)                     79.79    6621.76 f
+  U30964/op (nand4_1)                    108.90    6730.65 r
+  U30965/op (nand2_1)                     79.61    6810.26 f
+  U30967/op (nand2_1)                     69.15    6879.41 r
+  y_reg[12]/ip (dp_1)                      0.00    6879.41 r
+  data arrival time                                6879.41
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[12]/ck (dp_1)                      0.00   50000.00 r
+  library setup time                    -143.85   49856.15
+  data required time                              49856.15
+  -----------------------------------------------------------
+  data required time                              49856.15
+  data arrival time                               -6879.41
+  -----------------------------------------------------------
+  slack (MET)                                     42976.74
+
+
+  Startpoint: x_reg[14][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[10] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  143.95     143.95 r
+  U27449/op (inv_1)                       40.21     184.16 f
+  U27451/op (not_ab_or_c_or_d)           134.21     318.37 r
+  U27453/op (not_ab_or_c_or_d)           119.27     437.64 f
+  U27457/op (not_ab_or_c_or_d)           244.83     682.46 r
+  U27458/op (nand2_1)                     96.22     778.68 f
+  U27461/op (ab_or_c_or_d)               179.66     958.35 f
+  U27464/op (and3_1)                     141.14    1099.48 f
+  U27466/op (not_ab_or_c_or_d)           151.13    1250.61 r
+  U27468/op (or2_1)                      108.77    1359.38 r
+  U27469/op (nand2_1)                     64.76    1424.14 f
+  U27470/op (not_ab_or_c_or_d)           118.03    1542.17 r
+  U27471/op (not_ab_or_c_or_d)           107.76    1649.93 f
+  U27473/op (nor2_1)                     144.13    1794.06 r
+  U27475/op (not_ab_or_c_or_d)           111.26    1905.32 f
+  U27476/op (nor2_1)                     175.91    2081.23 r
+  U27495/op (not_ab_or_c_or_d)           165.75    2246.98 f
+  U27497/op (nor2_1)                      94.04    2341.02 r
+  U27553/op (nor4_1)                    1082.01    3423.04 f
+  U27554/op (nor2_1)                     194.01    3617.05 r
+  U27634/op (nand3_1)                    168.16    3785.21 f
+  U27635/op (nor2_1)                     137.41    3922.62 r
+  U27644/op (nand2_1)                    102.93    4025.56 f
+  U27645/op (nor2_1)                     124.48    4150.04 r
+  U27718/op (nand3_1)                    178.33    4328.37 f
+  U27719/op (nor3_1)                     215.50    4543.87 r
+  U27781/op (nand3_1)                    169.59    4713.46 f
+  U27782/op (nor2_1)                     560.81    5274.27 r
+  U30557/op (nand2_1)                    159.94    5434.21 f
+  U30560/op (nand4_1)                     92.38    5526.58 r
+  U30561/op (not_ab_or_c_or_d)            99.13    5625.72 f
+  U30562/op (nor2_1)                     118.99    5744.71 r
+  U30568/op (not_ab_or_c_or_d)           112.72    5857.43 f
+  U30571/op (nand4_1)                    105.49    5962.92 r
+  U30609/op (not_ab_or_c_or_d)           143.34    6106.26 f
+  U30610/op (or2_1)                      181.12    6287.38 f
+  U30611/op (nand2_1)                     44.96    6332.34 r
+  U30625/op (not_ab_or_c_or_d)           103.53    6435.87 f
+  U30629/op (nand4_1)                    106.10    6541.97 r
+  U30630/op (nand2_1)                     79.79    6621.76 f
+  U30633/op (nand4_1)                    108.90    6730.65 r
+  U30634/op (nand2_1)                     79.61    6810.26 f
+  U30636/op (nand2_1)                     69.15    6879.41 r
+  y_reg[10]/ip (dp_1)                      0.00    6879.41 r
+  data arrival time                                6879.41
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[10]/ck (dp_1)                      0.00   50000.00 r
+  library setup time                    -143.85   49856.15
+  data required time                              49856.15
+  -----------------------------------------------------------
+  data required time                              49856.15
+  data arrival time                               -6879.41
+  -----------------------------------------------------------
+  slack (MET)                                     42976.74
+
+
+  Startpoint: x_reg[14][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[3] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  143.95     143.95 r
+  U27449/op (inv_1)                       40.21     184.16 f
+  U27451/op (not_ab_or_c_or_d)           134.21     318.37 r
+  U27453/op (not_ab_or_c_or_d)           119.27     437.64 f
+  U27457/op (not_ab_or_c_or_d)           244.83     682.46 r
+  U27458/op (nand2_1)                     96.22     778.68 f
+  U27461/op (ab_or_c_or_d)               179.66     958.35 f
+  U27464/op (and3_1)                     141.14    1099.48 f
+  U27466/op (not_ab_or_c_or_d)           151.13    1250.61 r
+  U27468/op (or2_1)                      108.77    1359.38 r
+  U27469/op (nand2_1)                     64.76    1424.14 f
+  U27470/op (not_ab_or_c_or_d)           118.03    1542.17 r
+  U27471/op (not_ab_or_c_or_d)           107.76    1649.93 f
+  U27473/op (nor2_1)                     144.13    1794.06 r
+  U27475/op (not_ab_or_c_or_d)           111.26    1905.32 f
+  U27476/op (nor2_1)                     175.91    2081.23 r
+  U27495/op (not_ab_or_c_or_d)           165.75    2246.98 f
+  U27497/op (nor2_1)                      94.04    2341.02 r
+  U27553/op (nor4_1)                    1082.01    3423.04 f
+  U27554/op (nor2_1)                     194.01    3617.05 r
+  U27634/op (nand3_1)                    168.16    3785.21 f
+  U27635/op (nor2_1)                     137.41    3922.62 r
+  U27644/op (nand2_1)                    102.93    4025.56 f
+  U27645/op (nor2_1)                     124.48    4150.04 r
+  U27718/op (nand3_1)                    178.33    4328.37 f
+  U27719/op (nor3_1)                     215.50    4543.87 r
+  U27781/op (nand3_1)                    169.59    4713.46 f
+  U27782/op (nor2_1)                     560.81    5274.27 r
+  U29391/op (nand2_1)                    159.94    5434.21 f
+  U29394/op (nand4_1)                     92.38    5526.58 r
+  U29395/op (not_ab_or_c_or_d)            99.13    5625.72 f
+  U29396/op (nor2_1)                     118.99    5744.71 r
+  U29402/op (not_ab_or_c_or_d)           112.72    5857.43 f
+  U29405/op (nand4_1)                    105.49    5962.92 r
+  U29443/op (not_ab_or_c_or_d)           143.34    6106.26 f
+  U29444/op (or2_1)                      181.12    6287.38 f
+  U29445/op (nand2_1)                     44.96    6332.34 r
+  U29459/op (not_ab_or_c_or_d)           103.53    6435.87 f
+  U29463/op (nand4_1)                    106.10    6541.97 r
+  U29464/op (nand2_1)                     79.79    6621.76 f
+  U29467/op (nand4_1)                    108.90    6730.65 r
+  U29468/op (nand2_1)                     79.61    6810.26 f
+  U29470/op (nand2_1)                     69.15    6879.41 r
+  y_reg[3]/ip (dp_1)                       0.00    6879.41 r
+  data arrival time                                6879.41
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[3]/ck (dp_1)                       0.00   50000.00 r
+  library setup time                    -143.85   49856.15
+  data required time                              49856.15
+  -----------------------------------------------------------
+  data required time                              49856.15
+  data arrival time                               -6879.41
+  -----------------------------------------------------------
+  slack (MET)                                     42976.74
+
+
+  Startpoint: x_reg[14][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[14] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  143.95     143.95 r
+  U27449/op (inv_1)                       40.21     184.16 f
+  U27451/op (not_ab_or_c_or_d)           134.21     318.37 r
+  U27453/op (not_ab_or_c_or_d)           119.27     437.64 f
+  U27457/op (not_ab_or_c_or_d)           244.83     682.46 r
+  U27458/op (nand2_1)                     96.22     778.68 f
+  U27461/op (ab_or_c_or_d)               179.66     958.35 f
+  U27464/op (and3_1)                     141.14    1099.48 f
+  U27466/op (not_ab_or_c_or_d)           151.13    1250.61 r
+  U27468/op (or2_1)                      108.77    1359.38 r
+  U27469/op (nand2_1)                     64.76    1424.14 f
+  U27470/op (not_ab_or_c_or_d)           118.03    1542.17 r
+  U27471/op (not_ab_or_c_or_d)           107.76    1649.93 f
+  U27473/op (nor2_1)                     144.13    1794.06 r
+  U27475/op (not_ab_or_c_or_d)           111.26    1905.32 f
+  U27476/op (nor2_1)                     175.91    2081.23 r
+  U27495/op (not_ab_or_c_or_d)           165.75    2246.98 f
+  U27497/op (nor2_1)                      94.04    2341.02 r
+  U27553/op (nor4_1)                    1082.01    3423.04 f
+  U27554/op (nor2_1)                     194.01    3617.05 r
+  U27634/op (nand3_1)                    168.16    3785.21 f
+  U27635/op (nor2_1)                     137.41    3922.62 r
+  U27644/op (nand2_1)                    102.93    4025.56 f
+  U27645/op (nor2_1)                     124.48    4150.04 r
+  U27718/op (nand3_1)                    178.33    4328.37 f
+  U27719/op (nor3_1)                     215.50    4543.87 r
+  U27781/op (nand3_1)                    169.59    4713.46 f
+  U27782/op (nor2_1)                     560.81    5274.27 r
+  U31220/op (nand2_1)                    159.94    5434.21 f
+  U31223/op (nand4_1)                     92.38    5526.58 r
+  U31224/op (not_ab_or_c_or_d)            99.05    5625.63 f
+  U31225/op (nor2_1)                     118.99    5744.63 r
+  U31231/op (not_ab_or_c_or_d)           112.72    5857.35 f
+  U31234/op (nand4_1)                    105.49    5962.84 r
+  U31272/op (not_ab_or_c_or_d)           143.34    6106.18 f
+  U31273/op (or2_1)                      181.12    6287.30 f
+  U31274/op (nand2_1)                     44.96    6332.25 r
+  U31288/op (not_ab_or_c_or_d)           103.53    6435.79 f
+  U31292/op (nand4_1)                    106.10    6541.88 r
+  U31293/op (nand2_1)                     79.79    6621.67 f
+  U31296/op (nand4_1)                    108.90    6730.57 r
+  U31297/op (nand2_1)                     79.61    6810.18 f
+  U31299/op (nand2_1)                     69.15    6879.33 r
+  y_reg[14]/ip (dp_1)                      0.00    6879.33 r
+  data arrival time                                6879.33
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[14]/ck (dp_1)                      0.00   50000.00 r
+  library setup time                    -143.85   49856.15
+  data required time                              49856.15
+  -----------------------------------------------------------
+  data required time                              49856.15
+  data arrival time                               -6879.33
+  -----------------------------------------------------------
+  slack (MET)                                     42976.82
+
+
+  Startpoint: x_reg[14][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[9] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  143.95     143.95 r
+  U27449/op (inv_1)                       40.21     184.16 f
+  U27451/op (not_ab_or_c_or_d)           134.21     318.37 r
+  U27453/op (not_ab_or_c_or_d)           119.27     437.64 f
+  U27457/op (not_ab_or_c_or_d)           244.83     682.46 r
+  U27458/op (nand2_1)                     96.22     778.68 f
+  U27461/op (ab_or_c_or_d)               179.66     958.35 f
+  U27464/op (and3_1)                     141.14    1099.48 f
+  U27466/op (not_ab_or_c_or_d)           151.13    1250.61 r
+  U27468/op (or2_1)                      108.77    1359.38 r
+  U27469/op (nand2_1)                     64.76    1424.14 f
+  U27470/op (not_ab_or_c_or_d)           118.03    1542.17 r
+  U27471/op (not_ab_or_c_or_d)           107.76    1649.93 f
+  U27473/op (nor2_1)                     144.13    1794.06 r
+  U27475/op (not_ab_or_c_or_d)           111.26    1905.32 f
+  U27476/op (nor2_1)                     175.91    2081.23 r
+  U27495/op (not_ab_or_c_or_d)           165.75    2246.98 f
+  U27497/op (nor2_1)                      94.04    2341.02 r
+  U27553/op (nor4_1)                    1082.01    3423.04 f
+  U27554/op (nor2_1)                     194.01    3617.05 r
+  U27634/op (nand3_1)                    168.16    3785.21 f
+  U27635/op (nor2_1)                     137.41    3922.62 r
+  U27644/op (nand2_1)                    102.93    4025.56 f
+  U27645/op (nor2_1)                     124.48    4150.04 r
+  U27718/op (nand3_1)                    178.33    4328.37 f
+  U27719/op (nor3_1)                     215.50    4543.87 r
+  U27781/op (nand3_1)                    169.59    4713.46 f
+  U27782/op (nor2_1)                     560.81    5274.27 r
+  U30391/op (nand2_1)                    159.94    5434.21 f
+  U30394/op (nand4_1)                     92.38    5526.58 r
+  U30395/op (not_ab_or_c_or_d)            99.05    5625.63 f
+  U30396/op (nor2_1)                     118.99    5744.63 r
+  U30402/op (not_ab_or_c_or_d)           112.72    5857.35 f
+  U30405/op (nand4_1)                    105.49    5962.84 r
+  U30443/op (not_ab_or_c_or_d)           143.34    6106.18 f
+  U30444/op (or2_1)                      181.12    6287.30 f
+  U30445/op (nand2_1)                     44.96    6332.25 r
+  U30459/op (not_ab_or_c_or_d)           103.53    6435.79 f
+  U30463/op (nand4_1)                    106.10    6541.88 r
+  U30464/op (nand2_1)                     79.79    6621.67 f
+  U30467/op (nand4_1)                    108.90    6730.57 r
+  U30468/op (nand2_1)                     79.61    6810.18 f
+  U30470/op (nand2_1)                     69.15    6879.33 r
+  y_reg[9]/ip (dp_1)                       0.00    6879.33 r
+  data arrival time                                6879.33
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[9]/ck (dp_1)                       0.00   50000.00 r
+  library setup time                    -143.85   49856.15
+  data required time                              49856.15
+  -----------------------------------------------------------
+  data required time                              49856.15
+  data arrival time                               -6879.33
+  -----------------------------------------------------------
+  slack (MET)                                     42976.82
+
+
+  Startpoint: x_reg[14][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[7] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  143.95     143.95 r
+  U27449/op (inv_1)                       40.21     184.16 f
+  U27451/op (not_ab_or_c_or_d)           134.21     318.37 r
+  U27453/op (not_ab_or_c_or_d)           119.27     437.64 f
+  U27457/op (not_ab_or_c_or_d)           244.83     682.46 r
+  U27458/op (nand2_1)                     96.22     778.68 f
+  U27461/op (ab_or_c_or_d)               179.66     958.35 f
+  U27464/op (and3_1)                     141.14    1099.48 f
+  U27466/op (not_ab_or_c_or_d)           151.13    1250.61 r
+  U27468/op (or2_1)                      108.77    1359.38 r
+  U27469/op (nand2_1)                     64.76    1424.14 f
+  U27470/op (not_ab_or_c_or_d)           118.03    1542.17 r
+  U27471/op (not_ab_or_c_or_d)           107.76    1649.93 f
+  U27473/op (nor2_1)                     144.13    1794.06 r
+  U27475/op (not_ab_or_c_or_d)           111.26    1905.32 f
+  U27476/op (nor2_1)                     175.91    2081.23 r
+  U27495/op (not_ab_or_c_or_d)           165.75    2246.98 f
+  U27497/op (nor2_1)                      94.04    2341.02 r
+  U27553/op (nor4_1)                    1082.01    3423.04 f
+  U27554/op (nor2_1)                     194.01    3617.05 r
+  U27634/op (nand3_1)                    168.16    3785.21 f
+  U27635/op (nor2_1)                     137.41    3922.62 r
+  U27644/op (nand2_1)                    102.93    4025.56 f
+  U27645/op (nor2_1)                     124.48    4150.04 r
+  U27718/op (nand3_1)                    178.33    4328.37 f
+  U27719/op (nor3_1)                     215.50    4543.87 r
+  U27781/op (nand3_1)                    169.59    4713.46 f
+  U27782/op (nor2_1)                     560.81    5274.27 r
+  U30057/op (nand2_1)                    159.94    5434.21 f
+  U30060/op (nand4_1)                     92.38    5526.58 r
+  U30061/op (not_ab_or_c_or_d)            99.05    5625.63 f
+  U30062/op (nor2_1)                     118.99    5744.63 r
+  U30068/op (not_ab_or_c_or_d)           112.72    5857.35 f
+  U30071/op (nand4_1)                    105.49    5962.84 r
+  U30109/op (not_ab_or_c_or_d)           143.34    6106.18 f
+  U30110/op (or2_1)                      181.12    6287.30 f
+  U30111/op (nand2_1)                     44.96    6332.25 r
+  U30125/op (not_ab_or_c_or_d)           103.53    6435.79 f
+  U30129/op (nand4_1)                    106.10    6541.88 r
+  U30130/op (nand2_1)                     79.79    6621.67 f
+  U30133/op (nand4_1)                    108.90    6730.57 r
+  U30134/op (nand2_1)                     79.61    6810.18 f
+  U30136/op (nand2_1)                     69.15    6879.33 r
+  y_reg[7]/ip (dp_1)                       0.00    6879.33 r
+  data arrival time                                6879.33
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[7]/ck (dp_1)                       0.00   50000.00 r
+  library setup time                    -143.85   49856.15
+  data required time                              49856.15
+  -----------------------------------------------------------
+  data required time                              49856.15
+  data arrival time                               -6879.33
+  -----------------------------------------------------------
+  slack (MET)                                     42976.82
+
+
+  Startpoint: x_reg[14][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[12] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  143.95     143.95 r
+  U27449/op (inv_1)                       40.21     184.16 f
+  U27451/op (not_ab_or_c_or_d)           134.21     318.37 r
+  U27453/op (not_ab_or_c_or_d)           119.27     437.64 f
+  U27457/op (not_ab_or_c_or_d)           244.83     682.46 r
+  U27460/op (nor2_1)                      96.94     779.40 f
+  U27461/op (ab_or_c_or_d)               173.50     952.90 f
+  U27464/op (and3_1)                     141.14    1094.04 f
+  U27466/op (not_ab_or_c_or_d)           151.13    1245.17 r
+  U27468/op (or2_1)                      108.77    1353.93 r
+  U27469/op (nand2_1)                     64.76    1418.69 f
+  U27470/op (not_ab_or_c_or_d)           118.03    1536.72 r
+  U27471/op (not_ab_or_c_or_d)           107.76    1644.48 f
+  U27473/op (nor2_1)                     144.13    1788.62 r
+  U27475/op (not_ab_or_c_or_d)           111.26    1899.87 f
+  U27476/op (nor2_1)                     175.91    2075.78 r
+  U27495/op (not_ab_or_c_or_d)           165.75    2241.53 f
+  U27497/op (nor2_1)                      94.04    2335.57 r
+  U27553/op (nor4_1)                    1082.01    3417.59 f
+  U27554/op (nor2_1)                     194.01    3611.60 r
+  U27634/op (nand3_1)                    168.16    3779.76 f
+  U27635/op (nor2_1)                     137.41    3917.18 r
+  U27644/op (nand2_1)                    102.93    4020.11 f
+  U27645/op (nor2_1)                     124.48    4144.59 r
+  U27718/op (nand3_1)                    178.33    4322.92 f
+  U27719/op (nor3_1)                     215.50    4538.42 r
+  U27781/op (nand3_1)                    169.59    4708.01 f
+  U27782/op (nor2_1)                     560.81    5268.83 r
+  U30888/op (nand2_1)                    159.94    5428.76 f
+  U30891/op (nand4_1)                     92.38    5521.14 r
+  U30892/op (not_ab_or_c_or_d)            99.13    5620.27 f
+  U30893/op (nor2_1)                     118.99    5739.26 r
+  U30899/op (not_ab_or_c_or_d)           112.72    5851.99 f
+  U30902/op (nand4_1)                    105.49    5957.48 r
+  U30940/op (not_ab_or_c_or_d)           143.34    6100.81 f
+  U30941/op (or2_1)                      181.12    6281.93 f
+  U30942/op (nand2_1)                     44.96    6326.89 r
+  U30956/op (not_ab_or_c_or_d)           103.53    6430.42 f
+  U30960/op (nand4_1)                    106.10    6536.52 r
+  U30961/op (nand2_1)                     79.79    6616.31 f
+  U30964/op (nand4_1)                    108.90    6725.21 r
+  U30965/op (nand2_1)                     79.61    6804.81 f
+  U30967/op (nand2_1)                     69.15    6873.96 r
+  y_reg[12]/ip (dp_1)                      0.00    6873.96 r
+  data arrival time                                6873.96
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[12]/ck (dp_1)                      0.00   50000.00 r
+  library setup time                    -143.85   49856.15
+  data required time                              49856.15
+  -----------------------------------------------------------
+  data required time                              49856.15
+  data arrival time                               -6873.96
+  -----------------------------------------------------------
+  slack (MET)                                     42982.19
+
+
+  Startpoint: x_reg[14][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[10] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  143.95     143.95 r
+  U27449/op (inv_1)                       40.21     184.16 f
+  U27451/op (not_ab_or_c_or_d)           134.21     318.37 r
+  U27453/op (not_ab_or_c_or_d)           119.27     437.64 f
+  U27457/op (not_ab_or_c_or_d)           244.83     682.46 r
+  U27460/op (nor2_1)                      96.94     779.40 f
+  U27461/op (ab_or_c_or_d)               173.50     952.90 f
+  U27464/op (and3_1)                     141.14    1094.04 f
+  U27466/op (not_ab_or_c_or_d)           151.13    1245.17 r
+  U27468/op (or2_1)                      108.77    1353.93 r
+  U27469/op (nand2_1)                     64.76    1418.69 f
+  U27470/op (not_ab_or_c_or_d)           118.03    1536.72 r
+  U27471/op (not_ab_or_c_or_d)           107.76    1644.48 f
+  U27473/op (nor2_1)                     144.13    1788.62 r
+  U27475/op (not_ab_or_c_or_d)           111.26    1899.87 f
+  U27476/op (nor2_1)                     175.91    2075.78 r
+  U27495/op (not_ab_or_c_or_d)           165.75    2241.53 f
+  U27497/op (nor2_1)                      94.04    2335.57 r
+  U27553/op (nor4_1)                    1082.01    3417.59 f
+  U27554/op (nor2_1)                     194.01    3611.60 r
+  U27634/op (nand3_1)                    168.16    3779.76 f
+  U27635/op (nor2_1)                     137.41    3917.18 r
+  U27644/op (nand2_1)                    102.93    4020.11 f
+  U27645/op (nor2_1)                     124.48    4144.59 r
+  U27718/op (nand3_1)                    178.33    4322.92 f
+  U27719/op (nor3_1)                     215.50    4538.42 r
+  U27781/op (nand3_1)                    169.59    4708.01 f
+  U27782/op (nor2_1)                     560.81    5268.83 r
+  U30557/op (nand2_1)                    159.94    5428.76 f
+  U30560/op (nand4_1)                     92.38    5521.14 r
+  U30561/op (not_ab_or_c_or_d)            99.13    5620.27 f
+  U30562/op (nor2_1)                     118.99    5739.26 r
+  U30568/op (not_ab_or_c_or_d)           112.72    5851.99 f
+  U30571/op (nand4_1)                    105.49    5957.48 r
+  U30609/op (not_ab_or_c_or_d)           143.34    6100.81 f
+  U30610/op (or2_1)                      181.12    6281.93 f
+  U30611/op (nand2_1)                     44.96    6326.89 r
+  U30625/op (not_ab_or_c_or_d)           103.53    6430.42 f
+  U30629/op (nand4_1)                    106.10    6536.52 r
+  U30630/op (nand2_1)                     79.79    6616.31 f
+  U30633/op (nand4_1)                    108.90    6725.21 r
+  U30634/op (nand2_1)                     79.61    6804.81 f
+  U30636/op (nand2_1)                     69.15    6873.96 r
+  y_reg[10]/ip (dp_1)                      0.00    6873.96 r
+  data arrival time                                6873.96
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[10]/ck (dp_1)                      0.00   50000.00 r
+  library setup time                    -143.85   49856.15
+  data required time                              49856.15
+  -----------------------------------------------------------
+  data required time                              49856.15
+  data arrival time                               -6873.96
+  -----------------------------------------------------------
+  slack (MET)                                     42982.19
+
+
+  Startpoint: x_reg[14][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[3] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  143.95     143.95 r
+  U27449/op (inv_1)                       40.21     184.16 f
+  U27451/op (not_ab_or_c_or_d)           134.21     318.37 r
+  U27453/op (not_ab_or_c_or_d)           119.27     437.64 f
+  U27457/op (not_ab_or_c_or_d)           244.83     682.46 r
+  U27460/op (nor2_1)                      96.94     779.40 f
+  U27461/op (ab_or_c_or_d)               173.50     952.90 f
+  U27464/op (and3_1)                     141.14    1094.04 f
+  U27466/op (not_ab_or_c_or_d)           151.13    1245.17 r
+  U27468/op (or2_1)                      108.77    1353.93 r
+  U27469/op (nand2_1)                     64.76    1418.69 f
+  U27470/op (not_ab_or_c_or_d)           118.03    1536.72 r
+  U27471/op (not_ab_or_c_or_d)           107.76    1644.48 f
+  U27473/op (nor2_1)                     144.13    1788.62 r
+  U27475/op (not_ab_or_c_or_d)           111.26    1899.87 f
+  U27476/op (nor2_1)                     175.91    2075.78 r
+  U27495/op (not_ab_or_c_or_d)           165.75    2241.53 f
+  U27497/op (nor2_1)                      94.04    2335.57 r
+  U27553/op (nor4_1)                    1082.01    3417.59 f
+  U27554/op (nor2_1)                     194.01    3611.60 r
+  U27634/op (nand3_1)                    168.16    3779.76 f
+  U27635/op (nor2_1)                     137.41    3917.18 r
+  U27644/op (nand2_1)                    102.93    4020.11 f
+  U27645/op (nor2_1)                     124.48    4144.59 r
+  U27718/op (nand3_1)                    178.33    4322.92 f
+  U27719/op (nor3_1)                     215.50    4538.42 r
+  U27781/op (nand3_1)                    169.59    4708.01 f
+  U27782/op (nor2_1)                     560.81    5268.83 r
+  U29391/op (nand2_1)                    159.94    5428.76 f
+  U29394/op (nand4_1)                     92.38    5521.14 r
+  U29395/op (not_ab_or_c_or_d)            99.13    5620.27 f
+  U29396/op (nor2_1)                     118.99    5739.26 r
+  U29402/op (not_ab_or_c_or_d)           112.72    5851.99 f
+  U29405/op (nand4_1)                    105.49    5957.48 r
+  U29443/op (not_ab_or_c_or_d)           143.34    6100.81 f
+  U29444/op (or2_1)                      181.12    6281.93 f
+  U29445/op (nand2_1)                     44.96    6326.89 r
+  U29459/op (not_ab_or_c_or_d)           103.53    6430.42 f
+  U29463/op (nand4_1)                    106.10    6536.52 r
+  U29464/op (nand2_1)                     79.79    6616.31 f
+  U29467/op (nand4_1)                    108.90    6725.21 r
+  U29468/op (nand2_1)                     79.61    6804.81 f
+  U29470/op (nand2_1)                     69.15    6873.96 r
+  y_reg[3]/ip (dp_1)                       0.00    6873.96 r
+  data arrival time                                6873.96
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[3]/ck (dp_1)                       0.00   50000.00 r
+  library setup time                    -143.85   49856.15
+  data required time                              49856.15
+  -----------------------------------------------------------
+  data required time                              49856.15
+  data arrival time                               -6873.96
+  -----------------------------------------------------------
+  slack (MET)                                     42982.19
+
+
+  Startpoint: x_reg[14][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[14] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  143.95     143.95 r
+  U27449/op (inv_1)                       40.21     184.16 f
+  U27451/op (not_ab_or_c_or_d)           134.21     318.37 r
+  U27453/op (not_ab_or_c_or_d)           119.27     437.64 f
+  U27457/op (not_ab_or_c_or_d)           244.83     682.46 r
+  U27460/op (nor2_1)                      96.94     779.40 f
+  U27461/op (ab_or_c_or_d)               173.50     952.90 f
+  U27464/op (and3_1)                     141.14    1094.04 f
+  U27466/op (not_ab_or_c_or_d)           151.13    1245.17 r
+  U27468/op (or2_1)                      108.77    1353.93 r
+  U27469/op (nand2_1)                     64.76    1418.69 f
+  U27470/op (not_ab_or_c_or_d)           118.03    1536.72 r
+  U27471/op (not_ab_or_c_or_d)           107.76    1644.48 f
+  U27473/op (nor2_1)                     144.13    1788.62 r
+  U27475/op (not_ab_or_c_or_d)           111.26    1899.87 f
+  U27476/op (nor2_1)                     175.91    2075.78 r
+  U27495/op (not_ab_or_c_or_d)           165.75    2241.53 f
+  U27497/op (nor2_1)                      94.04    2335.57 r
+  U27553/op (nor4_1)                    1082.01    3417.59 f
+  U27554/op (nor2_1)                     194.01    3611.60 r
+  U27634/op (nand3_1)                    168.16    3779.76 f
+  U27635/op (nor2_1)                     137.41    3917.18 r
+  U27644/op (nand2_1)                    102.93    4020.11 f
+  U27645/op (nor2_1)                     124.48    4144.59 r
+  U27718/op (nand3_1)                    178.33    4322.92 f
+  U27719/op (nor3_1)                     215.50    4538.42 r
+  U27781/op (nand3_1)                    169.59    4708.01 f
+  U27782/op (nor2_1)                     560.81    5268.83 r
+  U31220/op (nand2_1)                    159.94    5428.76 f
+  U31223/op (nand4_1)                     92.38    5521.14 r
+  U31224/op (not_ab_or_c_or_d)            99.05    5620.19 f
+  U31225/op (nor2_1)                     118.99    5739.18 r
+  U31231/op (not_ab_or_c_or_d)           112.72    5851.90 f
+  U31234/op (nand4_1)                    105.49    5957.39 r
+  U31272/op (not_ab_or_c_or_d)           143.34    6100.73 f
+  U31273/op (or2_1)                      181.12    6281.85 f
+  U31274/op (nand2_1)                     44.96    6326.81 r
+  U31288/op (not_ab_or_c_or_d)           103.53    6430.34 f
+  U31292/op (nand4_1)                    106.10    6536.44 r
+  U31293/op (nand2_1)                     79.79    6616.23 f
+  U31296/op (nand4_1)                    108.90    6725.12 r
+  U31297/op (nand2_1)                     79.61    6804.73 f
+  U31299/op (nand2_1)                     69.15    6873.88 r
+  y_reg[14]/ip (dp_1)                      0.00    6873.88 r
+  data arrival time                                6873.88
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[14]/ck (dp_1)                      0.00   50000.00 r
+  library setup time                    -143.85   49856.15
+  data required time                              49856.15
+  -----------------------------------------------------------
+  data required time                              49856.15
+  data arrival time                               -6873.88
+  -----------------------------------------------------------
+  slack (MET)                                     42982.27
+
+
+  Startpoint: x_reg[14][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[9] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  143.95     143.95 r
+  U27449/op (inv_1)                       40.21     184.16 f
+  U27451/op (not_ab_or_c_or_d)           134.21     318.37 r
+  U27453/op (not_ab_or_c_or_d)           119.27     437.64 f
+  U27457/op (not_ab_or_c_or_d)           244.83     682.46 r
+  U27460/op (nor2_1)                      96.94     779.40 f
+  U27461/op (ab_or_c_or_d)               173.50     952.90 f
+  U27464/op (and3_1)                     141.14    1094.04 f
+  U27466/op (not_ab_or_c_or_d)           151.13    1245.17 r
+  U27468/op (or2_1)                      108.77    1353.93 r
+  U27469/op (nand2_1)                     64.76    1418.69 f
+  U27470/op (not_ab_or_c_or_d)           118.03    1536.72 r
+  U27471/op (not_ab_or_c_or_d)           107.76    1644.48 f
+  U27473/op (nor2_1)                     144.13    1788.62 r
+  U27475/op (not_ab_or_c_or_d)           111.26    1899.87 f
+  U27476/op (nor2_1)                     175.91    2075.78 r
+  U27495/op (not_ab_or_c_or_d)           165.75    2241.53 f
+  U27497/op (nor2_1)                      94.04    2335.57 r
+  U27553/op (nor4_1)                    1082.01    3417.59 f
+  U27554/op (nor2_1)                     194.01    3611.60 r
+  U27634/op (nand3_1)                    168.16    3779.76 f
+  U27635/op (nor2_1)                     137.41    3917.18 r
+  U27644/op (nand2_1)                    102.93    4020.11 f
+  U27645/op (nor2_1)                     124.48    4144.59 r
+  U27718/op (nand3_1)                    178.33    4322.92 f
+  U27719/op (nor3_1)                     215.50    4538.42 r
+  U27781/op (nand3_1)                    169.59    4708.01 f
+  U27782/op (nor2_1)                     560.81    5268.83 r
+  U30391/op (nand2_1)                    159.94    5428.76 f
+  U30394/op (nand4_1)                     92.38    5521.14 r
+  U30395/op (not_ab_or_c_or_d)            99.05    5620.19 f
+  U30396/op (nor2_1)                     118.99    5739.18 r
+  U30402/op (not_ab_or_c_or_d)           112.72    5851.90 f
+  U30405/op (nand4_1)                    105.49    5957.39 r
+  U30443/op (not_ab_or_c_or_d)           143.34    6100.73 f
+  U30444/op (or2_1)                      181.12    6281.85 f
+  U30445/op (nand2_1)                     44.96    6326.81 r
+  U30459/op (not_ab_or_c_or_d)           103.53    6430.34 f
+  U30463/op (nand4_1)                    106.10    6536.44 r
+  U30464/op (nand2_1)                     79.79    6616.23 f
+  U30467/op (nand4_1)                    108.90    6725.12 r
+  U30468/op (nand2_1)                     79.61    6804.73 f
+  U30470/op (nand2_1)                     69.15    6873.88 r
+  y_reg[9]/ip (dp_1)                       0.00    6873.88 r
+  data arrival time                                6873.88
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[9]/ck (dp_1)                       0.00   50000.00 r
+  library setup time                    -143.85   49856.15
+  data required time                              49856.15
+  -----------------------------------------------------------
+  data required time                              49856.15
+  data arrival time                               -6873.88
+  -----------------------------------------------------------
+  slack (MET)                                     42982.27
+
+
+  Startpoint: x_reg[14][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[7] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  143.95     143.95 r
+  U27449/op (inv_1)                       40.21     184.16 f
+  U27451/op (not_ab_or_c_or_d)           134.21     318.37 r
+  U27453/op (not_ab_or_c_or_d)           119.27     437.64 f
+  U27457/op (not_ab_or_c_or_d)           244.83     682.46 r
+  U27460/op (nor2_1)                      96.94     779.40 f
+  U27461/op (ab_or_c_or_d)               173.50     952.90 f
+  U27464/op (and3_1)                     141.14    1094.04 f
+  U27466/op (not_ab_or_c_or_d)           151.13    1245.17 r
+  U27468/op (or2_1)                      108.77    1353.93 r
+  U27469/op (nand2_1)                     64.76    1418.69 f
+  U27470/op (not_ab_or_c_or_d)           118.03    1536.72 r
+  U27471/op (not_ab_or_c_or_d)           107.76    1644.48 f
+  U27473/op (nor2_1)                     144.13    1788.62 r
+  U27475/op (not_ab_or_c_or_d)           111.26    1899.87 f
+  U27476/op (nor2_1)                     175.91    2075.78 r
+  U27495/op (not_ab_or_c_or_d)           165.75    2241.53 f
+  U27497/op (nor2_1)                      94.04    2335.57 r
+  U27553/op (nor4_1)                    1082.01    3417.59 f
+  U27554/op (nor2_1)                     194.01    3611.60 r
+  U27634/op (nand3_1)                    168.16    3779.76 f
+  U27635/op (nor2_1)                     137.41    3917.18 r
+  U27644/op (nand2_1)                    102.93    4020.11 f
+  U27645/op (nor2_1)                     124.48    4144.59 r
+  U27718/op (nand3_1)                    178.33    4322.92 f
+  U27719/op (nor3_1)                     215.50    4538.42 r
+  U27781/op (nand3_1)                    169.59    4708.01 f
+  U27782/op (nor2_1)                     560.81    5268.83 r
+  U30057/op (nand2_1)                    159.94    5428.76 f
+  U30060/op (nand4_1)                     92.38    5521.14 r
+  U30061/op (not_ab_or_c_or_d)            99.05    5620.19 f
+  U30062/op (nor2_1)                     118.99    5739.18 r
+  U30068/op (not_ab_or_c_or_d)           112.72    5851.90 f
+  U30071/op (nand4_1)                    105.49    5957.39 r
+  U30109/op (not_ab_or_c_or_d)           143.34    6100.73 f
+  U30110/op (or2_1)                      181.12    6281.85 f
+  U30111/op (nand2_1)                     44.96    6326.81 r
+  U30125/op (not_ab_or_c_or_d)           103.53    6430.34 f
+  U30129/op (nand4_1)                    106.10    6536.44 r
+  U30130/op (nand2_1)                     79.79    6616.23 f
+  U30133/op (nand4_1)                    108.90    6725.12 r
+  U30134/op (nand2_1)                     79.61    6804.73 f
+  U30136/op (nand2_1)                     69.15    6873.88 r
+  y_reg[7]/ip (dp_1)                       0.00    6873.88 r
+  data arrival time                                6873.88
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[7]/ck (dp_1)                       0.00   50000.00 r
+  library setup time                    -143.85   49856.15
+  data required time                              49856.15
+  -----------------------------------------------------------
+  data required time                              49856.15
+  data arrival time                               -6873.88
+  -----------------------------------------------------------
+  slack (MET)                                     42982.27
+
+
+  Startpoint: x_reg[14][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[10] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  143.95     143.95 r
+  U27449/op (inv_1)                       40.21     184.16 f
+  U27451/op (not_ab_or_c_or_d)           134.21     318.37 r
+  U27453/op (not_ab_or_c_or_d)           119.27     437.64 f
+  U27457/op (not_ab_or_c_or_d)           244.83     682.46 r
+  U27458/op (nand2_1)                     96.22     778.68 f
+  U27461/op (ab_or_c_or_d)               179.66     958.35 f
+  U27464/op (and3_1)                     141.14    1099.48 f
+  U27466/op (not_ab_or_c_or_d)           151.13    1250.61 r
+  U27467/op (or2_1)                      107.32    1357.93 r
+  U27469/op (nand2_1)                     60.50    1418.42 f
+  U27470/op (not_ab_or_c_or_d)           118.03    1536.45 r
+  U27471/op (not_ab_or_c_or_d)           107.76    1644.22 f
+  U27473/op (nor2_1)                     144.13    1788.35 r
+  U27475/op (not_ab_or_c_or_d)           111.26    1899.60 f
+  U27476/op (nor2_1)                     175.91    2075.52 r
+  U27495/op (not_ab_or_c_or_d)           165.75    2241.27 f
+  U27497/op (nor2_1)                      94.04    2335.31 r
+  U27553/op (nor4_1)                    1082.01    3417.32 f
+  U27554/op (nor2_1)                     194.01    3611.33 r
+  U27634/op (nand3_1)                    168.16    3779.49 f
+  U27635/op (nor2_1)                     137.41    3916.91 r
+  U27644/op (nand2_1)                    102.93    4019.84 f
+  U27645/op (nor2_1)                     124.48    4144.32 r
+  U27718/op (nand3_1)                    178.33    4322.65 f
+  U27719/op (nor3_1)                     215.50    4538.15 r
+  U27781/op (nand3_1)                    169.59    4707.75 f
+  U27782/op (nor2_1)                     560.81    5268.56 r
+  U30557/op (nand2_1)                    159.94    5428.49 f
+  U30560/op (nand4_1)                     92.38    5520.87 r
+  U30561/op (not_ab_or_c_or_d)            99.13    5620.00 f
+  U30562/op (nor2_1)                     118.99    5739.00 r
+  U30568/op (not_ab_or_c_or_d)           112.72    5851.72 f
+  U30571/op (nand4_1)                    105.49    5957.21 r
+  U30609/op (not_ab_or_c_or_d)           143.34    6100.55 f
+  U30610/op (or2_1)                      181.12    6281.67 f
+  U30611/op (nand2_1)                     44.96    6326.62 r
+  U30625/op (not_ab_or_c_or_d)           103.53    6430.16 f
+  U30629/op (nand4_1)                    106.10    6536.25 r
+  U30630/op (nand2_1)                     79.79    6616.04 f
+  U30633/op (nand4_1)                    108.90    6724.94 r
+  U30634/op (nand2_1)                     79.61    6804.55 f
+  U30636/op (nand2_1)                     69.15    6873.69 r
+  y_reg[10]/ip (dp_1)                      0.00    6873.69 r
+  data arrival time                                6873.69
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[10]/ck (dp_1)                      0.00   50000.00 r
+  library setup time                    -143.85   49856.15
+  data required time                              49856.15
+  -----------------------------------------------------------
+  data required time                              49856.15
+  data arrival time                               -6873.69
+  -----------------------------------------------------------
+  slack (MET)                                     42982.45
+
+
+  Startpoint: x_reg[14][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_reg[3] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  x_reg[14][1]/ck (dp_1)                   0.00 #     0.00 r
+  x_reg[14][1]/q (dp_1)                  143.95     143.95 r
+  U27449/op (inv_1)                       40.21     184.16 f
+  U27451/op (not_ab_or_c_or_d)           134.21     318.37 r
+  U27453/op (not_ab_or_c_or_d)           119.27     437.64 f
+  U27457/op (not_ab_or_c_or_d)           244.83     682.46 r
+  U27458/op (nand2_1)                     96.22     778.68 f
+  U27461/op (ab_or_c_or_d)               179.66     958.35 f
+  U27464/op (and3_1)                     141.14    1099.48 f
+  U27466/op (not_ab_or_c_or_d)           151.13    1250.61 r
+  U27467/op (or2_1)                      107.32    1357.93 r
+  U27469/op (nand2_1)                     60.50    1418.42 f
+  U27470/op (not_ab_or_c_or_d)           118.03    1536.45 r
+  U27471/op (not_ab_or_c_or_d)           107.76    1644.22 f
+  U27473/op (nor2_1)                     144.13    1788.35 r
+  U27475/op (not_ab_or_c_or_d)           111.26    1899.60 f
+  U27476/op (nor2_1)                     175.91    2075.52 r
+  U27495/op (not_ab_or_c_or_d)           165.75    2241.27 f
+  U27497/op (nor2_1)                      94.04    2335.31 r
+  U27553/op (nor4_1)                    1082.01    3417.32 f
+  U27554/op (nor2_1)                     194.01    3611.33 r
+  U27634/op (nand3_1)                    168.16    3779.49 f
+  U27635/op (nor2_1)                     137.41    3916.91 r
+  U27644/op (nand2_1)                    102.93    4019.84 f
+  U27645/op (nor2_1)                     124.48    4144.32 r
+  U27718/op (nand3_1)                    178.33    4322.65 f
+  U27719/op (nor3_1)                     215.50    4538.15 r
+  U27781/op (nand3_1)                    169.59    4707.75 f
+  U27782/op (nor2_1)                     560.81    5268.56 r
+  U29391/op (nand2_1)                    159.94    5428.49 f
+  U29394/op (nand4_1)                     92.38    5520.87 r
+  U29395/op (not_ab_or_c_or_d)            99.13    5620.00 f
+  U29396/op (nor2_1)                     118.99    5739.00 r
+  U29402/op (not_ab_or_c_or_d)           112.72    5851.72 f
+  U29405/op (nand4_1)                    105.49    5957.21 r
+  U29443/op (not_ab_or_c_or_d)           143.34    6100.55 f
+  U29444/op (or2_1)                      181.12    6281.67 f
+  U29445/op (nand2_1)                     44.96    6326.62 r
+  U29459/op (not_ab_or_c_or_d)           103.53    6430.16 f
+  U29463/op (nand4_1)                    106.10    6536.25 r
+  U29464/op (nand2_1)                     79.79    6616.04 f
+  U29467/op (nand4_1)                    108.90    6724.94 r
+  U29468/op (nand2_1)                     79.61    6804.55 f
+  U29470/op (nand2_1)                     69.15    6873.69 r
+  y_reg[3]/ip (dp_1)                       0.00    6873.69 r
+  data arrival time                                6873.69
+
+  clock clk (rise edge)                50000.00   50000.00
+  clock network delay (ideal)              0.00   50000.00
+  y_reg[3]/ck (dp_1)                       0.00   50000.00 r
+  library setup time                    -143.85   49856.15
+  data required time                              49856.15
+  -----------------------------------------------------------
+  data required time                              49856.15
+  data arrival time                               -6873.69
+  -----------------------------------------------------------
+  slack (MET)                                     42982.45
 
 
 1

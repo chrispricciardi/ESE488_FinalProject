@@ -9,15 +9,17 @@ Report : timing
         -max_paths 20
 Design : sigmoid
 Version: J-2014.09-SP5
-Date   : Sun Dec  3 12:46:40 2017
+Date   : Tue Dec  5 22:30:43 2017
 ****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
 
 Operating Conditions: nom_pvt   Library: vtvt_tsmc180
 Wire Load Model Mode: top
 
-  Startpoint: sig_rdy_reg
+  Startpoint: LUT_reg[47][0]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: sig_rdy_reg
+  Endpoint: LUT_reg[47][0]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: min
@@ -26,57 +28,27 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
-  sig_rdy_reg/q (dp_1)                   271.30     271.30 r
-  U70/op (nor2_1)                        104.32     375.62 f
-  U71/op (nor2_1)                         80.65     456.27 r
-  sig_rdy_reg/ip (dp_1)                    0.00     456.27 r
-  data arrival time                                 456.27
+  LUT_reg[47][0]/ck (dp_1)                 0.00 #     0.00 r
+  LUT_reg[47][0]/q (dp_1)                126.50     126.50 r
+  U20803/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[47][0]/ip (dp_1)                 0.00     242.90 r
+  data arrival time                                 242.90
 
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
+  LUT_reg[47][0]/ck (dp_1)                 0.00       0.00 r
   library hold time                        0.00       0.00
   data required time                                  0.00
   -----------------------------------------------------------
   data required time                                  0.00
-  data arrival time                                -456.27
+  data arrival time                                -242.90
   -----------------------------------------------------------
-  slack (MET)                                       456.27
+  slack (MET)                                       242.90
 
 
-  Startpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
-  Path Group: clk
-  Path Type: min
-
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clock clk (rise edge)                    0.00       0.00
-  clock network delay (ideal)              0.00       0.00
-  y_reg[8]/ck (dp_1)                       0.00       0.00 r
-  y_reg[8]/q (dp_1)                      271.08     271.08 r
-  U57/op (nand2_1)                       102.22     373.30 f
-  U58/op (or2_1)                         118.82     492.13 f
-  U68/op (nand2_1)                        47.72     539.85 r
-  y_reg[8]/ip (dp_1)                       0.00     539.85 r
-  data arrival time                                 539.85
-
-  clock clk (rise edge)                    0.00       0.00
-  clock network delay (ideal)              0.00       0.00
-  y_reg[8]/ck (dp_1)                       0.00       0.00 r
-  library hold time                        0.00       0.00
-  data required time                                  0.00
-  -----------------------------------------------------------
-  data required time                                  0.00
-  data arrival time                                -539.85
-  -----------------------------------------------------------
-  slack (MET)                                       539.85
-
-
-  Startpoint: sig_rdy_reg
+  Startpoint: LUT_reg[45][9]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: sig_rdy_reg
+  Endpoint: LUT_reg[45][9]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: min
@@ -85,27 +57,28 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
-  sig_rdy_reg/q (dp_1)                   345.61     345.61 f
-  U70/op (nor2_1)                        126.70     472.32 r
-  U71/op (nor2_1)                         71.79     544.11 f
-  sig_rdy_reg/ip (dp_1)                    0.00     544.11 f
-  data arrival time                                 544.11
+  LUT_reg[45][9]/ck (dp_1)                 0.00 #     0.00 r
+  LUT_reg[45][9]/q (dp_1)                126.50     126.50 r
+  U20826/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[45][9]/ip (dp_1)                 0.00     242.90 r
+  data arrival time                                 242.90
 
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  sig_rdy_reg/ck (dp_1)                    0.00       0.00 r
+  LUT_reg[45][9]/ck (dp_1)                 0.00       0.00 r
   library hold time                        0.00       0.00
   data required time                                  0.00
   -----------------------------------------------------------
   data required time                                  0.00
-  data arrival time                                -544.11
+  data arrival time                                -242.90
   -----------------------------------------------------------
-  slack (MET)                                       544.11
+  slack (MET)                                       242.90
 
 
-  Startpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: y_reg[8] (rising edge-triggered flip-flop clocked by clk)
+  Startpoint: LUT_reg[43][11]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: LUT_reg[43][11]
+            (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: min
 
@@ -113,24 +86,515 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  y_reg[8]/ck (dp_1)                       0.00       0.00 r
-  y_reg[8]/q (dp_1)                      345.43     345.43 f
-  U57/op (nand2_1)                        81.66     427.09 r
-  U58/op (or2_1)                          72.30     499.39 r
-  U68/op (nand2_1)                        58.24     557.63 f
-  y_reg[8]/ip (dp_1)                       0.00     557.63 f
-  data arrival time                                 557.63
+  LUT_reg[43][11]/ck (dp_1)                0.00 #     0.00 r
+  LUT_reg[43][11]/q (dp_1)               126.50     126.50 r
+  U20856/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[43][11]/ip (dp_1)                0.00     242.90 r
+  data arrival time                                 242.90
 
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  y_reg[8]/ck (dp_1)                       0.00       0.00 r
+  LUT_reg[43][11]/ck (dp_1)                0.00       0.00 r
   library hold time                        0.00       0.00
   data required time                                  0.00
   -----------------------------------------------------------
   data required time                                  0.00
-  data arrival time                                -557.63
+  data arrival time                                -242.90
   -----------------------------------------------------------
-  slack (MET)                                       557.63
+  slack (MET)                                       242.90
+
+
+  Startpoint: LUT_reg[43][6]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: LUT_reg[43][6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[43][6]/ck (dp_1)                 0.00 #     0.00 r
+  LUT_reg[43][6]/q (dp_1)                126.50     126.50 r
+  U20861/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[43][6]/ip (dp_1)                 0.00     242.90 r
+  data arrival time                                 242.90
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[43][6]/ck (dp_1)                 0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -242.90
+  -----------------------------------------------------------
+  slack (MET)                                       242.90
+
+
+  Startpoint: LUT_reg[15][15]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: LUT_reg[15][15]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][15]/ck (dp_1)                0.00 #     0.00 r
+  LUT_reg[15][15]/q (dp_1)               126.50     126.50 r
+  U21300/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[15][15]/ip (dp_1)                0.00     242.90 r
+  data arrival time                                 242.90
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][15]/ck (dp_1)                0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -242.90
+  -----------------------------------------------------------
+  slack (MET)                                       242.90
+
+
+  Startpoint: LUT_reg[15][14]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: LUT_reg[15][14]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][14]/ck (dp_1)                0.00 #     0.00 r
+  LUT_reg[15][14]/q (dp_1)               126.50     126.50 r
+  U21301/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[15][14]/ip (dp_1)                0.00     242.90 r
+  data arrival time                                 242.90
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][14]/ck (dp_1)                0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -242.90
+  -----------------------------------------------------------
+  slack (MET)                                       242.90
+
+
+  Startpoint: LUT_reg[15][13]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: LUT_reg[15][13]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][13]/ck (dp_1)                0.00 #     0.00 r
+  LUT_reg[15][13]/q (dp_1)               126.50     126.50 r
+  U21302/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[15][13]/ip (dp_1)                0.00     242.90 r
+  data arrival time                                 242.90
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][13]/ck (dp_1)                0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -242.90
+  -----------------------------------------------------------
+  slack (MET)                                       242.90
+
+
+  Startpoint: LUT_reg[15][12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: LUT_reg[15][12]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][12]/ck (dp_1)                0.00 #     0.00 r
+  LUT_reg[15][12]/q (dp_1)               126.50     126.50 r
+  U21303/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[15][12]/ip (dp_1)                0.00     242.90 r
+  data arrival time                                 242.90
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][12]/ck (dp_1)                0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -242.90
+  -----------------------------------------------------------
+  slack (MET)                                       242.90
+
+
+  Startpoint: LUT_reg[15][11]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: LUT_reg[15][11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][11]/ck (dp_1)                0.00 #     0.00 r
+  LUT_reg[15][11]/q (dp_1)               126.50     126.50 r
+  U21304/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[15][11]/ip (dp_1)                0.00     242.90 r
+  data arrival time                                 242.90
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][11]/ck (dp_1)                0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -242.90
+  -----------------------------------------------------------
+  slack (MET)                                       242.90
+
+
+  Startpoint: LUT_reg[15][10]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: LUT_reg[15][10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][10]/ck (dp_1)                0.00 #     0.00 r
+  LUT_reg[15][10]/q (dp_1)               126.50     126.50 r
+  U21305/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[15][10]/ip (dp_1)                0.00     242.90 r
+  data arrival time                                 242.90
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][10]/ck (dp_1)                0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -242.90
+  -----------------------------------------------------------
+  slack (MET)                                       242.90
+
+
+  Startpoint: LUT_reg[15][9]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: LUT_reg[15][9]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][9]/ck (dp_1)                 0.00 #     0.00 r
+  LUT_reg[15][9]/q (dp_1)                126.50     126.50 r
+  U21306/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[15][9]/ip (dp_1)                 0.00     242.90 r
+  data arrival time                                 242.90
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][9]/ck (dp_1)                 0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -242.90
+  -----------------------------------------------------------
+  slack (MET)                                       242.90
+
+
+  Startpoint: LUT_reg[15][8]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: LUT_reg[15][8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][8]/ck (dp_1)                 0.00 #     0.00 r
+  LUT_reg[15][8]/q (dp_1)                126.50     126.50 r
+  U21307/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[15][8]/ip (dp_1)                 0.00     242.90 r
+  data arrival time                                 242.90
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][8]/ck (dp_1)                 0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -242.90
+  -----------------------------------------------------------
+  slack (MET)                                       242.90
+
+
+  Startpoint: LUT_reg[15][7]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: LUT_reg[15][7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][7]/ck (dp_1)                 0.00 #     0.00 r
+  LUT_reg[15][7]/q (dp_1)                126.50     126.50 r
+  U21308/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[15][7]/ip (dp_1)                 0.00     242.90 r
+  data arrival time                                 242.90
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][7]/ck (dp_1)                 0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -242.90
+  -----------------------------------------------------------
+  slack (MET)                                       242.90
+
+
+  Startpoint: LUT_reg[15][6]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: LUT_reg[15][6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][6]/ck (dp_1)                 0.00 #     0.00 r
+  LUT_reg[15][6]/q (dp_1)                126.50     126.50 r
+  U21309/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[15][6]/ip (dp_1)                 0.00     242.90 r
+  data arrival time                                 242.90
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][6]/ck (dp_1)                 0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -242.90
+  -----------------------------------------------------------
+  slack (MET)                                       242.90
+
+
+  Startpoint: LUT_reg[15][5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: LUT_reg[15][5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][5]/ck (dp_1)                 0.00 #     0.00 r
+  LUT_reg[15][5]/q (dp_1)                126.50     126.50 r
+  U21310/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[15][5]/ip (dp_1)                 0.00     242.90 r
+  data arrival time                                 242.90
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][5]/ck (dp_1)                 0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -242.90
+  -----------------------------------------------------------
+  slack (MET)                                       242.90
+
+
+  Startpoint: LUT_reg[15][4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: LUT_reg[15][4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][4]/ck (dp_1)                 0.00 #     0.00 r
+  LUT_reg[15][4]/q (dp_1)                126.50     126.50 r
+  U21311/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[15][4]/ip (dp_1)                 0.00     242.90 r
+  data arrival time                                 242.90
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][4]/ck (dp_1)                 0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -242.90
+  -----------------------------------------------------------
+  slack (MET)                                       242.90
+
+
+  Startpoint: LUT_reg[15][3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: LUT_reg[15][3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][3]/ck (dp_1)                 0.00 #     0.00 r
+  LUT_reg[15][3]/q (dp_1)                126.50     126.50 r
+  U21312/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[15][3]/ip (dp_1)                 0.00     242.90 r
+  data arrival time                                 242.90
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][3]/ck (dp_1)                 0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -242.90
+  -----------------------------------------------------------
+  slack (MET)                                       242.90
+
+
+  Startpoint: LUT_reg[15][2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: LUT_reg[15][2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][2]/ck (dp_1)                 0.00 #     0.00 r
+  LUT_reg[15][2]/q (dp_1)                126.50     126.50 r
+  U21313/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[15][2]/ip (dp_1)                 0.00     242.90 r
+  data arrival time                                 242.90
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][2]/ck (dp_1)                 0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -242.90
+  -----------------------------------------------------------
+  slack (MET)                                       242.90
+
+
+  Startpoint: LUT_reg[15][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: LUT_reg[15][1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][1]/ck (dp_1)                 0.00 #     0.00 r
+  LUT_reg[15][1]/q (dp_1)                126.50     126.50 r
+  U21314/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[15][1]/ip (dp_1)                 0.00     242.90 r
+  data arrival time                                 242.90
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][1]/ck (dp_1)                 0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -242.90
+  -----------------------------------------------------------
+  slack (MET)                                       242.90
+
+
+  Startpoint: LUT_reg[15][0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: LUT_reg[15][0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][0]/ck (dp_1)                 0.00 #     0.00 r
+  LUT_reg[15][0]/q (dp_1)                126.50     126.50 r
+  U21315/op (mux2_1)                     116.41     242.90 r
+  LUT_reg[15][0]/ip (dp_1)                 0.00     242.90 r
+  data arrival time                                 242.90
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  LUT_reg[15][0]/ck (dp_1)                 0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -242.90
+  -----------------------------------------------------------
+  slack (MET)                                       242.90
 
 
 1

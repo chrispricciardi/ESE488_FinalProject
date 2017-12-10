@@ -18,12 +18,8 @@ input read;
 input write;
 
 
-
 reg [15:0] regs [99:0];
 integer i;
-
-
-
 
 always @(posedge clk) begin
 	//Reset if high

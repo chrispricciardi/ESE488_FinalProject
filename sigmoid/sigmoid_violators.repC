@@ -4,7 +4,7 @@ Report : constraint
         -all_violators
 Design : sigmoid
 Version: J-2014.09-SP5
-Date   : Sun Dec  3 12:46:40 2017
+Date   : Tue Dec  5 22:30:43 2017
 ****************************************
 
 
@@ -13,7 +13,7 @@ Date   : Sun Dec  3 12:46:40 2017
                              Required        Actual
    Design                   Leakage Power  Leakage Power     Slack
    -----------------------------------------------------------------
-   sigmoid                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   sigmoid                      0.00           0.01          -0.01  (VIOLATED)
 
 
 1

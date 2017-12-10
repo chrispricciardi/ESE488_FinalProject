@@ -1,6 +1,6 @@
 ###################################################################
 
-# Created by write_sdc on Sun Dec  3 12:46:40 2017
+# Created by write_sdc on Tue Dec  5 22:30:42 2017
 
 ###################################################################
 set sdc_version 2.0
@@ -10,6 +10,23 @@ set_units -time ps -resistance kOhm -capacitance fF -power mW -voltage V       \
 set_driving_cell -lib_cell inv_1 [get_ports clk]
 set_driving_cell -lib_cell inv_1 [get_ports reset]
 set_driving_cell -lib_cell inv_1 [get_ports done]
+set_driving_cell -lib_cell inv_1 [get_ports {d[15]}]
+set_driving_cell -lib_cell inv_1 [get_ports {d[14]}]
+set_driving_cell -lib_cell inv_1 [get_ports {d[13]}]
+set_driving_cell -lib_cell inv_1 [get_ports {d[12]}]
+set_driving_cell -lib_cell inv_1 [get_ports {d[11]}]
+set_driving_cell -lib_cell inv_1 [get_ports {d[10]}]
+set_driving_cell -lib_cell inv_1 [get_ports {d[9]}]
+set_driving_cell -lib_cell inv_1 [get_ports {d[8]}]
+set_driving_cell -lib_cell inv_1 [get_ports {d[7]}]
+set_driving_cell -lib_cell inv_1 [get_ports {d[6]}]
+set_driving_cell -lib_cell inv_1 [get_ports {d[5]}]
+set_driving_cell -lib_cell inv_1 [get_ports {d[4]}]
+set_driving_cell -lib_cell inv_1 [get_ports {d[3]}]
+set_driving_cell -lib_cell inv_1 [get_ports {d[2]}]
+set_driving_cell -lib_cell inv_1 [get_ports {d[1]}]
+set_driving_cell -lib_cell inv_1 [get_ports {d[0]}]
+set_driving_cell -lib_cell inv_1 [get_ports we]
 set_driving_cell -lib_cell inv_1 [get_ports {sig_in[15]}]
 set_driving_cell -lib_cell inv_1 [get_ports {sig_in[14]}]
 set_driving_cell -lib_cell inv_1 [get_ports {sig_in[13]}]
@@ -26,6 +43,13 @@ set_driving_cell -lib_cell inv_1 [get_ports {sig_in[3]}]
 set_driving_cell -lib_cell inv_1 [get_ports {sig_in[2]}]
 set_driving_cell -lib_cell inv_1 [get_ports {sig_in[1]}]
 set_driving_cell -lib_cell inv_1 [get_ports {sig_in[0]}]
+set_driving_cell -lib_cell inv_1 [get_ports {address[6]}]
+set_driving_cell -lib_cell inv_1 [get_ports {address[5]}]
+set_driving_cell -lib_cell inv_1 [get_ports {address[4]}]
+set_driving_cell -lib_cell inv_1 [get_ports {address[3]}]
+set_driving_cell -lib_cell inv_1 [get_ports {address[2]}]
+set_driving_cell -lib_cell inv_1 [get_ports {address[1]}]
+set_driving_cell -lib_cell inv_1 [get_ports {address[0]}]
 set_load -pin_load 57.462 [get_ports sig_ready]
 set_load -pin_load 57.462 [get_ports {sig_out[15]}]
 set_load -pin_load 57.462 [get_ports {sig_out[14]}]
