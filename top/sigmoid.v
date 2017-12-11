@@ -49,10 +49,11 @@ begin
 
 	end else if(we == 0)begin 
 
-
+/*
 	if(sig_rdy)begin 
 	sig_rdy <= 0; 
 	end
+	*/
 
 	//If reset is held high reset
 	if (reset==1) begin
@@ -61,6 +62,7 @@ begin
 	end
 	//If the MAC output is ready, compare it to the lookup table
 	else if (done==1) begin
+		sig_rdy<=0; //set sig_ready to low 
 		//Implement the lookup table
 		//If the input is less than 6
 		if (sig_in >= $signed(16'b1111101000000000) && sig_in <= $signed(16'b0000011000000000)) begin
