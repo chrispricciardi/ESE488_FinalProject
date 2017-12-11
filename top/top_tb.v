@@ -87,17 +87,15 @@ module top_tb();
 		reset = 1;
 		we = 0; //testing
 	    	address_2 = 0; 
-		address_3 = 0; 
-		mac1_start = 0; 
-		mac2_start = 0; 
-
+		address_3 = 0;
 		//address_4 = 0; 
 		address_5 = 0; 
+		mac1_start = 0; 
+		mac2_start = 0; 
 		sel = 4'b1010; 
 
 		#20		
 		reset = 0; 
-		sel = 4'b0000;
 
 	    //---Cycle through input data and weights
 		for(i = 0; i< 200; i=i+1)begin 
@@ -115,12 +113,12 @@ module top_tb();
 		end	
 	    //--when the sigmoid completes a data set, send select signal and addresses for second layer weights---
 	    //--this might have to be moved to a separate DMA file to avoid conflicting timing with the for loops above
-	    always @ (posedge clk) begin 
+	    always @ (sig_ready) begin 
 		    if(sig_ready==1)begin
 			    for(a=0;a<10;a=a+1)begin
 				    sel <= i; 
 				    for(b=0;b<10;b=b+1)begin 
-					    address_2 <= b +count*10; 
+					    address_2 <= b + count*10; 
 				    end 
 				    count = count + 1;
 			     end
