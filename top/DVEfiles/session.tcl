@@ -1,14 +1,13 @@
 # Begin_DVE_Session_Save_Info
 # DVE full session
-# Saved on Sun Dec 10 15:06:13 2017
+# Saved on Sun Dec 10 16:23:28 2017
 # Designs open: 1
-#   V2: /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/top.vcd
+#   V1: /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/top.vcd
 # Toplevel windows open: 1
 # 	TopLevel.1
 #   Source.1: 
-#   Group count = 2
-#   Group MUX signal count = 0
-#   Group MUX_1 signal count = 12
+#   Group count = 1
+#   Group MAC_OUT signal count = 25
 # End_DVE_Session_Save_Info
 
 # DVE version: J-2014.12-SP1-1
@@ -67,7 +66,7 @@ if {![gui_exist_window -window TopLevel.1]} {
 } else { 
     set TopLevel.1 TopLevel.1
 }
-gui_show_window -window ${TopLevel.1} -show_state normal -rect {{37 146} {967 718}}
+gui_show_window -window ${TopLevel.1} -show_state normal -rect {{38 182} {967 753}}
 
 # ToolBar settings
 gui_set_toolbar_attributes -toolbar {TimeOperations} -dock_state top
@@ -108,23 +107,23 @@ gui_hide_toolbar -toolbar {Testbench}
 # End ToolBar settings
 
 # Docked window settings
-set HSPane.1 [gui_create_window -type HSPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 206]
+set HSPane.1 [gui_create_window -type HSPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 205]
 catch { set Hier.1 [gui_share_window -id ${HSPane.1} -type Hier] }
-gui_set_window_pref_key -window ${HSPane.1} -key dock_width -value_type integer -value 206
+gui_set_window_pref_key -window ${HSPane.1} -key dock_width -value_type integer -value 205
 gui_set_window_pref_key -window ${HSPane.1} -key dock_height -value_type integer -value -1
 gui_set_window_pref_key -window ${HSPane.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${HSPane.1} {{left 0} {top 0} {width 205} {height 368} {dock_state left} {dock_on_new_line true} {child_hier_colhier 166} {child_hier_coltype 100} {child_hier_colpd 0} {child_hier_col1 0} {child_hier_col2 1} {child_hier_col3 -1}}
-set DLPane.1 [gui_create_window -type DLPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 109]
+gui_update_layout -id ${HSPane.1} {{left 0} {top 0} {width 204} {height 367} {dock_state left} {dock_on_new_line true} {child_hier_colhier 166} {child_hier_coltype 100} {child_hier_colpd 0} {child_hier_col1 0} {child_hier_col2 1} {child_hier_col3 -1}}
+set DLPane.1 [gui_create_window -type DLPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 108]
 catch { set Data.1 [gui_share_window -id ${DLPane.1} -type Data] }
-gui_set_window_pref_key -window ${DLPane.1} -key dock_width -value_type integer -value 109
-gui_set_window_pref_key -window ${DLPane.1} -key dock_height -value_type integer -value 369
+gui_set_window_pref_key -window ${DLPane.1} -key dock_width -value_type integer -value 108
+gui_set_window_pref_key -window ${DLPane.1} -key dock_height -value_type integer -value 368
 gui_set_window_pref_key -window ${DLPane.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${DLPane.1} {{left 0} {top 0} {width 108} {height 368} {dock_state left} {dock_on_new_line true} {child_data_colvariable 140} {child_data_colvalue 100} {child_data_coltype 40} {child_data_col1 0} {child_data_col2 1} {child_data_col3 2}}
+gui_update_layout -id ${DLPane.1} {{left 0} {top 0} {width 107} {height 367} {dock_state left} {dock_on_new_line true} {child_data_colvariable 140} {child_data_colvalue 100} {child_data_coltype 40} {child_data_col1 0} {child_data_col2 1} {child_data_col3 2}}
 set Console.1 [gui_create_window -type Console -parent ${TopLevel.1} -dock_state bottom -dock_on_new_line true -dock_extent 105]
-gui_set_window_pref_key -window ${Console.1} -key dock_width -value_type integer -value 931
+gui_set_window_pref_key -window ${Console.1} -key dock_width -value_type integer -value 930
 gui_set_window_pref_key -window ${Console.1} -key dock_height -value_type integer -value 105
 gui_set_window_pref_key -window ${Console.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${Console.1} {{left 0} {top 0} {width 930} {height 105} {dock_state bottom} {dock_on_new_line true}}
+gui_update_layout -id ${Console.1} {{left 0} {top 0} {width 929} {height 105} {dock_state bottom} {dock_on_new_line true}}
 #### Start - Readjusting docked view's offset / size
 set dockAreaList { top left right bottom }
 foreach dockArea $dockAreaList {
@@ -147,8 +146,8 @@ gui_sync_global -id ${TopLevel.1} -option true
 
 # MDI window settings
 set Source.1 [gui_create_window -type {Source}  -parent ${TopLevel.1}]
-gui_show_window -window ${Source.1} -show_state normal -rect {{0 0} {607 318}}
-gui_update_layout -id ${Source.1} {{left 0} {top 0} {width 612} {height 343} {show_state normal} {dock_state undocked} {dock_on_new_line false}}
+gui_show_window -window ${Source.1} -show_state normal -rect {{0 0} {608 317}}
+gui_update_layout -id ${Source.1} {{left 0} {top 0} {width 613} {height 342} {show_state normal} {dock_state undocked} {dock_on_new_line false}}
 
 # End MDI window settings
 
@@ -168,7 +167,7 @@ gui_update_statusbar_target_frame ${TopLevel.1}
 # DVE Open design session: 
 
 if { ![gui_is_db_opened -db {/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/top.vcd.vpd}] } {
-	gui_open_db -design V2 -file /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/top.vcd.vpd -nosource
+	gui_open_db -design V1 -file /home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/top.vcd.vpd -nosource
 }
 gui_set_precision 1ps
 gui_set_time_units 1ps
@@ -186,19 +185,14 @@ gui_set_time_units 1ps
 # Global: Signal Compare
 
 # Global: Signal Groups
-gui_load_child_values {top_tb.DUT.MUX}
+gui_load_child_values {top_tb.DUT.MAC_OUT}
 
 
-set _session_group_1 MUX
+set _session_group_1 MAC_OUT
 gui_sg_create "$_session_group_1"
-set MUX "$_session_group_1"
+set MAC_OUT "$_session_group_1"
 
-
-set _session_group_2 MUX_1
-gui_sg_create "$_session_group_2"
-set MUX_1 "$_session_group_2"
-
-gui_sg_addsignal -group "$_session_group_2" { top_tb.DUT.MUX.sel top_tb.DUT.MUX.mux_in_0 top_tb.DUT.MUX.mux_in_1 top_tb.DUT.MUX.mux_in_2 top_tb.DUT.MUX.mux_in_3 top_tb.DUT.MUX.mux_in_4 top_tb.DUT.MUX.mux_in_5 top_tb.DUT.MUX.mux_in_6 top_tb.DUT.MUX.mux_in_7 top_tb.DUT.MUX.mux_in_8 top_tb.DUT.MUX.mux_in_9 top_tb.DUT.MUX.mux_out }
+gui_sg_addsignal -group "$_session_group_1" { top_tb.DUT.MAC_OUT.clk top_tb.DUT.MAC_OUT.reset top_tb.DUT.MAC_OUT.start top_tb.DUT.MAC_OUT.mac_in top_tb.DUT.MAC_OUT.weight top_tb.DUT.MAC_OUT.mac_out top_tb.DUT.MAC_OUT.addr_in top_tb.DUT.MAC_OUT.mac_req_addr top_tb.DUT.MAC_OUT.reg_read top_tb.DUT.MAC_OUT.read top_tb.DUT.MAC_OUT.write top_tb.DUT.MAC_OUT.mult_out top_tb.DUT.MAC_OUT.mac2_en top_tb.DUT.MAC_OUT.stage1 top_tb.DUT.MAC_OUT.stage2 top_tb.DUT.MAC_OUT.stage3 top_tb.DUT.MAC_OUT.stage4 top_tb.DUT.MAC_OUT.stage5 top_tb.DUT.MAC_OUT.stage6 top_tb.DUT.MAC_OUT.addr1 top_tb.DUT.MAC_OUT.addr2 top_tb.DUT.MAC_OUT.addr3 top_tb.DUT.MAC_OUT.addr4 top_tb.DUT.MAC_OUT.addr5 top_tb.DUT.MAC_OUT.addr6 }
 
 # Global: Highlighting
 
@@ -208,7 +202,7 @@ gui_change_stack_mode -mode list
 # Post database loading setting...
 
 # Restore C1 time
-gui_set_time -C1_only 13668839
+gui_set_time -C1_only 0
 
 
 
@@ -232,20 +226,20 @@ gui_show_window -window ${Hier.1}
 gui_list_set_filter -id ${Hier.1} -list { {Package 1} {All 0} {Process 1} {VirtPowSwitch 0} {UnnamedProcess 1} {UDP 0} {Function 1} {Block 1} {SrsnAndSpaCell 0} {OVA Unit 1} {LeafScCell 1} {LeafVlgCell 1} {Interface 1} {LeafVhdCell 1} {$unit 1} {NamedBlock 1} {Task 1} {VlgPackage 1} {ClassDef 1} {VirtIsoCell 0} }
 gui_list_set_filter -id ${Hier.1} -text {*}
 gui_hier_list_init -id ${Hier.1}
-gui_change_design -id ${Hier.1} -design V2
+gui_change_design -id ${Hier.1} -design V1
 catch {gui_list_expand -id ${Hier.1} top_tb}
 catch {gui_list_expand -id ${Hier.1} top_tb.DUT}
-catch {gui_list_select -id ${Hier.1} {top_tb.DUT.MUX}}
-gui_view_scroll -id ${Hier.1} -vertical -set 260
+catch {gui_list_select -id ${Hier.1} {top_tb.DUT.MAC_OUT}}
+gui_view_scroll -id ${Hier.1} -vertical -set 483
 gui_view_scroll -id ${Hier.1} -horizontal -set 0
 
 # Data 'Data.1'
 gui_list_set_filter -id ${Data.1} -list { {Buffer 1} {Input 1} {Others 1} {Linkage 1} {Output 1} {LowPower 1} {Parameter 1} {All 1} {Aggregate 1} {LibBaseMember 1} {Event 1} {Assertion 1} {Constant 1} {Interface 1} {BaseMembers 1} {Signal 1} {$unit 1} {Inout 1} {Variable 1} }
 gui_list_set_filter -id ${Data.1} -text {*}
-gui_list_show_data -id ${Data.1} {top_tb.DUT.MUX}
+gui_list_show_data -id ${Data.1} {top_tb.DUT.MAC_OUT}
 gui_view_scroll -id ${Data.1} -vertical -set 0
 gui_view_scroll -id ${Data.1} -horizontal -set 0
-gui_view_scroll -id ${Hier.1} -vertical -set 260
+gui_view_scroll -id ${Hier.1} -vertical -set 483
 gui_view_scroll -id ${Hier.1} -horizontal -set 0
 
 # Source 'Source.1'

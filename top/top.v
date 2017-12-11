@@ -12,6 +12,7 @@ mac2_start,
 mac1_done, 
 mac2_done,
 sel,	
+sig_ready,
 reset
 );
 
@@ -28,6 +29,7 @@ input [9:0]  address_3; //sram_input address
 input [6:0] address_5; //BS sig address
 input [6:0] sel; //select signal for hidden layer mux to output layer
 input mac1_start, mac2_start; // mac signal set to input for testing
+
 
 //---WIRES---
 wire signed [15:0] d0,d1,d2,d3,d4,d5,d6,d7,d8,d9; //data to sram_input
@@ -47,6 +49,8 @@ wire signed [15:0] reg_read;
 
 //---OUTPUTS---
 output  mac1_done, mac2_done; // control signal from MAC
+output wire sig_ready;
+assign sig_ready = sig1_ready0;
 
 reg signed [15:0] data = 0; 
 

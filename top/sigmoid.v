@@ -20,6 +20,7 @@ input [6:0] address; //address for writing to sigmoid
 input we; //write enable for registers holding Sigmoid values
 input signed [15:0] d; //data input to Sigmoid value register
 input signed [15:0] sig_in;
+
 output [15:0] sig_out;
 output sig_ready;
 
@@ -110,7 +111,7 @@ begin
 
 		
 		//The sigmoid function is now ready
-		#5 sig_rdy <= 1;
+		#20 sig_rdy <= 1;
 		
 		end
 	end
