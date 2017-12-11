@@ -16,8 +16,8 @@ module top_tb();
 	wire mac1_done; 
 	wire mac2_done;
 
-	integer i; 
-	integer j; 
+	integer i,j,a,b,count; 
+	
 
 	
     top DUT(
@@ -82,32 +82,15 @@ module top_tb();
 /*
 	$readmemb("x_fix.txt", DUT.SIGMOID2_1.x);
 	$readmemb("y_fix.txt", DUT.SIGMOID2_1.LUT);
-	$readmemb("x_fix.txt", DUT.SIGMOID2_2.x);
-	$readmemb("y_fix.txt", DUT.SIGMOID2_2.LUT);
-	$readmemb("x_fix.txt", DUT.SIGMOID2_3.x);
-	$readmemb("y_fix.txt", DUT.SIGMOID2_3.LUT);
-	$readmemb("x_fix.txt", DUT.SIGMOID2_4.x);
-	$readmemb("y_fix.txt", DUT.SIGMOID2_4.LUT);
-	$readmemb("x_fix.txt", DUT.SIGMOID2_5.x);
-	$readmemb("y_fix.txt", DUT.SIGMOID2_5.LUT);
-	$readmemb("x_fix.txt", DUT.SIGMOID2_6.x);
-	$readmemb("y_fix.txt", DUT.SIGMOID2_6.LUT);
-	$readmemb("x_fix.txt", DUT.SIGMOID2_7.x);
-	$readmemb("y_fix.txt", DUT.SIGMOID2_7.LUT);
-	$readmemb("x_fix.txt", DUT.SIGMOID2_8.x);
-	$readmemb("y_fix.txt", DUT.SIGMOID2_8.LUT);
-	$readmemb("x_fix.txt", DUT.SIGMOID2_9.x);
-	$readmemb("y_fix.txt", DUT.SIGMOID2_9.LUT);
-	$readmemb("x_fix.txt", DUT.SIGMOID2_10.x);
-	$readmemb("y_fix.txt", DUT.SIGMOID2_10.LUT);
 */
 		clk = 0;
 		reset = 1;
 		we = 0; //testing
+	    	address_2 = 0; 
 		address_3 = 0; 
 		mac1_start = 0; 
 		mac2_start = 0; 
-		address_2 = 0; 
+
 		//address_4 = 0; 
 		address_5 = 0; 
 		sel = 4'b1010; 
@@ -116,6 +99,7 @@ module top_tb();
 		reset = 0; 
 		sel = 4'b0000;
 
+	    //---Cycle through input data and weights
 		for(i = 0; i< 200; i=i+1)begin 
 			for (j = 0; j < 784; j=j+1)begin 
 				#20
@@ -126,13 +110,20 @@ module top_tb();
 				end
 				else begin 
 					mac1_start = 0; 
-				end
-				//if(mac1_done == 1) begin 
-				//	address_2=address_2+1;
-		
-				//end 			
+				end		
 			end
 		end	
+	    //--when the sigmoid completes a data set, send select signal and addresses for second layer weights---
+	    //--this might have to be moved to a separate DMA file to avoid conflicting timing with the for loops above
+	    always @ (posedge clk) begin 
+		    if(sig_ready==1)begin
+			    for(a=0;a<10;a=a+1)begin
+				    sel <= i; 
+				    for(b=0;b<10;b=b+1)begin 
+					    address_2 <= b +count*10; 
+				    end 
+				    count = count + 1;
+			     end
 		#300
 		$finish;
 
