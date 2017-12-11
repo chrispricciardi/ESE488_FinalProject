@@ -16,7 +16,7 @@ module top_tb();
 	wire mac1_done; 
 	wire mac2_done;
 
-	integer i,j,a,b,count; 
+	integer i,j,a,b,count,count_1, count_2; 
 	
 
 	
@@ -98,6 +98,24 @@ module top_tb();
 		reset = 0; 
 
 	    //---Cycle through input data and weights
+	    always@(posedge clk) begin 
+		    count_1 = count_1 + 1; 
+		    if(count_1 < 784*200)begin 
+		   	 address_1 <= count_1; //weight file is incremented from top to bottom
+		    
+		    for(i=0;i<200;i=i+1)begin 
+			    if(count_1 == i*784)begin //at the start of a new weight column, restart the input counter
+				    count_2 <= 0; 
+				    address_3 <= count_2;
+			    end else begin //increment the input counter
+				    count_2 <= count_2 + 1;
+				    address_3 <= count_2;
+			    end
+		    end 
+		    end 
+	   end		    
+	
+	/*	    
 		for(i = 0; i< 200; i=i+1)begin 
 			for (j = 0; j < 784; j=j+1)begin 
 				#20
@@ -111,6 +129,7 @@ module top_tb();
 				end		
 			end
 		end	
+	*/
 	    //--when the sigmoid completes a data set, send select signal and addresses for second layer weights---
 	    //--this might have to be moved to a separate DMA file to avoid conflicting timing with the for loops above
 	    always @ (sig_ready) begin 
@@ -118,7 +137,9 @@ module top_tb();
 			    for(a=0;a<10;a=a+1)begin
 				    sel <= i; 
 				    for(b=0;b<10;b=b+1)begin 
-					    address_2 <= b + count*10; 
+					    #20
+					    address_2 <= b + count*10;
+					    address_6 <= sel*10+address_2; 
 				    end 
 				    count = count + 1;
 			     end
