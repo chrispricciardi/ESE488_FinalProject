@@ -135,10 +135,10 @@ module top_tb();
 	    always @ (sig_ready) begin 
 		    if(sig_ready==1)begin
 			    for(a=0;a<10;a=a+1)begin
-				    sel <= i; 
+				    sel <= i; //index through multiplexer inputs (0-9)
 				    for(b=0;b<10;b=b+1)begin 
 					    #20
-					    address_2 <= b + count*10;
+					    address_2 <= b + count*10; //index through weight_2 SRAM. after 10 iterations, count increments to select the next weight column
 					    address_6 <= sel*10+address_2; 
 				    end 
 				    count = count + 1;
