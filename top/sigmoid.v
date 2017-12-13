@@ -50,68 +50,45 @@ begin
 
 	end else if(we == 0)begin 
 
-/*
-	if(sig_rdy)begin 
-	sig_rdy <= 0; 
-	end
-	*/
+		/*
+		if(sig_rdy)begin 
+		sig_rdy <= 0; 
+		end
+		*/
 
-	//If reset is held high reset
-	if (reset==1) begin
-		y<=0;
-		sig_rdy<=0;
-	end
-	//If the MAC output is ready, compare it to the lookup table
-	else if (done==1) begin
-		sig_rdy<=0; //set sig_ready to low 
-		//Implement the lookup table
-		//If the input is less than 6
-		if (sig_in >= $signed(16'b1111101000000000) && sig_in <= $signed(16'b0000011000000000)) begin
-			for (i=0; i<120; i=i+1) begin
-				//If the sigmoid input is between two registers, it must be
-				//in that bin
-				if ((sig_in >= x[i]) && (sig_in < x[i+1])) begin
-				//if (sig_in <= x[i] && sig_in > x[i+1]) begin
-					//Assign the lower y-value bin to the output register
-					y<=LUT[i];
+		//If reset is held high reset
+		if (reset==1) begin
+			y<=0;
+			sig_rdy<=0;
+		end
+		//If the MAC output is ready, compare it to the lookup table
+		else if (done==1) begin
+			sig_rdy<=0; //set sig_ready to low 
+			//Implement the lookup table
+			//If the input is less than 6
+			if (sig_in >= $signed(16'b1111101000000000) && sig_in <= $signed(16'b0000011000000000)) begin
+				for (i=0; i<120; i=i+1) begin
+					//If the sigmoid input is between two registers, it must be
+					//in that bin
+					if ((sig_in >= x[i]) && (sig_in < x[i+1])) begin
+					//if (sig_in <= x[i] && sig_in > x[i+1]) begin
+						//Assign the lower y-value bin to the output register
+						y<=LUT[i];
+					end
 				end
 			end
-		end
-		else if (sig_in < $signed(16'b1111101000000000)) begin
-			y<=16'h0000;
-		end
-
-		//If the input is more than 6
-		else if (sig_in > $signed(16'b0000011000000000)) begin
-			y<=16'h0100;
-		end
-		
-	/*
-		if (sig_in < $signed(16'b1111101000000000)) begin
-			y<=16'h0000;
-		end
-		//If the input is more than 6
-		else if (sig_in > $signed(16'b0000011000000000)) begin
-			y<=16'h0100;
-		end
-		//Otherwise go to the LUT
-		else begin
-			//Replicate bin comparitor logic
-			for (i=0; i<120; i=i+1) begin
-				//If the sigmoid input is between two registers, it must be
-				//in that bin
-				if ((sig_in >= x[i]) && (sig_in < x[i+1])) begin
-				//if (sig_in <= x[i] && sig_in > x[i+1]) begin
-					//Assign the lower y-value bin to the output register
-					y<=LUT[i];
-				end
+			else if (sig_in < $signed(16'b1111101000000000)) begin
+				y<=16'h0000;
 			end
-		end
-	*/
 
+			//If the input is more than 6
+			else if (sig_in > $signed(16'b0000011000000000)) begin
+				y<=16'h0100;
+			end
+	
 		
-		//The sigmoid function is now ready
-		#20 sig_rdy <= 1;
+			//The sigmoid function is now ready
+			#20 sig_rdy <= 1;
 		
 		end
 	end

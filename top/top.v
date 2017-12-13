@@ -7,13 +7,15 @@ address_2,
 address_3, //input SRAM address
 //address_4,
 address_5,//address for sigmoid BS
+address_6,
 mac1_start,
 mac2_start,
 mac1_done, 
 mac2_done,
 sel,	
 sig_ready,
-reset
+reset,
+final_out
 );
 
 //---Inputs---
@@ -27,8 +29,10 @@ input [11:0] address_2; //sram_weight2 address
 input [9:0]  address_3; //sram_input address
 //input [5:0] address_4; //sram_output address
 input [6:0] address_5; //BS sig address
+input [6:0] address_6; //Reg_out address
 input [6:0] sel; //select signal for hidden layer mux to output layer
 input mac1_start, mac2_start; // mac signal set to input for testing
+output reg signed [15:0] final_out;
 
 
 //---WIRES---
@@ -46,6 +50,11 @@ wire signed [15:0] mac_out;
 wire read, write;//signals from mac2 to reg_out
 wire [6:0] mac_req_addr;
 wire signed [15:0] reg_read; 
+wire signed [15:0] data_to_sig, data_from_sig;
+wire read_mac, write_mac, write_sig, read_sig;
+wire [6:0] sig_addr;
+wire write_mac, read_mac;
+wire all_done; 
 
 //---OUTPUTS---
 output  mac1_done, mac2_done; // control signal from MAC
@@ -322,19 +331,50 @@ mac2 MAC_OUT(.clk(clk),
 	.mac_in(mux_out),
 	.weight(weight_2), 
 	.mac_out(mac_out),
-	.addr_in(sel),
+	.addr_in(address_6),
 	.reg_read(reg_read), //Data from register file (for psum)
 	.mac_req_addr(mac_req_addr),//Address corresponding to the data exiting the pipeline
-	.read(read), 
-	.write(write));
+	.read(read_mac), 
+	.write(write_mac));
 
 //---REG_out---
 reg_out REG_OUT(.clk(clk),  
 	.reset(reset), 
-	.write_regs(mac_out), 
-	.regs_out(reg_read), 
-	.addr(mac_req_addr), 
-	.write(write), 
-	.read(read));
+	.data_from_mac(mac_out), 
+	.data_to_mac(reg_read),
+	.data_from_sig(data_from_sig),
+	.data_to_sig(data_to_sig),
+	.mac_addr(mac_req_addr),
+	.sig_addr(sig_addr),	
+	.write_mac(write_mac),
+	.read_mac(read_mac),
+	.write_sig(write_sig),
+	.read_sig(read_sig));
+
+
+sigmoid2 SIGMOID_OUT(.clk(clk),
+	.we(we),
+	.address(address_5),
+	.d(d1),
+	.reset(reset),
+	.read_regs(data_to_sig), 
+	.write_regs(data_from_sig), 
+	.sig_addr(sig_addr), 
+	.address_2(address_2), 
+	.read(read_sig), 
+	.write(write_sig),
+	.all_done(all_done));
+ 
+
+always @(data_from_sig) begin
+	if (reset==1) begin
+		final_out<=0;
+	end
+	else begin 
+		final_out<=data_from_sig;
+	end
+end
+
+
 
 endmodule

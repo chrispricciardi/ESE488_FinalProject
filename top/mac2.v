@@ -19,25 +19,57 @@ input signed [15:0] mac_in;	//Input from the MUX
 input signed [15:0] weight;	//Input from the weight function
 output signed [15:0] mac_out;	//Output back to the register file
 input [6:0] addr_in;		//Address corresponding to the data entering the pipeline
-output reg [6:0] mac_req_addr;	//Address corresponding to the data exiting the pipeline
+//output reg [6:0] mac_req_addr;	//Address corresponding to the data exiting the pipeline
+output wire read, write;
+
+output wire [6:0] mac_req_addr;
 input signed [15:0] reg_read;	//Data from register file (for psum)
 
-output reg read, write;		//Need to be high to access the register file (SHOULD BE OUTPUTS)
+//output reg read, write;		//Need to be high to access the register file (SHOULD BE OUTPUTS)
+
+
 
 //Define variables
 wire signed [15:0] mult_out;
-wire mac2_en; 		//enable the MAC to output
+
 
 //Stages 1-5 correspond to the multiplier module
 //Stage 6 corresponds to the accumulate stage
 reg stage1, stage2, stage3, stage4, stage5, stage6;
 reg [6:0] addr1, addr2, addr3, addr4, addr5, addr6;
+reg [6:0] prev_addr6;
+
 
 //Instantiate a pipelined multiplier
 mult mult1(clk, reset, mac_in, weight, mult_out);
 
 //If the address is valid, continue operations 
-assign mac2_en= (addr6>=0 && addr6 <=99) ? 1'b1 : 1'b0;
+//assign mac2_en= (addr6>=0 && addr6 <=99) ? 1'b1 : 1'b0;
+/*
+reg mac2_en; 		//enable the MAC to output
+always @(posedge clk) begin
+	if (reset==1) begin
+		mac2_en=0;
+	end
+	else if (addr5>=0 && addr5<=99) begin
+	//else if (addr6>=0 && addr6<=99) begin
+		//if (prev_addr6==addr6) begin
+		if (addr5==addr6) begin
+			mac2_en=0;
+		end
+		else begin
+			mac2_en=1;		
+		end			
+
+	end
+end
+*/
+
+wire mac2_en;
+assign mac2_en = (reset==1) ? 1'b0:
+		 ((addr5>=0 && addr5<=99) && (addr5==addr6)) ? 1'b0:
+		 1'b1;
+		 
 
 //Keep track of the delay through the pipeline
 always @(posedge clk) begin
@@ -53,7 +85,8 @@ always @(posedge clk) begin
 		addr3<=0;
 		addr4<=0;
 		addr5<=0;
-		addr6<=0;	
+		addr6<=0;
+		prev_addr6<=0;	
 	end
 	else begin
 		stage1<=start;
@@ -68,27 +101,44 @@ always @(posedge clk) begin
 		addr4<=addr3;
 		addr5<=addr4;
 		addr6<=addr5;
+		prev_addr6<=addr6;
 	end
 end
 
 //Request the contents from the register file pointed to by the address in stage 6
 //Also used to writeback to the regfile on the same clock cycle
 //assign mac_req_addr = (mac2_en==1) ? addr6 : 7'b0000000;
-always @ (mac2_en) begin 
+/*
+always @(posedge clk) begin 
 	if (mac2_en == 1) begin 
 		mac_req_addr <= addr6; 
 	end else begin 
-		mac_req_addr <= 7'b0000000;
+		//mac_req_addr <= 7'b0000000;
+		mac_req_addr <= 7'b1111111;
 	end
 end
+*/
+assign mac_req_addr = addr6;
+
+
 
 //If the pipeline does not have a valid address at the last stage, then the
 //read and write signals are set low and the regfile is not modified
-initial begin
-read<=mac2_en;
-write<=mac2_en;
+/*
+always @(posedge clk) begin
+	if (reset==1) begin
+		read<=0;
+		write<=0;
+	end
+	else begin
+		read<=mac2_en;
+		write<=mac2_en;
+	end
 end
+*/
 
+assign read=mac2_en;
+assign write=mac2_en;
 
 //The output of the MAC is added to the multiplier ouptut if the MAC is active
 //Otherwise, it just returns the same value that was read from memory

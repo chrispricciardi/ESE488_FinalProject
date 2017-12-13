@@ -19,6 +19,7 @@ module top_tb();
 	wire mac1_done; 
 	wire mac2_done;
 	wire sig_ready;
+	wire signed [15:0] final_out;
 
 	integer i,j,a,b,count_1, count_2,count_3,count_4; 
 	
@@ -32,12 +33,14 @@ module top_tb();
 	.address_3(address_3),
 	//.address_4(address_4),
 	.address_5(address_5),
+	.address_6(address_6),
 	.mac1_start(mac1_start),
 	.mac2_start(mac2_start), 
 	.mac1_done(mac1_done), 
 	.mac2_done(mac2_done),
 	.sig_ready(sig_ready),
 	.sel(sel),
+	.final_out(final_out),
         .reset(reset)
         );
 
@@ -86,10 +89,10 @@ module top_tb();
 	$readmemb("y_fix.txt", DUT.SIGMOID1_9.LUT);
 
 //---Reading Sigmoid values into 2nd Sigmoids
-/*
-	$readmemb("x_fix.txt", DUT.SIGMOID2_1.x);
-	$readmemb("y_fix.txt", DUT.SIGMOID2_1.LUT);
-*/
+
+	$readmemb("x_fix.txt", DUT.SIGMOID_OUT.x);
+	$readmemb("y_fix.txt", DUT.SIGMOID_OUT.LUT);
+
 		clk = 0;
 		reset = 1;
 		we = 0; //testing
