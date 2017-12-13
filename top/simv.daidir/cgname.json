@@ -1,17 +1,12 @@
 {
-    "sigmoid": [
-        "sigmoid",
-        "bYzLi",
+    "top_tb": [
+        "top_tb",
+        "W0eJz",
         "module"
     ],
     "mult": [
         "mult",
         "SRUFi",
-        "module"
-    ],
-    "top_tb": [
-        "top_tb",
-        "W0eJz",
         "module"
     ],
     "sram_input": [
@@ -22,6 +17,11 @@
     "mac": [
         "mac",
         "duZ3t",
+        "module"
+    ],
+    "sigmoid": [
+        "sigmoid",
+        "bYzLi",
         "module"
     ],
     "sram_output": [

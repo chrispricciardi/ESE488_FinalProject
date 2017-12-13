@@ -20,7 +20,7 @@ module top_tb();
 	wire mac2_done;
 	wire sig_ready;
 
-	integer i,j,a,b,count,count_1, count_2; 
+	integer i,j,a,b,count_1, count_2,count_3,count_4; 
 	
 
 	
@@ -101,16 +101,19 @@ module top_tb();
 		address_6 = 0; 
 		mac1_start = 0; 
 		mac2_start = 0; 
-		sel = 4'b1010;
-		count = 0;  
+		//sel = 4'b0000; 
 		count_1 = 0; 
 		count_2 = 0; 
+		count_3 = 0; 
+		count_4 = 0;
 		j=0;
+		a=0;
+		b=0;
 
 		#20		
 		reset = 0; 
 
-		#3136000
+		#400000
 		$finish;
 end
     //---Cycle through input data and weights
@@ -136,81 +139,27 @@ end
 	    end 
 	    
 
-	    /*
-		for(i = 0; i< 200; i=i+1)begin 
-			for (j = 0; j < 784; j=j+1)begin 
-				#20
-				address_3 = j; 
-				address_1 = i*784+j;
-				if (j == 783) begin 
-					mac1_start = 1;  
-				end
-				else begin 
-					mac1_start = 0; 
-				end		
-			end
-		end	
-	*/
-
-	    //--when the sigmoid completes a data set, send select signal and addresses for second layer weights---
-
-	    //--this might have to be moved to a separate DMA file to avoid conflicting timing with the for loops above
-
-/*wire[31:0] temp1, temp2;
-assign temp2 = b+count*10;
-assign address_2 = temp2[9:0];
-
-assign temp1= (sel*10 + address_2);
-assign address_6 = temp1[6:0];
-
-*/
-/*
-always @(sig_ready) begin
-	if (sig_ready==1) begin
-		#20		
-		a=a+1;
-		
-		if (a==10) begin
-			b
-		end
-	end
-
-
-end
-*/
-
-
-
-
 	  always @ (sig_ready) begin 
 		   if(sig_ready==1)begin
-			    for(a=0;a<11;a=a+1)begin
-	 //index through multiplexer inputs (0-9)			  
-  				sel <= a;					
-				    for(b=0;b<10;b=b+1)begin	   			    
-					    address_2 <= b + count*10;	
-					   // address_6 <= sel*10+address_2; 
- 					    #20
-					    j=j+1;
+			    for(a=0;a<10;a=a+1)begin			  
+  				sel <= a ; 
+				    for(b=0;b<10;b=b+1)begin	   	
+					    address_2 <= b + count_3*10;
+
+						address_6 <= b+count_4*10; 
+ 						#20
+						j<=j+1;
+
 			     		end 
- 				count = count + 1;
+																	 						count_3 = count_3+1; 
+					count_4 = count_4+1; 
+					if(count_4 % 10 == 0) begin 
+					count_4 = 0; 
+					end
 				end
 	   	end
 	end
 
-
-reg[6:0] c = 0; 
-	  always @ (posedge clk) begin 
-		   if(sig_ready==1)begin
-
-			    for(c=0;c<100;c=c+1)begin		  
-  				address_6 <= c;	
-				end				
-	 
-	   	end
-	end
-
-   
     always 
         #10 clk = !clk;
 

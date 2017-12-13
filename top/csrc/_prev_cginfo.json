@@ -1,81 +1,89 @@
 {
+    "PEModules": [],
+    "CurCompileModules": [
+        "...MASTER...",
+        "top_tb"
+    ],
     "MlibObjs": {},
-    "SIMBData": {
-        "out": "amcQwB.o",
-        "bytes": 71995
-    },
-    "stat": {
-        "nMops": 5
-    },
     "PrevCompiledModules": {
+        "sram_output": {
+            "rzGrF_d": {
+                "bytes": 8158,
+                "mod": "sram_output",
+                "mode": 4,
+                "archive": "archive.125/_prev_archive_1.a",
+                "out": "rzGrF_d.o"
+            }
+        },
         "sram_input": {
             "wx9Rv_d": {
-                "mode": 4,
                 "bytes": 8146,
                 "mod": "sram_input",
-                "archive": "archive.101/_prev_archive_1.a",
+                "mode": 4,
+                "archive": "archive.125/_prev_archive_1.a",
                 "out": "wx9Rv_d.o"
-            }
-        },
-        "top_tb": {
-            "W0eJz_d": {
-                "mode": 4,
-                "bytes": 75767,
-                "mod": "top_tb",
-                "out": "W0eJz_d.o",
-                "archive": "archive.101/_prev_archive_1.a"
-            }
-        },
-        "sigmoid": {
-            "bYzLi_d": {
-                "mode": 4,
-                "bytes": 11620,
-                "mod": "sigmoid",
-                "archive": "archive.101/_prev_archive_1.a",
-                "out": "bYzLi_d.o"
-            }
-        },
-        "mac": {
-            "duZ3t_d": {
-                "mode": 4,
-                "bytes": 10408,
-                "mod": "mac",
-                "archive": "archive.101/_prev_archive_1.a",
-                "out": "duZ3t_d.o"
             }
         },
         "mult": {
             "SRUFi_d": {
-                "mode": 4,
                 "bytes": 19306,
                 "mod": "mult",
-                "archive": "archive.101/_prev_archive_1.a",
+                "mode": 4,
+                "archive": "archive.125/_prev_archive_1.a",
                 "out": "SRUFi_d.o"
+            }
+        },
+        "top_tb": {
+            "W0eJz_d": {
+                "bytes": 76196,
+                "mod": "top_tb",
+                "out": "W0eJz_d.o",
+                "mode": 4,
+                "archive": "archive.125/_25863_archive_1.a"
+            }
+        },
+        "mac": {
+            "duZ3t_d": {
+                "bytes": 10408,
+                "mod": "mac",
+                "mode": 4,
+                "archive": "archive.125/_prev_archive_1.a",
+                "out": "duZ3t_d.o"
+            }
+        },
+        "sigmoid": {
+            "bYzLi_d": {
+                "bytes": 11620,
+                "mod": "sigmoid",
+                "mode": 4,
+                "archive": "archive.125/_prev_archive_1.a",
+                "out": "bYzLi_d.o"
             }
         },
         "...MASTER...": {
             "amcQw_d": {
-                "mode": 4,
                 "bytes": 7784,
                 "mod": "...MASTER...",
                 "out": "amcQw_d.o",
-                "archive": "archive.101/_14778_archive_1.a"
-            }
-        },
-        "sram_output": {
-            "rzGrF_d": {
                 "mode": 4,
-                "bytes": 8158,
-                "mod": "sram_output",
-                "archive": "archive.101/_prev_archive_1.a",
-                "out": "rzGrF_d.o"
+                "archive": "archive.125/_25863_archive_1.a"
             }
         }
     },
     "NameTable": {
+        "mult": [
+            "mult",
+            "SRUFi",
+            "module"
+        ],
         "top_tb": [
             "top_tb",
             "W0eJz",
+            "module"
+        ],
+        "sram_output": [
+            "sram_output",
+            "rzGrF",
             "module"
         ],
         "sram_input": [
@@ -83,9 +91,9 @@
             "wx9Rv",
             "module"
         ],
-        "mult": [
-            "mult",
-            "SRUFi",
+        "sigmoid": [
+            "sigmoid",
+            "bYzLi",
             "module"
         ],
         "mac": [
@@ -93,42 +101,35 @@
             "duZ3t",
             "module"
         ],
-        "sigmoid": [
-            "sigmoid",
-            "bYzLi",
-            "module"
-        ],
         "...MASTER...": [
             "SIM",
             "amcQw",
             "module"
-        ],
-        "sram_output": [
-            "sram_output",
-            "rzGrF",
-            "module"
         ]
     },
-    "Misc": {
-        "daidir": "simv.daidir",
-        "cwd": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top",
-        "archive_dir": "archive.101",
-        "daidir_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/simv.daidir",
-        "csrc": "csrc",
-        "csrc_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/csrc",
-        "default_output_dir": "csrc"
-    },
     "CompileStrategy": "fullobj",
+    "CompileStatus": "Successful",
     "CurCompileUdps": {},
-    "PEModules": [],
-    "CurCompileModules": [
-        "...MASTER..."
-    ],
+    "stat": {
+        "nMops": 3695
+    },
+    "Misc": {
+        "csrc": "csrc",
+        "cwd": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top",
+        "csrc_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/csrc",
+        "daidir_abs": "/home/warehouse/c.ricciardi/GitHub/ESE488_FinalProject/top/simv.daidir",
+        "daidir": "simv.daidir",
+        "default_output_dir": "csrc",
+        "archive_dir": "archive.125"
+    },
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 72305
+    },
     "LVLData": [
         "SIM"
     ],
     "CompileProcesses": [
-        "cgproc.14778.json"
-    ],
-    "CompileStatus": "Successful"
+        "cgproc.25863.json"
+    ]
 }
